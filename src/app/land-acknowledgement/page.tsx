@@ -1,0 +1,21 @@
+export const metadata = { title: "Land Acknowledgment | CUMSA" };
+export default function LandAcknowledgementPage() {
+  return (
+    <div className="container-base py-12">
+      <h1 className="text-3xl font-bold">Land Acknowledgement</h1>
+      <p className="mt-4 text-gray-700">
+        As Muslims committed to justice, we recognize that we live, learn, and worship on the
+        unceded, unsurrendered territory of the Algonquin nation. We affirm our responsibility to
+        support Indigenous self-determination and to work toward justice in word and deed.
+      </p>
+      <div className="mt-6 space-y-4 text-gray-700">
+        <p>
+          We remember the Qur’anic call to stand firm for justice (4:135) and the Prophetic
+          teachings against oppression. We ask God to help us uphold these commitments and to work
+          in solidarity with the Algonquin people.
+        </p>
+        <p>Ameen.</p>
+      </div>
+    </div>
+  );
+}

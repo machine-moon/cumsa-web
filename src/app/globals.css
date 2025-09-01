@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --muted: #64748b;
+  --navy: #2a7487;
+  --blue: #5aced8;
+  --red: #c73221;
+  --header-top: #123a66;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+.link-cta {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link-cta:hover {
+  color: var(--red);
+}
+
+.btn-cozy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    opacity 150ms ease;
+}
+
+.btn-cozy:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--foreground);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--blue) 70%, white);
+  outline-offset: 2px;
+}
+
+.container-base {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-base {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-base {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.transition-base {
+  transition: all 200ms ease-out;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.75rem;
+}
+
+.title {
+  color: var(--red);
+}
+
+.tint-blue {
+  filter: invert(28%) sepia(88%) saturate(3612%) hue-rotate(211deg) brightness(93%) contrast(98%);
+}
+
+.logo-mask-blue {
+  background-color: var(--blue);
+  -webkit-mask-image: url("/CU-MSA-LOGO-blank-2.png");
+  mask-image: url("/CU-MSA-LOGO-blank-2.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  display: inline-block;
+}
