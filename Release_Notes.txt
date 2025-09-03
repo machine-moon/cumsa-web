@@ -1,0 +1,15 @@
+CUMSA Web Application Release Notes
+-------------------------------------------------------------------
+Document all technical changes introduced in this release as concise bullet points below.
+
+v0.0.1 (2025-09-03)
+----------------------
+Tarek Ibrahim
+- Initial release of CUMSA web app
+- Built with Next.js, React, TypeScript, Tailwind CSS
+
+vX.Y.Z (YYYY-MM-DD)
+----------------------
+Author Full Name
+- Short bullet describing the change
+- Another bullet if needed
