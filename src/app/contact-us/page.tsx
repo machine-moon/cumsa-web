@@ -1,6 +1,6 @@
 export const metadata = { title: "Contact Us | CUMSA" };
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import ContactForm from "./contact-form";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function ContactUsPage() {
   return (
@@ -21,32 +21,7 @@ export default function ContactUsPage() {
             <p>1125 Colonel By Drive</p>
             <p>Ottawa, ON K1S 5B6</p>
           </div>
-          <div className="mt-6 flex gap-4 text-[var(--blue)]">
-            <a
-              aria-label="Facebook"
-              href="https://www.facebook.com/CarletonMSA/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF size={18} />
-            </a>
-            <a
-              aria-label="Twitter"
-              href="https://twitter.com/carletonmsa?lang=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter size={18} />
-            </a>
-            <a
-              aria-label="Instagram"
-              href="https://www.instagram.com/carletonmsa/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={18} />
-            </a>
-          </div>
+          <SocialLinks className="mt-6 text-[var(--blue)]" />
         </section>
         <section>
           <h2 className="text-xl font-semibold">Send us a message</h2>

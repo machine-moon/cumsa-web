@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MotionCard snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="rounded-xl bg-white ring-1 ring-black/10 shadow-sm p-6 "
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;

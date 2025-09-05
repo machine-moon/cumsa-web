@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`your masajid client snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-8 grid gap-8 md:grid-cols-2"
+  >
+    <div
+      class="space-y-3"
+    >
+      <div
+        class="rounded-lg border border-black/10 bg-white"
+      >
+        <button
+          aria-expanded="true"
+          class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+        >
+          <span>
+            Ottawa Mosque (OMA)
+          </span>
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 transition-transform rotate-180"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
+            />
+          </svg>
+        </button>
+        <div
+          class="px-4 pb-4 text-sm text-gray-700 space-y-1"
+        >
+          <div
+            class="font-semibold text-[var(--red)]"
+          >
+            Information
+          </div>
+          <div>
+            251 Northwestern Ave, Ottawa, ON
+          </div>
+          <div>
+            (613) 722-8763
+          </div>
+          <div>
+            <a
+              class="link-cta"
+              href="https://www.omaottawa.org/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Website →
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="rounded-lg border border-black/10 bg-white"
+      >
+        <button
+          aria-expanded="false"
+          class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+        >
+          <span>
+            Masjid ar-Rahmah (AMA)
+          </span>
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 transition-transform "
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="rounded-lg border border-black/10 bg-white"
+      >
+        <button
+          aria-expanded="false"
+          class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+        >
+          <span>
+            South Nepean Muslim Community (SNMC)
+          </span>
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 transition-transform "
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="rounded-lg border border-black/10 bg-white"
+      >
+        <button
+          aria-expanded="false"
+          class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+        >
+          <span>
+            Kanata Muslim Association (KMA)
+          </span>
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 transition-transform "
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="rounded-lg border border-black/10 bg-white"
+      >
+        <button
+          aria-expanded="false"
+          class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+        >
+          <span>
+            Centre Islamique de l’Outaouais (CIO)
+          </span>
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4 transition-transform "
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        data-testid="stub"
+        mosques="[object Object],[object Object],[object Object],[object Object],[object Object]"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

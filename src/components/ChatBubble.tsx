@@ -20,14 +20,16 @@ export default function ChatBubble() {
                 e.preventDefault();
                 setStatus("sending");
                 const form = e.currentTarget as HTMLFormElement;
-                const data = new FormData(form);
-                data.append("access_key", "903900d6-718c-41f7-ad85-da101b30763e");
-                data.append("from_name", "CUMSA Website Chat");
-                data.append("subject", "Chat bubble inquiry");
+                const data = Object.fromEntries(new FormData(form).entries());
                 try {
-                  const res = await fetch("https://api.web3forms.com/submit", {
+                  const res = await fetch("/api/contact", {
                     method: "POST",
-                    body: data,
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({
+                      ...data,
+                      from_name: "CUMSA Website Chat",
+                      subject: "Chat bubble inquiry",
+                    }),
                   });
                   const json = await res.json();
                   setStatus(json.success ? "sent" : "error");

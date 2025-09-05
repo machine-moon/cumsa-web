@@ -1,4 +1,5 @@
 export const metadata = { title: "Join Us | CUMSA" };
+import { FORMS, LINKS } from "@/lib/constants";
 export default function JoinUsPage() {
   return (
     <div className="container-base py-12">
@@ -9,7 +10,7 @@ export default function JoinUsPage() {
         Administration.
       </p>
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSf26RDn8I2t_pcQBoF72GLIwUllaG8kF5KPd1OAekPC-oaY9A/viewform"
+        href={FORMS.councilApplication}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-block px-5 py-2.5 rounded-md bg-[var(--blue)] text-white transition-base hover:opacity-90"
@@ -28,12 +29,7 @@ export default function JoinUsPage() {
         <section className="card p-6">
           <h2 className="text-xl font-semibold text-[var(--red)]">Join Our Discord</h2>
           <p className="mt-2 text-gray-700">Our primary channel for announcements and community.</p>
-          <a
-            href="https://discord.gg/GugaNUV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-cta"
-          >
+          <a href={LINKS.discord} target="_blank" rel="noopener noreferrer" className="link-cta">
             Join our Discord →
           </a>
         </section>

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="relative overflow-hidden"
+  >
+    <div
+      class="container-base py-12 md:py-16 text-white"
+    >
+      <h1
+        class="text-4xl md:text-6xl font-extrabold tracking-tight"
+      >
+        Test Title
+      </h1>
+      <p
+        class="mt-4 max-w-2xl text-white/85 text-lg"
+      >
+        Test Subtitle
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;

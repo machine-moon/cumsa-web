@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrandLogo snapshot 1`] = `
+<DocumentFragment>
+  <span
+    aria-hidden="true"
+    class="logo-mask-blue rounded-sm "
+    style="width: 44px; height: 44px;"
+  />
+</DocumentFragment>
+`;

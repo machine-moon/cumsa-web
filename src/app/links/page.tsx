@@ -1,10 +1,10 @@
 import { FaBinoculars } from "react-icons/fa";
+import { LINKS } from "@/lib/constants";
 
 export const metadata = { title: "Links | CUMSA" };
 export const dynamic = "force-dynamic";
 
-const LINKTREE_URL =
-  "https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681";
+const LINKTREE_URL = LINKS.linktree;
 
 const fallbackLinks: Array<{ name: string; url: string }> = [
   { name: "Discord", url: "https://discord.gg/GugaNUV" },

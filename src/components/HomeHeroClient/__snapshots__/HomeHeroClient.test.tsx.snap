@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeHeroClient snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="relative overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 -z-10"
+    >
+      <img
+        alt="CUMSA banner"
+        class="object-cover"
+        src="/zahid-lilani-unsplash-scaled.jpg"
+        style="position: absolute; inset: 0;"
+      />
+      <div
+        class="absolute inset-0 bg-[var(--navy)]/55"
+      />
+    </div>
+    <div
+      class="container-base py-24 md:py-32 text-white"
+    >
+      <h1
+        class="text-4xl md:text-6xl font-extrabold tracking-tight"
+        style="opacity: 0; transform: translateY(12px);"
+      >
+        Carleton University Muslim Students’ Association
+      </h1>
+      <div
+        class="mt-4 max-w-2xl text-white/85 text-lg"
+      >
+        <div
+          class="Typewriter"
+          data-testid="typewriter-wrapper"
+        >
+          <span
+            class="Typewriter__wrapper"
+          />
+          <span
+            class="Typewriter__cursor"
+          >
+            <span
+              class="typewriter-cursor"
+            >
+              |
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex flex-wrap gap-3"
+        style="opacity: 0;"
+      >
+        <a
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[var(--blue)] text-white hover:opacity-90 focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
+          href="/services/prayer"
+        >
+          Prayers
+        </a>
+        <a
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-black/10 bg-[var(--surface)] text-[var(--foreground)] hover:bg-black/5 focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
+          href="/join-us"
+        >
+          Join Us
+        </a>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

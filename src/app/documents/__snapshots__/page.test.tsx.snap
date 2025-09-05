@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`documents page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-base py-12"
+  >
+    <h1
+      class="text-3xl font-bold"
+    >
+      Documents
+    </h1>
+    <div
+      class="mt-6 grid gap-6 md:grid-cols-2"
+    >
+      <a
+        class="border rounded-xl p-6 hover:shadow-md transition-base no-underline"
+        href="https://cumsa.ca/wp-content/uploads/2014/12/CU-MSA-Constituton-May-2017.pdf"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Constitution
+        </h2>
+        <p
+          class="mt-2 text-gray-700"
+        >
+          Foundational document outlining our purpose, structure, responsibilities, and elections.
+        </p>
+        <span
+          class="mt-3 inline-block link-cta"
+        >
+          Read More →
+        </span>
+      </a>
+      <a
+        class="border rounded-xl p-6 hover:shadow-md transition-base no-underline"
+        href="https://cumsa.ca/wp-content/uploads/2014/12/Director-Positions-2017-2018.pdf"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Directors Guidebook
+        </h2>
+        <p
+          class="mt-2 text-gray-700"
+        >
+          In-depth overview of directors’ duties and CU‑MSA committees.
+        </p>
+        <span
+          class="mt-3 inline-block link-cta"
+        >
+          Read More →
+        </span>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

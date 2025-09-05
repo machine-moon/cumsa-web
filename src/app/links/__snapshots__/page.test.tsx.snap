@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`links page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-base py-10"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <svg
+        class="text-[var(--red)]"
+        fill="currentColor"
+        height="22"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M416 48c0-8.84-7.16-16-16-16h-64c-8.84 0-16 7.16-16 16v48h96V48zM63.91 159.99C61.4 253.84 3.46 274.22 0 404v44c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32V288h32V128H95.84c-17.63 0-31.45 14.37-31.93 31.99zm384.18 0c-.48-17.62-14.3-31.99-31.93-31.99H320v160h32v160c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-44c-3.46-129.78-61.4-150.16-63.91-244.01zM176 32h-64c-8.84 0-16 7.16-16 16v48h96V48c0-8.84-7.16-16-16-16zm48 256h64V128h-64v160z"
+        />
+      </svg>
+      <h1
+        class="text-3xl font-bold title"
+      >
+        CU‑MSA Links
+      </h1>
+    </div>
+    <p
+      class="mt-3 text-gray-700"
+    >
+      Explore our active links, socials, and forms. If any item is missing, open the Linktree directly.
+    </p>
+    <div
+      class="mt-6 flex gap-3"
+    >
+      <a
+        class="btn-cozy btn-primary"
+        href="https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Open on Linktree
+      </a>
+      <a
+        class="btn-cozy btn-outline"
+        href="/contact-us"
+      >
+        Questions? Contact us
+      </a>
+    </div>
+    <section
+      class="mt-8"
+    >
+      <div
+        class="overflow-x-auto"
+      >
+        <table
+          class="w-full text-left border border-black/10 rounded-lg overflow-hidden bg-white"
+        >
+          <thead>
+            <tr
+              class="bg-black/5"
+            >
+              <th
+                class="p-3 border-b border-black/10"
+              >
+                Name
+              </th>
+              <th
+                class="p-3 border-b border-black/10"
+              >
+                Link
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                Discord
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="https://discord.gg/GugaNUV"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                Instagram
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="https://www.instagram.com/carletonmsa/?hl=en"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                Facebook
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="https://www.facebook.com/CarletonMSA/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                YouTube
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="https://www.youtube.com/@carletonmsa"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                Website
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="/"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="hover:bg-black/5 transition-base"
+            >
+              <td
+                class="p-3 border-b border-black/10 font-medium"
+              >
+                Donate
+              </td>
+              <td
+                class="p-3 border-b border-black/10"
+              >
+                <a
+                  class="link-cta"
+                  href="/donate"
+                >
+                  Visit →
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p
+        class="mt-2 text-sm text-gray-600"
+      >
+        Note: The Linktree embed is blocked by their site; we fetch links server-side instead.
+      </p>
+    </section>
+  </div>
+</DocumentFragment>
+`;

@@ -2,6 +2,13 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all technical changes introduced in this release as concise bullet points below.
 
+v0.0.2 (2025-09-04)
+----------------------
+Tarek Ibrahim
+- Refactored monolithic app into modular components
+- Added snapshot tests for each page and component library
+- Added GitHub Actions CI workflow for automated test runs
+
 v0.0.1 (2025-09-03)
 ----------------------
 Tarek Ibrahim

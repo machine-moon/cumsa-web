@@ -10,14 +10,28 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("sending");
     const form = e.currentTarget;
-    const data = new FormData(form);
-    data.append("access_key", "903900d6-718c-41f7-ad85-da101b30763e"); // LOL
-    data.append("from_name", "CUMSA Website");
-    data.append("subject", data.get("subject")?.toString() || "New message from CUMSA website");
+    const formData = new FormData(form);
+
+    const body = {
+      name: formData.get("name")?.toString().trim() || "",
+      email: formData.get("email")?.toString().trim() || "",
+      message: formData.get("message")?.toString().trim() || "",
+      subject: formData.get("subject")?.toString().trim() || "",
+    };
+
     try {
-      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+      });
       const json = await res.json();
-      setStatus(json.success ? "sent" : "error");
+      if (json.success) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -32,14 +46,14 @@ export default function ContactForm() {
         className="w-full rounded-md border border-black/10 bg-[var(--surface)] px-3 py-2 text-[var(--foreground)] placeholder-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
         rows={5}
         placeholder="Message"
+        name="message"
+        required
       />
       <div className="flex items-center gap-3">
         <Button type="submit" disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send"}
         </Button>
-        {status === "error" && (
-          <span className="text-sm text-red-700">Failed to send. Check Web3Forms key.</span>
-        )}
+        {status === "error" && <span className="text-sm text-red-700">Failed to send.</span>}
         {status === "sent" && (
           <span className="text-sm text-green-700">Thanks! We’ll get back to you soon.</span>
         )}

@@ -1,43 +1,75 @@
-Setup notes
+# CUMSA Web Application
 
-- Emails (Contact + Chat) use Web3Forms. Add an env var in your shell or .env:
+A modern, modular web application for the Carleton University Muslim Students’ Association (CUMSA).
 
-  NEXT_PUBLIC_WEB3FORMS_KEY=YOUR_WEB3FORMS_ACCESS_KEY
-
-- Optional: Google Maps API key for Your Masajid page embed. Replace the placeholder key in `src/app/services/your-masajid/your-masajid-client.tsx`.
-  This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Tech Stack
+- **Framework:** Next.js 15 (App Router, React 19)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animation:** framer-motion
+- **UI:** shadcn/ui, custom components
+- **Maps:** react-leaflet, leaflet
+- **Testing:** Jest, React Testing Library, snapshot tests
+- **CI:** GitHub Actions (see `.github/workflows/ci.yml`)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js >= 22.18.0 (see `package.json`)
+- Yarn (recommended)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Setup
+```sh
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
+```sh
+yarn dev
+```
+- Starts the app locally at http://localhost:3000
+- Uses Next.js with Turbopack for fast refresh
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
+```sh
+yarn build
+```
+- Builds the app for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Lint & Format
+```sh
+yarn lint
+yarn format
+```
 
-## Learn More
+### Run Tests
+```sh
+yarn test
+```
+- Runs all snapshot/component/page tests
+- See `.github/workflows/ci.yml` for CI setup
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/` — App routes, pages, and API endpoints
+  - `layout.tsx`, `page.tsx` — Main layout and homepage
+  - `about/`, `contact-us/`, `documents/`, etc. — Feature pages
+  - `api/` — API endpoints (e.g., `/api/contact`)
+- `src/components/` — All UI components, each in its own folder with colocated snapshot test
+- `src/lib/` — Shared utilities (e.g., `db.ts`, constants)
+- `public/` — Static assets (images, etc.)
+- `__mocks__/` — Jest/RTL mocks for Next.js, leaflet, images, etc.
+- `.github/workflows/ci.yml` — GitHub Actions workflow for CI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+- Keep code modular and simple. Avoid cleverness; prefer clarity.
+- All components must have a colocated snapshot test.
+- Use only snapshot tests for UI unless testing an API endpoint.
+- Use mocks for external dependencies in tests (see `__mocks__`).
+- Follow the existing folder structure and naming conventions.
+- Document any new features or changes in `Release_Notes.txt`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Support
+- For questions, open an issue or contact the maintainers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -75,6 +75,7 @@ export default function Navbar() {
 
           <button
             aria-label="Toggle menu"
+            type="button"
             className="md:hidden p-2 rounded hover:bg-white/10 transition-base"
             onClick={() => setMobileOpen((v) => !v)}
           >
@@ -86,15 +87,17 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-6">
             {NAV.map((item) => (
               <div key={item.label} className="relative">
-                {item.children ? (
+                {"children" in item ? (
                   <>
                     <button
                       className="flex items-center gap-1 hover:text-[var(--blue)] transition-base"
+                      type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         setOpenDropdown((d) => (d === item.label ? null : item.label));
                       }}
                       aria-expanded={openDropdown === item.label}
+                      aria-haspopup="menu"
                     >
                       {item.label}
                       <svg
@@ -108,7 +111,7 @@ export default function Navbar() {
                     </button>
                     {openDropdown === item.label && (
                       <div className="absolute left-0 mt-2 w-56 rounded-md bg-white text-[var(--navy)] shadow ring-1 ring-black/5 py-2">
-                        {item.children.map((c) =>
+                        {(item.children ?? []).map((c: { label: string; href: string }) =>
                           c.href?.startsWith("http") ? (
                             <a
                               key={c.href}
@@ -133,12 +136,15 @@ export default function Navbar() {
                     )}
                   </>
                 ) : (
-                  <Link
-                    href={item.href!}
-                    className={`hover:text-[var(--blue)] transition-base ${pathname === item.href ? "text-[var(--blue)]" : ""}`}
-                  >
-                    {item.label}
-                  </Link>
+                  "href" in item &&
+                  item.href && (
+                    <Link
+                      href={item.href}
+                      className={`hover:text-[var(--blue)] transition-base ${pathname === item.href ? "text-[var(--blue)]" : ""}`}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 )}
               </div>
             ))}
@@ -151,7 +157,7 @@ export default function Navbar() {
           <div className="container-base py-2 space-y-1">
             {NAV.map((item) => (
               <div key={item.label} className="">
-                {item.children ? (
+                {"children" in item ? (
                   <details className="group">
                     <summary className="list-none flex items-center justify-between py-2 cursor-pointer">
                       <span>{item.label}</span>
@@ -165,7 +171,7 @@ export default function Navbar() {
                       </svg>
                     </summary>
                     <div className="pl-4 pb-2 space-y-1">
-                      {item.children.map((c) =>
+                      {(item.children ?? []).map((c: { label: string; href: string }) =>
                         c.href?.startsWith("http") ? (
                           <a
                             key={c.href}
@@ -189,9 +195,12 @@ export default function Navbar() {
                     </div>
                   </details>
                 ) : (
-                  <Link href={item.href!} className="block py-2 hover:text-[var(--blue)]">
-                    {item.label}
-                  </Link>
+                  "href" in item &&
+                  item.href && (
+                    <Link href={item.href} className="block py-2 hover:text-[var(--blue)]">
+                      {item.label}
+                    </Link>
+                  )
                 )}
               </div>
             ))}

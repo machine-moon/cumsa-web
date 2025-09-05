@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatBubble snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed bottom-4 right-4 z-[60]"
+  >
+    <button
+      aria-label="Open chat"
+      class="btn-cozy btn-primary shadow-lg"
+    >
+      Chat
+    </button>
+  </div>
+</DocumentFragment>
+`;
