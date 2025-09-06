@@ -2,6 +2,11 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all technical changes introduced in this release as concise bullet points below.
 
+v0.0.5 (2025-09-06)
+----------------------
+Sarah Abada
+- Updated the information about the mosques
+
 v0.0.4 (2025-09-05)
 ----------------------
 Tarek Ibrahim
