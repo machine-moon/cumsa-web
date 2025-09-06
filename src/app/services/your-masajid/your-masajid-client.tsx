@@ -2,6 +2,7 @@
 import { useState } from "react";
 import MasajidMapClient from "@/components/MasajidMapClient";
 import { MOSQUES } from "@/lib/constants";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function YourMasajidClient() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -17,14 +18,10 @@ export default function YourMasajidClient() {
               aria-expanded={openIdx === i}
             >
               <span>{m.name}</span>
-              <svg
+              <FaChevronDown
                 className={`w-4 h-4 transition-transform ${openIdx === i ? "rotate-180" : ""}`}
-                viewBox="0 0 20 20"
-                fill="currentColor"
                 aria-hidden
-              >
-                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z" />
-              </svg>
+              />
             </button>
             {openIdx === i && (
               <div className="px-4 pb-4 text-sm text-gray-700 space-y-1">

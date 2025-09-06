@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ChatBubble from "@/components/ChatBubble";
 import Footer from "@/components/Footer";
+import { LOGOS } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
   title: "CUMSA",
   description: "Carleton Muslim Student Association",
   icons: {
-    icon: "/CU-MSA-LOGO-blank-2.png",
-    shortcut: "/CU-MSA-LOGO-blank-2.png",
-    apple: "/CU-MSA-LOGO-blank-2.png",
+    icon: LOGOS.main,
+    shortcut: LOGOS.main,
+    apple: LOGOS.main,
   },
 };
 

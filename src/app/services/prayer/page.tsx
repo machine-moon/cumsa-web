@@ -87,7 +87,7 @@ export default async function PrayerServicesPage() {
             </p>
           </section>
           <section className="rounded-lg border border-black/10 bg-white p-5">
-            <h2 className="text-xl font-semibold">Musala</h2>
+            <h2 className="text-xl font-semibold">Musalla (Prayer Room)</h2>
             <p className="mt-2 text-gray-700">
               Open daily for all Muslim students with wudhu facilities for brothers and sisters.
             </p>

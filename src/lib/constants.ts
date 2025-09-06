@@ -10,6 +10,12 @@ export const LINKS = {
   donate: "/donate",
 };
 
+export const LOGOS = {
+  main: "/CU-MSA-LOGO.png",
+  fallback: "/CU-MSA-LOGO-blank.png",
+  mask: "/CU-MSA-LOGO-blank.png",
+} as const;
+
 export const MOSQUES = [
   {
     name: "Ottawa Mosque (OMA)",
@@ -56,11 +62,13 @@ export const MOSQUES = [
 // Forms and submissions
 export const FORMS = {
   newsletter:
-    "https://docs.google.com/forms/d/e/1FAIpQLSee1bKuvIEzoPqEX-Ne4oCB1auQmqftLRoejCzKkuonvA5BPQ/viewform?embedded=true",
+    "https://docs.google.com/forms/d/e/1FAIpQLSee5KLKC4gycv5aJBtdSpTr8hQVNT5oVY3Jpo_M2dG9-QCOjQ/viewform",
   alumniNewsletter:
     "https://docs.google.com/forms/d/e/1FAIpQLSee1bKuvIEzoPqEX-Ne4oCB1auQmqftLRoejCzKkuonvA5BPQ/viewform?embedded=true",
   volunteerApplication:
     "https://docs.google.com/forms/d/e/1FAIpQLSelz_Ag6-8c5Fz5r0MqIC9urPbZrk5DLmHr_J8-ut0Cc3uJgw/viewform",
+  revertsSignup:
+    "https://docs.google.com/forms/d/1jAvnNH8jkEQgQM8B_mNBGPyhmyyQlyfjEwvneV7roBg/viewform?edit_requested=true",
 };
 
 // External API endpoints and headers

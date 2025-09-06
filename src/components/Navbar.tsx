@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
-import BrandLogo from "./BrandLogo";
+
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { LINKS } from "@/lib/constants";
+import { FaTree, FaChevronDown } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 type NavItem = {
   label: string;
@@ -30,10 +33,6 @@ const NAV: NavItem[] = [
       { label: "Equity Services", href: "/services/equity" },
       { label: "Your Masjid", href: "/services/your-masajid" },
       { label: "New Muslims", href: "/services/new-muslims" },
-      {
-        label: "Linktree",
-        href: "https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681",
-      },
     ],
   },
   { label: "Join Us", href: "/join-us" },
@@ -45,6 +44,18 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const navRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [highlightProps, setHighlightProps] = useState({ left: 0, width: 0 });
+
+  useEffect(() => {
+    if (hoveredIdx !== null && navRefs.current[hoveredIdx]) {
+      const el = navRefs.current[hoveredIdx]!;
+      const rect = el.getBoundingClientRect();
+      const parentRect = el.parentElement!.getBoundingClientRect();
+      setHighlightProps({ left: rect.left - parentRect.left, width: rect.width });
+    }
+  }, [hoveredIdx]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -68,10 +79,20 @@ export default function Navbar() {
         <div className="container-base h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-3 font-semibold tracking-wide transition-base hover:text-[var(--red)]"
+            className="flex items-center select-none"
+            style={{ WebkitTapHighlightColor: "transparent" }}
           >
-            <BrandLogo size={44} />
-            <span className="hidden sm:inline">Carleton University MSA</span>
+            <motion.img
+              src="/MSA.png"
+              alt="Carleton University MSA logo"
+              width={220}
+              height={56}
+              className="object-contain h-14 w-auto drop-shadow-md"
+              whileHover={{ scaleX: 1.12, scaleY: 0.92 }}
+              whileTap={{ scale: 1.18 }}
+              transition={{ type: "spring", stiffness: 350, damping: 12, duration: 0.3 }}
+              draggable={false}
+            />
           </Link>
 
           <button
@@ -85,13 +106,31 @@ export default function Navbar() {
             <span className="block w-6 h-0.5 bg-[var(--navy)]" />
           </button>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {NAV.map((item) => (
-              <div key={item.label} className="relative">
+          <nav className="hidden md:flex items-center gap-6 relative">
+            <motion.div
+              className="absolute top-0 h-full bg-gradient-to-br from-blue-200/60 to-blue-400/30 rounded-lg pointer-events-none z-0"
+              animate={
+                hoveredIdx !== null
+                  ? { left: highlightProps.left, width: highlightProps.width, opacity: 1 }
+                  : { opacity: 0 }
+              }
+              transition={{ type: "spring", stiffness: 400, damping: 30, duration: 0.25 }}
+              style={{ left: highlightProps.left, width: highlightProps.width }}
+            />
+            {NAV.map((item, i) => (
+              <div
+                key={item.label}
+                ref={(el) => {
+                  navRefs.current[i] = el;
+                }}
+                className="relative z-10"
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx(null)}
+              >
                 {"children" in item ? (
                   <>
                     <button
-                      className="flex items-center gap-1 hover:text-[var(--blue)] transition-base"
+                      className={`flex items-center gap-1 px-2 py-1 rounded transition-colors duration-200 ${hoveredIdx === i ? "bg-blue-100/60 text-[var(--blue)] shadow" : "hover:bg-blue-50/60 hover:text-[var(--blue)]"}`}
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -101,14 +140,10 @@ export default function Navbar() {
                       aria-haspopup="menu"
                     >
                       {item.label}
-                      <svg
+                      <FaChevronDown
                         className={`w-4 h-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
                         aria-hidden
-                      >
-                        <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z" />
-                      </svg>
+                      />
                     </button>
                     {openDropdown === item.label && (
                       <div className="absolute left-0 mt-2 w-56 rounded-md bg-white text-[var(--navy)] shadow ring-1 ring-black/5 py-2">
@@ -141,7 +176,7 @@ export default function Navbar() {
                   item.href && (
                     <Link
                       href={item.href}
-                      className={`hover:text-[var(--blue)] transition-base ${pathname === item.href ? "text-[var(--blue)]" : ""}`}
+                      className={`px-2 py-1 rounded transition-colors duration-200 ${hoveredIdx === i ? "bg-blue-100/60 text-[var(--blue)] shadow" : "hover:bg-blue-50/60 hover:text-[var(--blue)]"} ${pathname === item.href ? "text-[var(--blue)]" : ""}`}
                     >
                       {item.label}
                     </Link>
@@ -149,6 +184,15 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+            <a
+              href={LINKS.linktree}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Linktree"
+              className="ml-2 p-2 rounded-full hover:bg-green-100 transition-base text-green-700 hover:text-green-800 z-10"
+            >
+              <FaTree className="w-5 h-5" />
+            </a>
           </nav>
         </div>
       </div>
@@ -162,14 +206,10 @@ export default function Navbar() {
                   <details className="group">
                     <summary className="list-none flex items-center justify-between py-2 cursor-pointer">
                       <span>{item.label}</span>
-                      <svg
+                      <FaChevronDown
                         className="w-4 h-4 transition group-open:rotate-180"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
                         aria-hidden
-                      >
-                        <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.116l3.71-3.885a.75.75 0 1 1 1.08 1.04l-4.24 4.44a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z" />
-                      </svg>
+                      />
                     </summary>
                     <div className="pl-4 pb-2 space-y-1">
                       {(item.children ?? []).map((c: { label: string; href: string }) =>

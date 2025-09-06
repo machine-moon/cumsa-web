@@ -109,8 +109,8 @@ a {
 
 .logo-mask-blue {
   background-color: var(--blue);
-  -webkit-mask-image: url("/CU-MSA-LOGO-blank-2.png");
-  mask-image: url("/CU-MSA-LOGO-blank-2.png");
+  -webkit-mask-image: url("/CU-MSA-LOGO-blank.png");
+  mask-image: url("/CU-MSA-LOGO-blank.png");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;

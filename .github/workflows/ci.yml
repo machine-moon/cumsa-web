@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Skip CI on force push
+        if: github.event.forced == true
+        run: echo "Force push detected, skipping CI." && exit 0
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:

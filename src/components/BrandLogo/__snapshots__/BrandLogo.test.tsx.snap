@@ -2,10 +2,13 @@
 
 exports[`BrandLogo snapshot 1`] = `
 <DocumentFragment>
-  <span
-    aria-hidden="true"
-    class="logo-mask-blue rounded-sm "
+  <img
+    alt="CUMSA logo"
+    class="object-contain rounded-sm "
+    height="44"
+    src="/CU-MSA-LOGO.png"
     style="width: 44px; height: 44px;"
+    width="44"
   />
 </DocumentFragment>
 `;

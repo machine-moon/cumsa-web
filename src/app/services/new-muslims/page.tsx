@@ -1,3 +1,4 @@
+import { FORMS } from "@/lib/constants";
 export const metadata = { title: "New Muslims | CUMSA" };
 
 const resources = [
@@ -22,6 +23,22 @@ export default function NewMuslimsPage() {
             We want to make your first steps simple, supported, and rooted in authentic sources.
           </p>
         </header>
+
+        <section className="rounded-lg border border-blue-200 bg-blue-50 p-5 space-y-4 flex flex-col items-center text-center">
+          <h2 className="text-xl font-semibold text-[var(--blue)]">Join the Reverts Network</h2>
+          <p className="text-gray-700 max-w-xl mx-auto">
+            If you are a new Muslim or exploring Islam, connect with others on the journey. Sign up
+            to join our Reverts Network for mentorship, events, and support.
+          </p>
+          <a
+            href={FORMS.revertsSignup}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-md bg-[var(--blue)] px-6 py-2 text-white font-semibold shadow hover:bg-[var(--navy)] transition"
+          >
+            Reverts Network Sign Up
+          </a>
+        </section>
 
         <section className="rounded-lg border border-black/10 bg-white p-5 space-y-4">
           <h2 className="text-xl font-semibold">Core Pillars To Start With</h2>
@@ -66,7 +83,8 @@ export default function NewMuslimsPage() {
           </p>
           <ul className="list-disc pl-5 text-gray-700 space-y-1">
             <li>
-              <strong>Campus Musala:</strong> Daily presence of students who can assist.
+              <strong>Campus Musalla (prayer room):</strong> Daily presence of students who can
+              assist.
             </li>
             <li>
               <strong>Chaplaincy:</strong> Reach out via our Chaplaincy page for 1:1 support.

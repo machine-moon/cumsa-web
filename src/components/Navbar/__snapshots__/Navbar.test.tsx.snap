@@ -12,10 +12,13 @@ exports[`Navbar snapshot 1`] = `
         class="flex items-center gap-2"
         href="/"
       >
-        <span
-          aria-hidden="true"
-          class="logo-mask-blue rounded-sm h-8 w-auto"
+        <img
+          alt="CUMSA logo"
+          class="object-contain rounded-sm h-8 w-auto"
+          height="44"
+          src="/CU-MSA-LOGO.png"
           style="width: 44px; height: 44px;"
+          width="44"
         />
       </a>
       <ul

@@ -2,6 +2,18 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all technical changes introduced in this release as concise bullet points below.
 
+v0.0.4 (2025-09-05)
+----------------------
+Tarek Ibrahim
+- Added Revert Network signup form and newsletter
+- Banned the use of SVG icons directly in components
+- Added react-icons as a dependency
+- Moved Linktree to an icon
+- Added animation on home logo
+- Animated navbar tab highlight on hover
+- Updated website icon for mobile "Add to Home" feature
+- Added Musalla (prayer room) info section [prayer room]
+
 v0.0.3 (2025-09-05)
 ----------------------
 Tarek Ibrahim
