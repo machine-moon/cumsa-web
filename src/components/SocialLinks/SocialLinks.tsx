@@ -1,38 +1,46 @@
-import { FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { LINKS } from "@/lib/constants";
 
-const socials = [
-  {
-    href: "https://instagram.com/cumsacarleton",
-    label: "Instagram",
-    icon: FaInstagram,
-  },
-  {
-    href: "https://facebook.com/cumsacarleton",
-    label: "Facebook",
-    icon: FaFacebook,
-  },
-  {
-    href: "mailto:info@cumsa.ca",
-    label: "Email",
-    icon: FaEnvelope,
-  },
-];
+type Props = {
+  className?: string;
+  linkClassName?: string;
+  size?: number;
+};
 
-export default function SocialLinks() {
+export default function SocialLinks({
+  className = "",
+  linkClassName = "hover:text-[var(--blue)] transition-base",
+  size = 18,
+}: Props) {
   return (
-    <div className="flex gap-4">
-      {socials.map(({ href, label, icon: Icon }) => (
-        <a
-          key={label}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={label}
-          className="text-2xl text-[var(--blue)] hover:text-[var(--navy)] transition-colors"
-        >
-          <Icon />
-        </a>
-      ))}
+    <div className={`flex items-center gap-4 ${className}`}>
+      <a
+        aria-label="Facebook"
+        href={LINKS.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClassName}
+      >
+        <FaFacebookF size={size} />
+      </a>
+      <a
+        aria-label="Twitter"
+        href={LINKS.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClassName}
+      >
+        <FaTwitter size={size} />
+      </a>
+      <a
+        aria-label="Instagram"
+        href={LINKS.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClassName}
+      >
+        <FaInstagram size={size} />
+      </a>
     </div>
   );
 }

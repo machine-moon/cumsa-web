@@ -1,17 +1,17 @@
+"use client";
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-type MotionCardProps = {
-  children: ReactNode;
-  className?: string;
-};
+type MotionCardProps = { children: ReactNode };
 
-export default function MotionCard({ children, className = "" }: MotionCardProps) {
+export default function MotionCard({ children }: MotionCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -4, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.10)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={"rounded-xl bg-white ring-1 ring-black/10 shadow-sm p-6 " + className}
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      className="border rounded-xl p-6 transition-base hover:shadow-md hover:-translate-y-0.5 hover:border-[var(--red)]/30 bg-white"
     >
       {children}
     </motion.div>

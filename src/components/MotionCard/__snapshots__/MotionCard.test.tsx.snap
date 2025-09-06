@@ -3,7 +3,8 @@
 exports[`MotionCard snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="rounded-xl bg-white ring-1 ring-black/10 shadow-sm p-6 "
+    class="border rounded-xl p-6 transition-base hover:shadow-md hover:-translate-y-0.5 hover:border-[var(--red)]/30 bg-white"
+    style="opacity: 0; transform: translateY(8px);"
   >
     Test
   </div>

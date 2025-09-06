@@ -1,4 +1,3 @@
-// ...existing code from ChatBubble.tsx...
 "use client";
 import { useState } from "react";
 
@@ -14,7 +13,7 @@ export default function ChatBubble() {
           </div>
           <div className="p-4 space-y-3">
             <p className="text-sm text-gray-700">
-              Hi! Let us know how we can help and well respond shortly.
+              Hi! Let us know how we can help and we’ll respond shortly.
             </p>
             <form
               onSubmit={async (e) => {
@@ -66,7 +65,7 @@ export default function ChatBubble() {
                 type="submit"
                 disabled={status === "sending"}
               >
-                {status === "sending" ? "Sending" : status === "sent" ? "Sent" : "Send"}
+                {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send"}
               </button>
               {status === "error" && (
                 <div className="text-xs text-red-700">Failed to send. Check Web3Forms key.</div>

@@ -1,6 +1,12 @@
 CUMSA Web Application Release Notes
 -------------------------------------------------------------------
-Document all technical changes introduced in this release as concise bullet points below.
+Document all changes introduced in this release as concise bullet points below.
+
+v0.0.6 (2025-09-06)
+----------------------
+Tarek Ibrahim
+- Cleaned up codebase
+- Added secret menu with drafts: gallery, new muslims, roommate service
 
 v0.0.5 (2025-09-06)
 ----------------------
