@@ -6,6 +6,7 @@ const navLinks = [
   { href: "/services/prayer", label: "Prayers" },
   { href: "/services/chaplaincy", label: "Chaplaincy" },
   { href: "/services/roommate", label: "Roommate" },
+  { href: "/services/new-muslims", label: "New Muslims" },
   { href: "/documents", label: "Documents" },
   { href: "/donate", label: "Donate" },
   { href: "/contact-us", label: "Contact" },

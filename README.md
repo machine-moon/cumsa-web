@@ -3,6 +3,7 @@
 A modern, modular web application for the Carleton University Muslim Students’ Association (CUMSA).
 
 ## Tech Stack
+
 - **Framework:** Next.js 15 (App Router, React 19)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
@@ -15,37 +16,46 @@ A modern, modular web application for the Carleton University Muslim Students’
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js >= 22.18.0 (see `package.json`)
 - Yarn (recommended)
 
 ### Setup
+
 ```sh
 yarn install
 ```
 
 ### Development
+
 ```sh
 yarn dev
 ```
+
 - Starts the app locally at http://localhost:3000
 - Uses Next.js with Turbopack for fast refresh
 
 ### Build
+
 ```sh
 yarn build
 ```
+
 - Builds the app for production
 
 ### Lint & Format
+
 ```sh
 yarn lint
 yarn format
 ```
 
 ### Run Tests
+
 ```sh
 yarn test
 ```
+
 - Runs all snapshot/component/page tests
 - See `.github/workflows/ci.yml` for CI setup
 
@@ -71,5 +81,5 @@ yarn test
 - Document any new features or changes in `Release_Notes.txt`.
 
 ## Support
-- For questions, open an issue or contact the maintainers.
 
+- For questions, open an issue or contact the maintainers.

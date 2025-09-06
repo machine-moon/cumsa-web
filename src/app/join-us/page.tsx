@@ -10,7 +10,7 @@ export default function JoinUsPage() {
         Administration.
       </p>
       <a
-        href={FORMS.councilApplication}
+        href={FORMS.volunteerApplication}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-block px-5 py-2.5 rounded-md bg-[var(--blue)] text-white transition-base hover:opacity-90"

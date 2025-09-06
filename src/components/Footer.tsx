@@ -12,12 +12,9 @@ export default function Footer() {
               style={{ width: 28, height: 28 }}
             />
             <div className="text-sm text-gray-700">
-              <div>
-                <a className="hover:underline" href="mailto:info@cumsa.ca">
-                  info@cumsa.ca
-                </a>
-              </div>
-              <div>© {new Date().getFullYear()} CUMSA</div>
+              <a href="/release-notes" className="hover:underline focus:underline outline-none">
+                © {new Date().getFullYear()} CUMSA
+              </a>
             </div>
           </div>
           <SocialLinks className="text-[var(--navy)]" />

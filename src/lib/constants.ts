@@ -4,7 +4,7 @@ export const LINKS = {
   facebook: "https://www.facebook.com/CarletonMSA/",
   twitter: "https://twitter.com/carletonmsa?lang=en",
   instagram: "https://www.instagram.com/carletonmsa/?hl=en",
-  discord: "https://discord.gg/GugaNUV",
+  discord: "https://discord.gg/GyV5tjQ5yw",
   youtube: "https://www.youtube.com/@carletonmsa",
   website: "/",
   donate: "/donate",
@@ -59,10 +59,16 @@ export const FORMS = {
     "https://docs.google.com/forms/d/e/1FAIpQLSee1bKuvIEzoPqEX-Ne4oCB1auQmqftLRoejCzKkuonvA5BPQ/viewform?embedded=true",
   alumniNewsletter:
     "https://docs.google.com/forms/d/e/1FAIpQLSee1bKuvIEzoPqEX-Ne4oCB1auQmqftLRoejCzKkuonvA5BPQ/viewform?embedded=true",
-  councilApplication:
-    "https://docs.google.com/forms/d/e/1FAIpQLSf26RDn8I2t_pcQBoF72GLIwUllaG8kF5KPd1OAekPC-oaY9A/viewform",
+  volunteerApplication:
+    "https://docs.google.com/forms/d/e/1FAIpQLSelz_Ag6-8c5Fz5r0MqIC9urPbZrk5DLmHr_J8-ut0Cc3uJgw/viewform",
 };
 
 // External API endpoints and headers
 export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 export const USER_AGENT = "Mozilla/5.0 CUMSA-Site/1.0";
+
+// Chaplain contact (by appointment)
+export const CHAPLAIN_EMAILS = {
+  ahmed: "akhalil@macnet.ca",
+  aisha: "aisha.sherazi@gmail.com",
+};

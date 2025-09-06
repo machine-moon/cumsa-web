@@ -29,6 +29,7 @@ const NAV: NavItem[] = [
       { label: "Roommate Services", href: "/services/roommate" },
       { label: "Equity Services", href: "/services/equity" },
       { label: "Your Masjid", href: "/services/your-masajid" },
+      { label: "New Muslims", href: "/services/new-muslims" },
       {
         label: "Linktree",
         href: "https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681",

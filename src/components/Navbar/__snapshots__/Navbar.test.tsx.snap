@@ -56,6 +56,14 @@ exports[`Navbar snapshot 1`] = `
         <li>
           <a
             class="text-sm font-medium text-[var(--navy)] hover:text-[var(--blue)] transition-colors"
+            href="/services/new-muslims"
+          >
+            New Muslims
+          </a>
+        </li>
+        <li>
+          <a
+            class="text-sm font-medium text-[var(--navy)] hover:text-[var(--blue)] transition-colors"
             href="/documents"
           >
             Documents

@@ -1,15 +1,16 @@
 {
   "name": "cumsa-web",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "buildt": "next build --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 12345",
     "lint": "eslint",
     "format": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "yarn install && yarn build && yarn start"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
