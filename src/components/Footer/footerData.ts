@@ -23,6 +23,7 @@ export const SECRET_SECTIONS: SecretSection[] = [
         links: [
           { label: "New Muslims", href: "/services/new-muslims" },
           { label: "Roommate Services", href: "/services/roommate" },
+          { label: "Mental Health", href: "/services/mental-health" },
         ],
       },
     ],

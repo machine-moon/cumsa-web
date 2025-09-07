@@ -10,7 +10,6 @@ interface SecretMenuProps {
 export default function SecretMenu({ anchorRef, onClose }: SecretMenuProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  // Outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       if (!menuRef.current) return;

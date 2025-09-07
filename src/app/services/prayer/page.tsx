@@ -1,26 +1,7 @@
+import { LINKS } from "@/lib/constants";
+import { getOttawaTimings } from "@/lib/prayer-api";
+
 export const metadata = { title: "Prayer Services | CUMSA" };
-
-type AlAdhanData = {
-  timings: Record<string, string>;
-  date: { readable: string; hijri: { date: string } };
-  meta: { timezone: string; method?: { name?: string } };
-};
-
-async function getOttawaTimings(): Promise<AlAdhanData | null> {
-  const url = new URL("https://api.aladhan.com/v1/timingsByCity");
-  url.searchParams.set("city", "Ottawa");
-  url.searchParams.set("country", "Canada");
-  url.searchParams.set("method", "2"); // ISNA
-  try {
-    const res = await fetch(url.toString(), { cache: "no-store" });
-    if (!res.ok) return null;
-    const json = (await res.json()) as { code: number; data: AlAdhanData };
-    if (json.code !== 200 || !json.data) return null;
-    return json.data;
-  } catch {
-    return null;
-  }
-}
 
 export default async function PrayerServicesPage() {
   const data = await getOttawaTimings();
@@ -28,7 +9,6 @@ export default async function PrayerServicesPage() {
   const tz = data?.meta.timezone ?? "America/Toronto";
   const readable = data?.date.readable ?? "";
   const hijri = data?.date.hijri.date ?? "";
-  const methodName = data?.meta.method?.name ?? "ISNA";
   const order = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"] as const;
 
   return (
@@ -45,13 +25,12 @@ export default async function PrayerServicesPage() {
         <section className="mt-8 rounded-lg border border-black/10 bg-white p-5">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <h2 className="text-xl font-semibold text-[var(--red)]">Prayer Times — Ottawa</h2>
+              <h2 className="text-xl font-semibold text-[var(--red)]">Prayer Times</h2>
               <p className="text-sm text-gray-600">
                 {readable}
                 {hijri ? ` • ${hijri} AH` : ""} • {tz}
               </p>
             </div>
-            <div className="text-sm text-gray-600">Method: {methodName}</div>
           </div>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-left border border-black/10 rounded-lg overflow-hidden bg-white">
@@ -78,47 +57,79 @@ export default async function PrayerServicesPage() {
           )}
         </section>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <section className="rounded-lg border border-black/10 bg-white p-5">
-            <h2 className="text-xl font-semibold">Jummuah</h2>
+        <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-4 border-r border-black/10 pr-4">
+            <section className="rounded-lg border border-black/10 bg-white p-4">
+              <h2 className="text-xl font-semibold">Musalla (Prayer Room)</h2>
+              <p className="mt-2 text-gray-700">
+                Open daily for all Muslim students with wudhu facilities for brothers and sisters.
+              </p>
+              <p className="mt-2 text-gray-700">
+                <strong>Hours:</strong> Always open
+                <br />
+                <strong>Location:</strong> 225A University Centre (2nd Floor)
+              </p>
+              <div className="mt-2 text-gray-700">
+                <strong>Directions:</strong>
+                <ol className="list-decimal list-inside mt-1">
+                  <li>Enter University Centre from the main entrance.</li>
+                  <li>Take the stairs or elevator to the 2nd floor.</li>
+                  <li>Turn right after exiting the stairs/elevator.</li>
+                  <li>
+                    Continue straight till the end of the hallway, then take a left (past the
+                    stairs).
+                  </li>
+                  <li>225A Musalla will be on your right.</li>
+                </ol>
+              </div>
+              <a
+                href={LINKS.musallaDirections}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-cta mt-3 inline-block"
+              >
+                View on ClassFind →
+              </a>
+            </section>
+            <section className="rounded-lg border border-black/10 bg-white p-4">
+              <h2 className="text-xl font-semibold">Paterson Hall</h2>
+              <p className="mt-2 text-gray-700">Another option for prayer on campus.</p>
+              <p className="mt-2 text-gray-700">
+                <strong>Location:</strong> 218 Paterson Hall
+              </p>
+              <a
+                href={LINKS.patersonDirections}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-cta"
+              >
+                Directions →
+              </a>
+            </section>
+          </div>
+          <section className="rounded-lg border border-black/10 bg-white p-4">
+            <h2 className="text-xl font-semibold text-[var(--red)]">Jummuah</h2>
             <p className="mt-2 text-gray-700">
-              Jummuah is offered at the Fieldhouse or Norm Fenn Gym. Weekly updates are posted on
-              social media and via newsletter.
+              Weekly Jummuah prayers at the Fieldhouse or Norm Fenn Gym.
             </p>
-          </section>
-          <section className="rounded-lg border border-black/10 bg-white p-5">
-            <h2 className="text-xl font-semibold">Musalla (Prayer Room)</h2>
-            <p className="mt-2 text-gray-700">
-              Open daily for all Muslim students with wudhu facilities for brothers and sisters.
-            </p>
-            <p className="mt-2 text-gray-700">
-              <strong>Hours:</strong> Always open
-              <br />
-              <strong>Location:</strong> 225A University Centre (2nd Floor)
-            </p>
-          </section>
-          <section className="rounded-lg border border-black/10 bg-white p-5">
-            <h2 className="text-xl font-semibold">Multi‑Faith Centre</h2>
-            <p className="mt-2 text-gray-700">
-              Available during prayer times and bookable for various groups on campus.
-            </p>
-            <p className="mt-2 text-gray-700">
-              <strong>Location:</strong> 226C University Centre (2nd Floor)
-            </p>
-            <a
-              href="https://www.cusaonline.ca/services/servicecentres/multi-faith/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-cta"
-            >
-              Learn more →
-            </a>
-          </section>
-          <section className="rounded-lg border border-black/10 bg-white p-5">
-            <h2 className="text-xl font-semibold">Combatives Room</h2>
-            <p className="mt-2 text-gray-700">Another option for prayer on campus.</p>
-            <p className="mt-2 text-gray-700">
-              <strong>Location:</strong> 2406 Athletics (2nd Floor of Ice House)
+            <div className="mt-4 bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold text-lg">This Week&apos;s Schedule</h3>
+              <div className="mt-3 space-y-3">
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded border">
+                  <span className="font-medium">First Prayer: 12:15 PM</span>
+                  <span className="text-gray-700">Khateeb: First Last</span>
+                </div>
+                <div className="flex justify-between items-center py-2 px-3 bg-white rounded border">
+                  <span className="font-medium">Second Prayer: 1:15 PM</span>
+                  <span className="text-gray-700">Khateeb: First Last</span>
+                </div>
+              </div>
+              <p className="mt-3 text-sm text-gray-600 font-medium">
+                Location: Fieldhouse or Norm Fenn Gym
+              </p>
+            </div>
+            <p className="mt-3 text-sm text-gray-600">
+              Schedule updated weekly. Follow our socials for latest updates.
             </p>
           </section>
         </div>

@@ -1,14 +1,13 @@
 "use client";
 import Image from "next/image";
 
-// Skeleton data for photos (replace with real URLs later)
 const photos = [
-  { id: 1, src: "/placeholder1.jpg", alt: "Event Photo 1", title: "Community Gathering" },
-  { id: 2, src: "/placeholder2.jpg", alt: "Event Photo 2", title: "Prayer Session" },
-  { id: 3, src: "/placeholder3.jpg", alt: "Event Photo 3", title: "Charity Drive" },
-  { id: 4, src: "/placeholder4.jpg", alt: "Event Photo 4", title: "Cultural Event" },
-  { id: 5, src: "/placeholder5.jpg", alt: "Event Photo 5", title: "Youth Program" },
-  { id: 6, src: "/placeholder6.jpg", alt: "Event Photo 6", title: "Fundraiser" },
+  { id: 1, src: "/CU-MSA-LOGO.png", alt: "Event Photo 1", title: "Community Gathering" },
+  { id: 2, src: "/CU-MSA-LOGO.png", alt: "Event Photo 2", title: "Prayer Session" },
+  { id: 3, src: "/CU-MSA-LOGO.png", alt: "Event Photo 3", title: "Charity Drive" },
+  { id: 4, src: "/CU-MSA-LOGO.png", alt: "Event Photo 4", title: "Cultural Event" },
+  { id: 5, src: "/CU-MSA-LOGO.png", alt: "Event Photo 5", title: "Youth Program" },
+  { id: 6, src: "/CU-MSA-LOGO.png", alt: "Event Photo 6", title: "Fundraiser" },
 ];
 
 export default function GalleryPage() {

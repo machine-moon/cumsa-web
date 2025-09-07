@@ -7,7 +7,6 @@ export default function Footer() {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLAnchorElement | null>(null);
 
-  // Close on route change (optional future) or escape/outside handled inside SecretMenu
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {

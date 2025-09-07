@@ -5,7 +5,6 @@ type ImgLike = {
   height?: number | string;
   className?: string;
   style?: React.CSSProperties;
-  // Next-specific (discarded):
   fill?: boolean;
   priority?: boolean;
   sizes?: string;
@@ -26,7 +25,6 @@ export default function NextImageMock({
   className,
   style,
   fill,
-  // discard Next-only props to avoid DOM warnings
   priority: _priority,
   sizes: _sizes,
   quality: _quality,
@@ -39,7 +37,6 @@ export default function NextImageMock({
 }: ImgLike) {
   const resolvedSrc = typeof src === "string" ? src : src?.src || "";
   const finalStyle = (fill ? { position: "absolute", inset: 0, ...(style as any) } : style) as any;
-  // eslint-disable-next-line @next/next/no-img-element
   return (
     <img
       src={resolvedSrc}
@@ -48,7 +45,6 @@ export default function NextImageMock({
       height={height as any}
       className={className}
       style={finalStyle}
-      // no spreading of rest to prevent unknown prop warnings
     />
   );
 }

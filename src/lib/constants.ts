@@ -1,13 +1,16 @@
 export const LINKS = {
   linktree:
     "https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681",
-  facebook: "https://www.facebook.com/CarletonMSA/",
-  twitter: "https://twitter.com/carletonmsa?lang=en",
   instagram: "https://www.instagram.com/carletonmsa/?hl=en",
   discord: "https://discord.gg/GyV5tjQ5yw",
-  youtube: "https://www.youtube.com/@carletonmsa",
+  youtube: "https://www.youtube.com/@CarletonMSA",
   website: "/",
   donate: "/donate",
+  musallaDirections: "https://www.classfind.com/carleton/room/UC231",
+  patersonDirections: "https://share.google/l95AKvHeHUuX4we2W",
+  coordinatorsGuidebook:
+    "https://docs.google.com/document/d/1nEDXwGm3eeO0vd2eKmP1idH8PeEZnXlo2HpWb06vF0w/",
+  constitution: "/constitution.pdf",
 };
 
 export const LOGOS = {
@@ -183,3 +186,18 @@ export const CHAPLAIN_EMAILS = {
   ahmed: "akhalil@macnet.ca",
   aisha: "aisha.sherazi@gmail.com",
 };
+
+// Mental Health & Well-Being resource links centralization
+export const MENTAL_HEALTH_LINKS = {
+  yaqeenLibrary: "https://yaqeeninstitute.ca/read/psychology-mental-health",
+  seekersAnswers: "https://seekersguidance.org/answers",
+  muslimMentalHealthDirectory: "https://muslimmentalhealth.com/",
+  mfso: "https://mfso.ca/",
+  newMuslimAcademy: "https://newmuslimacademy.org/",
+  seekersGuidance: "https://seekersguidance.org",
+  nisaHelpline: "https://nisahelpline.com/",
+  naseeha: "https://naseeha.org/",
+  talkSuicideCanada: "https://www.talksuicide.ca/",
+  hopeForWellness: "https://www.hopeforwellness.ca/",
+  carletonHealth: "https://carleton.ca/health/",
+} as const;

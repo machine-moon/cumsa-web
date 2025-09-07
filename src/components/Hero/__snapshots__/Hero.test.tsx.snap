@@ -3,10 +3,12 @@
 exports[`Hero snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="relative overflow-hidden"
+    class="relative overflow-hidden z-0"
+    style="z-index: 1;"
   >
     <div
-      class="container-base py-12 md:py-16 text-white"
+      class="container-base py-12 md:py-16 text-white relative"
+      style="z-index: 1;"
     >
       <h1
         class="text-4xl md:text-6xl font-extrabold tracking-tight"

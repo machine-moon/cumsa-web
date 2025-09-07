@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new muslims page snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="relative h-40 md:h-52 flex items-center justify-center overflow-hidden bg-white"
+    >
+      <span
+        aria-hidden="true"
+        class="logo-mask-blue"
+        style="width: 260px; height: 100px;"
+      />
+    </div>
+    <div
+      class="container-base py-10 space-y-10"
+    >
+      <header>
+        <h1
+          class="text-3xl font-bold"
+        >
+          Welcome / Ahlan wa Sahlan
+        </h1>
+        <p
+          class="mt-2 text-gray-700 max-w-2xl"
+        >
+          This page is for those who have recently embraced Islam or are sincerely exploring it. We want to make your first steps simple, supported, and rooted in authentic sources.
+        </p>
+      </header>
+      <section
+        class="rounded-lg border border-blue-200 bg-blue-50 p-5 space-y-4 flex flex-col items-center text-center"
+      >
+        <h2
+          class="text-xl font-semibold text-[var(--blue)]"
+        >
+          Join the Reverts Network
+        </h2>
+        <p
+          class="text-gray-700 max-w-xl mx-auto"
+        >
+          If you are a new Muslim or exploring Islam, connect with others on the journey. Sign up to join our Reverts Network for mentorship, events, and support.
+        </p>
+        <a
+          class="inline-block rounded-md bg-[var(--blue)] px-6 py-2 text-white font-semibold shadow hover:bg-[var(--navy)] transition"
+          href="https://docs.google.com/forms/d/1jAvnNH8jkEQgQM8B_mNBGPyhmyyQlyfjEwvneV7roBg/viewform?edit_requested=true"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Reverts Network Sign Up
+        </a>
+      </section>
+      <section
+        class="rounded-lg border border-black/10 bg-white p-5 space-y-4"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Core Pillars To Start With
+        </h2>
+        <ul
+          class="list-disc pl-5 space-y-2 text-gray-700"
+        >
+          <li>
+            <strong>
+              Shahada:
+            </strong>
+             The testimony of faith. This is the entry into Islam and the anchor of everything else.
+          </li>
+          <li>
+            <strong>
+              Prayer (Salah):
+            </strong>
+             Aim first to learn the form. Consistency matters more than perfection.
+          </li>
+          <li>
+            <strong>
+              Qur'an:
+            </strong>
+             Begin with short chapters (Surah Al-Fatihah, the last 10 surahs). Focus on meaning and pronunciation gradually.
+          </li>
+          <li>
+            <strong>
+              Community:
+            </strong>
+             Stay connected. Growth is healthier with support and good company.
+          </li>
+        </ul>
+      </section>
+      <section
+        class="rounded-lg border border-black/10 bg-white p-5 space-y-4"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Practical First Steps
+        </h2>
+        <ol
+          class="list-decimal pl-5 space-y-2 text-gray-700"
+        >
+          <li>
+            Set a daily routine for the five prayers (even if you are still memorizing).
+          </li>
+          <li>
+            Memorize Surah Al-Fatihah with correct pronunciation over time.
+          </li>
+          <li>
+            Learn basic purification (wudhu) properly.
+          </li>
+          <li>
+            Read a short beginner-friendly booklet or watch a structured series—avoid random social media noise.
+          </li>
+          <li>
+            Schedule check-ins with a knowledgeable mentor or chaplain when possible.
+          </li>
+        </ol>
+      </section>
+      <section
+        class="rounded-lg border border-black/10 bg-white p-5 space-y-3"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Local Support
+        </h2>
+        <p
+          class="text-gray-700"
+        >
+          Connect with us in person for guidance, companionship, or to verify resources.
+        </p>
+        <ul
+          class="list-disc pl-5 text-gray-700 space-y-1"
+        >
+          <li>
+            <strong>
+              Campus Musalla (prayer room):
+            </strong>
+             Daily presence of students who can assist.
+          </li>
+          <li>
+            <strong>
+              Chaplaincy:
+            </strong>
+             Reach out via our Chaplaincy page for 1:1 support.
+          </li>
+          <li>
+            <strong>
+              Events:
+            </strong>
+             Look for "Intro" or "Foundations" themed gatherings.
+          </li>
+        </ul>
+      </section>
+      <section
+        class="rounded-lg border border-black/10 bg-white p-5 space-y-4"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Recommended Online Resources
+        </h2>
+        <ul
+          class="space-y-2"
+        >
+          <li>
+            <a
+              class="link-cta"
+              href="https://newmuslimacademy.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              New Muslim Academy →
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-cta"
+              href="https://www.whyislam.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              WhyIslam →
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-cta"
+              href="https://yaqeeninstitute.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Yaqeen Institute (Beginner Series) →
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-cta"
+              href="https://quran.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Learn Quran (Tajweed Basics) →
+            </a>
+          </li>
+          <li>
+            <a
+              class="link-cta"
+              href="https://sunnah.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Hadith Collection →
+            </a>
+          </li>
+        </ul>
+        <p
+          class="text-sm text-gray-600"
+        >
+          Always verify religious information with trusted scholars or established institutes.
+        </p>
+      </section>
+      <section
+        class="rounded-lg border border-black/10 bg-white p-5 space-y-3"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Common Reminders
+        </h2>
+        <ul
+          class="list-disc pl-5 text-gray-700 space-y-2"
+        >
+          <li>
+            Growth is gradual. Consistency beats intensity.
+          </li>
+          <li>
+            Questions are normal—ask them early instead of guessing.
+          </li>
+          <li>
+            Your worth is not measured by how much you know right now.
+          </li>
+          <li>
+            Avoid overload—focus on prayer, clean creed, and character first.
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;

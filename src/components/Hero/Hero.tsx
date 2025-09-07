@@ -11,14 +11,17 @@ type Props = {
 
 export default function Hero({ title, subtitle, cta, image, overlay = true }: Props) {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden z-0" style={{ zIndex: 1 }}>
       {image && (
         <div className="absolute inset-0 -z-10">
           <Image src={image.src} alt={image.alt} fill priority className="object-cover" />
           {overlay && <div className="absolute inset-0 bg-[var(--navy)]/60" />}
         </div>
       )}
-      <div className={`container-base ${image ? "py-24 md:py-32" : "py-12 md:py-16"} text-white`}>
+      <div
+        className={`container-base ${image ? "py-24 md:py-32" : "py-12 md:py-16"} text-white relative`}
+        style={{ zIndex: 1 }}
+      >
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">{title}</h1>
         {subtitle && <p className="mt-4 max-w-2xl text-white/85 text-lg">{subtitle}</p>}
         {cta && cta.length > 0 && (

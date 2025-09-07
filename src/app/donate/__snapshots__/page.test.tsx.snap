@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`donate page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-base py-12"
+  >
+    <h1
+      class="text-3xl font-bold"
+    >
+      Donate
+    </h1>
+    <p
+      class="mt-3 text-gray-700 max-w-2xl"
+    >
+      Your support sustains student-led programs, prayer services, and community initiatives. JazakumAllahu khairan for contributing.
+    </p>
+    <div
+      class="mt-6 flex flex-wrap gap-3"
+    >
+      <a
+        class="btn-cozy btn-primary"
+        href="#"
+      >
+        Donate Monthly
+      </a>
+      <a
+        class="btn-cozy btn-outline"
+        href="#"
+      >
+        One-time Donation
+      </a>
+    </div>
+    <p
+      class="mt-6 text-sm text-gray-600"
+    >
+      TODO.
+    </p>
+  </div>
+</DocumentFragment>
+`;

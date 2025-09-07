@@ -2,6 +2,19 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.7 (2025-09-06)
+----------------------
+Tarek Ibrahim
+- Updated prayer directions and added snapshots for pages
+- Fixed navbar being blocked by map
+- Added constitution and guidebook
+- Removed old social medias
+- Updated Linktree icon
+- Added navbar stubs to indicate current page
+- Added shadow effect for mouse hover on navbar
+- Added draft Mental Health & Well-Being page under Services
+
+
 v0.0.6 (2025-09-06)
 ----------------------
 Tarek Ibrahim
