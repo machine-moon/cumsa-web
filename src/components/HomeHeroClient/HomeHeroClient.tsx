@@ -22,7 +22,7 @@ export default function HomeHeroClient() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-extrabold tracking-tight"
+          className="text-3xl md:text-5xl font-extrabold tracking-tight"
         >
           Carleton University Muslim Students’ Association
         </motion.h1>
@@ -55,10 +55,10 @@ export default function HomeHeroClient() {
             Prayers
           </Link>
           <Link
-            href="/join-us"
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-black/10 bg-[var(--surface)] text-[var(--foreground)] hover:bg-black/5 focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
+            href="/events"
+            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-black/10 bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--blue)] hover:text-white focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
           >
-            Join Us
+            Events
           </Link>
         </motion.div>
       </div>

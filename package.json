@@ -1,6 +1,6 @@
 {
   "name": "cumsa-web",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -14,6 +14,7 @@
     "deploy": "yarn sync && yarn install && yarn build && yarn start"
   },
   "dependencies": {
+    "better-sqlite3": "^12.2.0",
     "framer-motion": "^12.23.12",
     "leaflet": "^1.9.4",
     "next": "15.5.2",
@@ -24,13 +25,14 @@
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@swc/core": "^1.7.0",
     "@swc/jest": "^0.2.36",
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/jest": "^29",
     "@types/leaflet": "^1.9.20",
     "@types/node": "^24.3.0",

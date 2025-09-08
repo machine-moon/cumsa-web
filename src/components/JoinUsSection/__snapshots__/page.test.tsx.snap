@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`join us page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-base py-12 flex flex-col gap-12 items-center"
+  >
+    <div
+      class="w-full max-w-6xl rounded-xl shadow p-10 flex flex-col gap-8 items-center md:px-20 sm:px-6"
+      style="background: rgb(230, 245, 248); box-shadow: 0 2px 24px 0 #2fbcd9ff;"
+    >
+      <h1
+        class="text-3xl md:text-5xl font-extrabold text-center text-[var(--blue)] mb-2"
+      >
+        Want to be part of our MSA family?
+      </h1>
+      <p
+        class="text-lg text-gray-700 text-center max-w-2xl"
+      >
+        Whether you want to 
+        <span
+          class="font-semibold text-[var(--red)]"
+        >
+          lead, help out, or just stay in the loop
+        </span>
+        , we would love to have you.
+        <br />
+        Join our council, subscribe to our newsletter, or join our Discord. Choose what feels right for you.
+      </p>
+      <div
+        class="flex flex-col md:flex-row gap-6 w-full justify-center items-center"
+      >
+        <a
+          class="px-7 py-3 rounded-full bg-[var(--blue)] text-white font-semibold text-lg shadow transition hover:opacity-90 min-w-[220px] text-center"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSelz_Ag6-8c5Fz5r0MqIC9urPbZrk5DLmHr_J8-ut0Cc3uJgw/viewform"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Become a Council Member
+        </a>
+        <a
+          class="px-7 py-3 rounded-full bg-[var(--red)] text-white font-semibold text-lg shadow transition hover:opacity-90 min-w-[220px] text-center"
+          href="https://discord.gg/GyV5tjQ5yw"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Join our Discord
+        </a>
+      </div>
+      <div
+        class="w-full flex flex-col items-center mt-6"
+      >
+        <h2
+          class="text-2xl font-bold text-[var(--blue)] mb-2"
+        >
+          Stay in the Loop
+        </h2>
+        <p
+          class="text-center text-gray-700 mb-4 max-w-lg"
+        >
+          Get the latest on events, prayer times, and more. No spam, just good vibes sent to your inbox every week.
+        </p>
+        <div
+          class="w-full max-w-2xl"
+        >
+          <section
+            class="py-8 md:py-12"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-center"
+            >
+              <div
+                class="lg:col-span-2 flex flex-col justify-center lg:pl-6"
+              >
+                <h2
+                  class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[var(--navy)]"
+                >
+                  Subscribe to the MSA Newsletter
+                </h2>
+              </div>
+              <div
+                class="lg:col-span-3 flex justify-center lg:justify-end"
+              >
+                <iframe
+                  allowfullscreen=""
+                  class="w-full max-w-md lg:max-w-lg"
+                  height="520"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSee5KLKC4gycv5aJBtdSpTr8hQVNT5oVY3Jpo_M2dG9-QCOjQ/viewform"
+                  style="border: 0px; border-radius: 12px;"
+                  title="Subscribe to the MSA Newsletter"
+                />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

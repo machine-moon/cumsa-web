@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Input from "@/components/ui/Input";
-import Button from "@/components/ui/Button";
+import Input from "@/components/Input/Input";
+import Button from "@/components/Button/Button";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");

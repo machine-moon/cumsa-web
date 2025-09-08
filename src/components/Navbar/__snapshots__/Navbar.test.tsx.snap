@@ -163,9 +163,9 @@ exports[`Navbar snapshot 1`] = `
             >
               <a
                 class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-blue-600"
-                href="/join-us"
+                href="/events"
               >
-                Join Us
+                Events
               </a>
             </div>
           </div>

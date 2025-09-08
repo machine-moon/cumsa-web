@@ -119,3 +119,15 @@ a {
   mask-size: contain;
   display: inline-block;
 }
+
+.portal-glow {
+  width: 100%;
+  max-width: 72rem;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 4px 32px 0 #5aced880,
+    0 0 0 2px #5aced850;
+  background: #fff;
+  border: none;
+  padding: 0;
+}

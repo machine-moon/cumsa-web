@@ -12,6 +12,10 @@ export const SECRET_SECTIONS: SecretSection[] = [
     links: [{ label: "Release Notes", href: "/extras/release-notes" }],
   },
   {
+    title: "Portals",
+    links: [{ label: "Events", href: "/extras/portals/events" }],
+  },
+  {
     title: "Pages Drafts",
     groups: [
       {

@@ -2,6 +2,14 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.8 (2025-09-08)
+----------------------
+Tarek Ibrahim
+- Added SQLite-backed events storage
+- Added Events page to view and manage events
+- Implemented CRUD API for creating, reading, updating, and deleting events
+- Added Event Portal with pages: add, edit, login, menu, remove, upload-image
+
 v0.0.7 (2025-09-06)
 ----------------------
 Tarek Ibrahim

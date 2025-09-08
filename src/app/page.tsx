@@ -1,8 +1,7 @@
 import Image from "next/image";
 import MotionCard from "@/components/MotionCard";
 import HomeHeroClient from "@/components/HomeHeroClient";
-import SubscribeSection from "@/components/SubscribeSection";
-
+import JoinUs from "@/components/JoinUsSection/page";
 export default function Home() {
   return (
     <div>
@@ -83,8 +82,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <SubscribeSection />
+      <JoinUs />
     </div>
   );
 }

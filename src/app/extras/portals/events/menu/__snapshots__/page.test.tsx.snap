@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventsMenu snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-center gap-8"
+  >
+    <div
+      class="text-center max-w-xl"
+    >
+      <h2
+        class="text-3xl font-extrabold text-[var(--blue)] tracking-tight"
+      >
+        Manage Events
+      </h2>
+      <p
+        class="mt-2 text-gray-600"
+      >
+        Create, edit, curate and keep the events board fresh.
+      </p>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-2xl"
+    >
+      <a
+        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        href="/extras/portals/events/add"
+      >
+        <span
+          class="font-semibold text-[var(--foreground)]"
+        >
+          Add Event
+        </span>
+      </a>
+      <a
+        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        href="/extras/portals/events/edit"
+      >
+        <span
+          class="font-semibold text-[var(--foreground)]"
+        >
+          Edit Event
+        </span>
+      </a>
+      <a
+        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        href="/extras/portals/events/remove"
+      >
+        <span
+          class="font-semibold text-[var(--foreground)]"
+        >
+          Remove Event
+        </span>
+      </a>
+      <a
+        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        href="/extras/portals/events/upload-image"
+      >
+        <span
+          class="font-semibold text-[var(--foreground)]"
+        >
+          Upload Image
+        </span>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

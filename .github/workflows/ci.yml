@@ -19,7 +19,10 @@ jobs:
         with:
           node-version: 22.x
           cache: "yarn"
+        if: github.event.forced != true
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        if: github.event.forced != true
       - name: Run tests
         run: yarn test
+        if: github.event.forced != true

@@ -21,6 +21,6 @@ export const NAV: NavItem[] = [
       { label: "Your Masjid", href: "/services/your-masajid" },
     ],
   },
-  { label: "Join Us", href: "/join-us" },
+  { label: "Events", href: "/events" },
   { label: "Contact Us", href: "/contact-us" },
 ];

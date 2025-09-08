@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`events page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-base py-12"
+  >
+    <div
+      class="portal-glow"
+    >
+      <div
+        class="w-full p-8 space-y-8"
+      >
+        <div
+          class="text-center space-y-4"
+        >
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-700 font-medium text-sm"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="none"
+                height="384"
+                rx="48"
+                stroke-linejoin="round"
+                stroke-width="32"
+                width="416"
+                x="48"
+                y="80"
+              />
+              <circle
+                cx="296"
+                cy="232"
+                r="24"
+              />
+              <circle
+                cx="376"
+                cy="232"
+                r="24"
+              />
+              <circle
+                cx="296"
+                cy="312"
+                r="24"
+              />
+              <circle
+                cx="376"
+                cy="312"
+                r="24"
+              />
+              <circle
+                cx="136"
+                cy="312"
+                r="24"
+              />
+              <circle
+                cx="216"
+                cy="312"
+                r="24"
+              />
+              <circle
+                cx="136"
+                cy="392"
+                r="24"
+              />
+              <circle
+                cx="216"
+                cy="392"
+                r="24"
+              />
+              <circle
+                cx="296"
+                cy="392"
+                r="24"
+              />
+              <path
+                d="M128 48v32m256-32v32"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M464 160H48"
+                fill="none"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            Upcoming Events
+          </div>
+          <h1
+            class="text-4xl font-bold text-gray-900 tracking-tight"
+          >
+            Join Our Amazing 
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            >
+              Events
+            </span>
+          </h1>
+          <p
+            class="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Discover exciting opportunities to connect, learn, and grow with our community!
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <div
+            class="col-span-full flex flex-col items-center justify-center py-16 text-center"
+          >
+            <div
+              class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-gray-400"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="none"
+                  height="384"
+                  rx="48"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  width="416"
+                  x="48"
+                  y="80"
+                />
+                <circle
+                  cx="296"
+                  cy="232"
+                  r="24"
+                />
+                <circle
+                  cx="376"
+                  cy="232"
+                  r="24"
+                />
+                <circle
+                  cx="296"
+                  cy="312"
+                  r="24"
+                />
+                <circle
+                  cx="376"
+                  cy="312"
+                  r="24"
+                />
+                <circle
+                  cx="136"
+                  cy="312"
+                  r="24"
+                />
+                <circle
+                  cx="216"
+                  cy="312"
+                  r="24"
+                />
+                <circle
+                  cx="136"
+                  cy="392"
+                  r="24"
+                />
+                <circle
+                  cx="216"
+                  cy="392"
+                  r="24"
+                />
+                <circle
+                  cx="296"
+                  cy="392"
+                  r="24"
+                />
+                <path
+                  d="M128 48v32m256-32v32"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M464 160H48"
+                  fill="none"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+            </div>
+            <h3
+              class="text-lg font-semibold text-gray-900 mb-2"
+            >
+              No Events Found
+            </h3>
+            <p
+              class="text-gray-500 max-w-sm"
+            >
+              There are no upcoming events at the moment. Check back soon for exciting new events! ✨
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
