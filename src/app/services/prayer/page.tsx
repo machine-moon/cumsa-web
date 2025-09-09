@@ -57,9 +57,9 @@ export default async function PrayerServicesPage() {
           )}
         </section>
 
-        <div className="mt-8 grid grid-cols-2 gap-4">
-          <div className="flex flex-col gap-4 border-r border-black/10 pr-4">
-            <section className="rounded-lg border border-black/10 bg-white p-4">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-y-0 gap-x-0 md:gap-x-6">
+          <div className="flex flex-col gap-10 md:border-r md:border-black/10 md:pr-6">
+            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4">
               <h2 className="text-xl font-semibold">Musalla (Prayer Room)</h2>
               <p className="mt-2 text-gray-700">
                 Open daily for all Muslim students with wudhu facilities for brothers and sisters.
@@ -91,7 +91,7 @@ export default async function PrayerServicesPage() {
                 View on ClassFind →
               </a>
             </section>
-            <section className="rounded-lg border border-black/10 bg-white p-4">
+            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-10 md:mt-0">
               <h2 className="text-xl font-semibold">Paterson Hall</h2>
               <p className="mt-2 text-gray-700">Another option for prayer on campus.</p>
               <p className="mt-2 text-gray-700">
@@ -107,7 +107,7 @@ export default async function PrayerServicesPage() {
               </a>
             </section>
           </div>
-          <section className="rounded-lg border border-black/10 bg-white p-4">
+          <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-12 md:mt-0">
             <h2 className="text-xl font-semibold text-[var(--red)]">Jummuah</h2>
             <p className="mt-2 text-gray-700">
               Weekly Jummuah prayers at the Fieldhouse or Norm Fenn Gym.

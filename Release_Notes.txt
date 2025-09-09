@@ -2,6 +2,13 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.9 (2025-09-11)
+----------------------
+Sarah Abada
+- Updated "Who we are" and "What we do" sections
+- Added Vision and Mission from the MSA constitution
+- Fixed cramming Jummah in prayers
+
 v0.0.8 (2025-09-08)
 ----------------------
 Tarek Ibrahim

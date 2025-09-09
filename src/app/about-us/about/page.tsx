@@ -13,19 +13,20 @@ export default function AboutPage() {
       </section>
       <div className="container-base py-12 grid gap-10 md:grid-cols-2">
         <section>
-          <h2 className="text-xl font-semibold">Who We Are</h2>
+          <h2 className="text-xl font-semibold">Vision</h2>
           <p className="mt-3 text-gray-700">
-            Our vision is to empower and inspire students to be a positive force for
-            change—beginning with our campus and extending to the wider community. With a diverse
-            and growing membership, we’re one of the biggest clubs at Carleton. With God’s help, we
-            aim to be your Family in Faith.
+            Driven by our religious foundation, our vision is to empower and inspire students to be a positive 
+            force for change.
+
           </p>
         </section>
         <section>
-          <h2 className="text-xl font-semibold">What We Do</h2>
+          <h2 className="text-xl font-semibold">Mission</h2>
           <p className="mt-3 text-gray-700">
-            We organize services and events, provide spaces and support for prayer and learning, and
-            encourage civic engagement and representation for Muslim students.
+            Our mission is to provide a welcoming, supportive, and enriching environment through our educational,
+            spiritual, and social services and events. We also aim to represent the concerns of Carleton University’s
+            Muslim student body, encourage civic engagement, and raise awareness about Islam.
+
           </p>
         </section>
       </div>

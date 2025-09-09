@@ -67,16 +67,19 @@ function EventCard({ event }: { event: Event }) {
 
         {}
         {event.link && (
-          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <Link
-              href={event.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-semibold rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-200"
-            >
-              <IoArrowForward className="w-3 h-3" />
-              Register
-            </Link>
+          <div>
+            {}
+            <div className="absolute top-3 right-3 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+              <Link
+                href={event.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-semibold rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-200"
+              >
+                <IoArrowForward className="w-3 h-3" />
+                Register
+              </Link>
+            </div>
           </div>
         )}
       </div>
