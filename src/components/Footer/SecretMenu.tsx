@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { SECRET_SECTIONS } from "./footerData";
-import type { SecretSection, SecretLink, SecretGroup } from "./footerData";
+import type { SecretSection } from "./footerData";
 
 export default function SecretMenu({
   anchorRef,

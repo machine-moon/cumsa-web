@@ -16,6 +16,10 @@ export const SECRET_SECTIONS: SecretSection[] = [
     links: [{ label: "Events", href: "/extras/portals/events" }],
   },
   {
+    title: "🙈",
+    links: [{ label: "Qibla Finder", href: "/extras/monkey/qibla-finder" }],
+  },
+  {
     title: "Pages Drafts",
     groups: [
       {
