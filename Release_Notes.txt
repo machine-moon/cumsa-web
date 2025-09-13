@@ -2,6 +2,14 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.11 (2025-09-13)
+----------------------
+Tarek Ibrahim
+- Removed roommate service
+- Updated countdown for mobile and home page
+- Added IntroAnimation component with animation effects and tests
+
+
 v0.0.10 (2025-09-13)
 ----------------------
 Tarek Ibrahim

@@ -62,17 +62,23 @@ export function PrayerCountdown({ timings }: PrayerCountdownProps) {
 
   if (!countdown || !timings) {
     return (
-      <div className="text-right">
-        <p className="text-sm text-gray-500">Loading countdown...</p>
+      <div className="rounded-lg bg-[var(--red)]/10 px-3 py-2 text-center">
+        <span className="text-xs text-[var(--red)]">Loading countdown...</span>
       </div>
     );
   }
 
   return (
-    <div className="text-right">
-      <p className="text-sm font-medium text-[var(--red)]">Next Prayer: {countdown.nextPrayer}</p>
-      <p className="text-sm text-gray-600">Remaining time: {countdown.timeRemaining}</p>
-      <p className="text-xs text-gray-500">Azan time: {countdown.prayerTime}</p>
+    <div className="rounded-lg bg-[var(--red)]/10 px-3 py-2 text-center w-full max-w-xs mx-auto">
+      <div className="text-[var(--red)] text-sm font-semibold leading-tight">
+        Next: <span className="font-bold">{countdown.nextPrayer}</span>
+      </div>
+      <div className="text-base font-mono text-[var(--red)] leading-tight">
+        {countdown.timeRemaining} <span className="text-xs font-normal text-gray-600">left</span>
+      </div>
+      <div className="text-xs text-gray-500 leading-tight">
+        Azan: <span className="font-semibold">{countdown.prayerTime}</span>
+      </div>
     </div>
   );
 }

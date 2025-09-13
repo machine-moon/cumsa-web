@@ -25,6 +25,46 @@ exports[`release notes page snapshot 1`] = `
             <span
               class="text-2xl font-bold text-[var(--blue)]"
             >
+              v0.0.11
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-13
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Removed roommate service
+          </li>
+          <li>
+            Updated countdown for mobile and home page
+          </li>
+          <li>
+            Added IntroAnimation component with animation effects and tests
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
               v0.0.10
             </span>
             <span

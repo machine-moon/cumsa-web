@@ -27,26 +27,24 @@ export default function Home() {
               <a href="/services/prayer" className="no-underline">
                 <h3 className="font-semibold text-lg">Prayers</h3>
                 <p className="mt-2 text-gray-600">
-                  Find prayer spaces on campus and Jummah updates.
+                  Find prayer spaces on campus and get Jummah updates.
                 </p>
                 <span className="mt-3 inline-block link-cta">Click Here →</span>
               </a>
             </MotionCard>
             <MotionCard>
-              <a href="/services/equity" className="no-underline">
-                <h3 className="font-semibold text-lg">Equity Services</h3>
+              <a href="/services/chaplaincy" className="no-underline">
+                <h3 className="font-semibold text-lg">Chaplaincy</h3>
                 <p className="mt-2 text-gray-600">
-                  Know your rights and how to request religious accommodations.
+                  1:1 support, mentorship, and spiritual care for students.
                 </p>
                 <span className="mt-3 inline-block link-cta">Click Here →</span>
               </a>
             </MotionCard>
             <MotionCard>
-              <a href="/services/roommate" className="no-underline">
-                <h3 className="font-semibold text-lg">Roommate Services</h3>
-                <p className="mt-2 text-gray-600">
-                  Need a place to stay? Search community listings.
-                </p>
+              <a href="/events" className="no-underline">
+                <h3 className="font-semibold text-lg">Events</h3>
+                <p className="mt-2 text-gray-600">See upcoming events, socials, and workshops.</p>
                 <span className="mt-3 inline-block link-cta">Click Here →</span>
               </a>
             </MotionCard>

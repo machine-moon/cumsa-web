@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ChatBubble from "@/components/ChatBubble";
 import Footer from "@/components/Footer";
+import IntroAnimation from "@/components/IntroAnimation";
 import { LOGOS } from "@/lib/constants";
 
 const geistSans = Geist({
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
+        <IntroAnimation />
         <Navbar />
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
         <ChatBubble />

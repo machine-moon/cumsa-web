@@ -50,7 +50,7 @@ exports[`home page snapshot 1`] = `
               <p
                 class="mt-2 text-gray-600"
               >
-                Find prayer spaces on campus and Jummah updates.
+                Find prayer spaces on campus and get Jummah updates.
               </p>
               <span
                 class="mt-3 inline-block link-cta"
@@ -64,17 +64,17 @@ exports[`home page snapshot 1`] = `
           >
             <a
               class="no-underline"
-              href="/services/equity"
+              href="/services/chaplaincy"
             >
               <h3
                 class="font-semibold text-lg"
               >
-                Equity Services
+                Chaplaincy
               </h3>
               <p
                 class="mt-2 text-gray-600"
               >
-                Know your rights and how to request religious accommodations.
+                1:1 support, mentorship, and spiritual care for students.
               </p>
               <span
                 class="mt-3 inline-block link-cta"
@@ -88,17 +88,17 @@ exports[`home page snapshot 1`] = `
           >
             <a
               class="no-underline"
-              href="/services/roommate"
+              href="/events"
             >
               <h3
                 class="font-semibold text-lg"
               >
-                Roommate Services
+                Events
               </h3>
               <p
                 class="mt-2 text-gray-600"
               >
-                Need a place to stay? Search community listings.
+                See upcoming events, socials, and workshops.
               </p>
               <span
                 class="mt-3 inline-block link-cta"
