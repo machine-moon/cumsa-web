@@ -6,8 +6,10 @@ export function AddClient() {
   const [preview, setPreview] = useState<PreviewEvent>({
     title: "",
     date: "",
+    time: "",
     location: "",
     imageStyle: "cover",
+    description: "",
   });
   const [image, setImage] = useState<string | undefined>(undefined);
   const [imageStyle, setImageStyle] = useState<

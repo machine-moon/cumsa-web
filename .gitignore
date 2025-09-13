@@ -1,4 +1,5 @@
 *secrets/
+./events.sqlite
 
 # dependencies
 /node_modules

@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 import BackButton from "@/components/BackButton";
 import { UploadPreview } from "@/components/eventPortal/UploadPreview";
 
+const SUPPORTED_FORMATS = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
+const SUPPORTED_MIME_TYPES = ["image/png", "image/jpeg", "image/jpg", "image/webp", "image/gif"];
+
 function listEventImages(): string[] {
   const dir = path.join(process.cwd(), "public", "events");
   try {
@@ -12,25 +15,71 @@ function listEventImages(): string[] {
       .filter((f) => !f.startsWith("."))
       .filter((f) => /(png|jpe?g|webp|gif)$/i.test(f))
       .map((f) => `/events/${f}`);
-  } catch {
+  } catch (error) {
+    console.error("Failed to read events directory:", error);
     return [];
   }
 }
 
+function validateImageFile(file: File): string | null {
+  if (!file) return "No file provided";
+
+  if (file.size > 10 * 1024 * 1024) {
+    return "File size must be less than 10MB";
+  }
+
+  if (!SUPPORTED_MIME_TYPES.includes(file.type.toLowerCase())) {
+    return `Unsupported file type: ${file.type}. Supported formats: PNG, JPG, JPEG, WebP, GIF`;
+  }
+
+  const ext = path.extname(file.name).toLowerCase();
+  if (!SUPPORTED_FORMATS.includes(ext)) {
+    return `Unsupported file extension: ${ext}. Supported formats: ${SUPPORTED_FORMATS.join(", ")}`;
+  }
+
+  return null;
+}
+
 async function upload(formData: FormData) {
   "use server";
-  const file = formData.get("file") as File | null;
-  if (!file) return;
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-  const ext = path.extname(file.name).toLowerCase();
-  if (![".png", ".jpg", ".jpeg", ".webp", ".gif"].includes(ext)) return;
-  const destDir = path.join(process.cwd(), "public", "events");
+
   try {
-    fs.mkdirSync(destDir, { recursive: true });
-  } catch {}
-  const safeName = file.name.replace(/[^a-z0-9._-]/gi, "_");
-  fs.writeFileSync(path.join(destDir, safeName), buffer);
+    const file = formData.get("file") as File | null;
+
+    const validationError = validateImageFile(file!);
+    if (validationError) {
+      console.error("File validation error:", validationError);
+      return;
+    }
+
+    const bytes = await file!.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    const destDir = path.join(process.cwd(), "public", "events");
+
+    try {
+      fs.mkdirSync(destDir, { recursive: true });
+    } catch (dirError) {
+      console.error("Failed to create directory:", dirError);
+      return;
+    }
+
+    const safeName = file!.name.replace(/[^a-z0-9._-]/gi, "_").replace(/_{2,}/g, "_");
+
+    const filePath = path.join(destDir, safeName);
+
+    try {
+      fs.writeFileSync(filePath, buffer);
+      console.log(`Successfully uploaded file: ${safeName}`);
+    } catch (writeError) {
+      console.error("Failed to write file:", writeError);
+      return;
+    }
+  } catch (error) {
+    console.error("Upload error:", error);
+    return;
+  }
+
   redirect("/extras/portals/events/add");
 }
 
@@ -73,14 +122,6 @@ export default function UploadImagePage() {
                 <p className="flex items-center gap-1">
                   <span>✅</span>
                   Accepted formats: PNG, JPG, JPEG, WebP, GIF
-                </p>
-                <p className="flex items-center gap-1">
-                  <span>📏</span>
-                  Recommended: Square aspect ratio (1:1) for best display
-                </p>
-                <p className="flex items-center gap-1">
-                  <span>💾</span>
-                  File will be saved to /public/events/
                 </p>
               </div>
             </div>

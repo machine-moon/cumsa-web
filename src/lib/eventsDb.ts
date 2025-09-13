@@ -8,11 +8,13 @@ db.exec(`CREATE TABLE IF NOT EXISTS events (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
   date TEXT NOT NULL,
+  time TEXT,
   location TEXT NOT NULL,
   fee TEXT,
   link TEXT,
   image TEXT,
-  imageStyle TEXT DEFAULT 'cover'
+  imageStyle TEXT DEFAULT 'cover',
+  description TEXT
 )`);
 
 export function getAllEvents() {
@@ -21,31 +23,35 @@ export function getAllEvents() {
 
 export function addEvent(event: Omit<Event, "id">) {
   const stmt = db.prepare(
-    "INSERT INTO events (title, date, location, fee, link, image, imageStyle) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    "INSERT INTO events (title, date, time, location, fee, link, image, imageStyle, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
   );
   const info = stmt.run(
     event.title,
     event.date,
+    event.time,
     event.location,
     event.fee,
     event.link,
     event.image,
     event.imageStyle || "cover",
+    event.description,
   );
   return { id: info.lastInsertRowid, ...event };
 }
 
 export function updateEvent(event: Event) {
   db.prepare(
-    "UPDATE events SET title=?, date=?, location=?, fee=?, link=?, image=?, imageStyle=? WHERE id=?",
+    "UPDATE events SET title=?, date=?, time=?, location=?, fee=?, link=?, image=?, imageStyle=?, description=? WHERE id=?",
   ).run(
     event.title,
     event.date,
+    event.time,
     event.location,
     event.fee,
     event.link,
     event.image,
     event.imageStyle || "cover",
+    event.description,
     event.id,
   );
 }
@@ -58,9 +64,11 @@ export type Event = {
   id: number;
   title: string;
   date: string;
+  time?: string;
   location: string;
   fee?: string;
   link?: string;
   image?: string;
   imageStyle?: "cover" | "contain" | "fill" | "scale-down" | "none";
+  description?: string;
 };

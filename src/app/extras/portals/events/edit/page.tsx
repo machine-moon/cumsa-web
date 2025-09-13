@@ -23,10 +23,12 @@ async function save(formData: FormData) {
   const id = Number(formData.get("id"));
   const title = String(formData.get("title") || "");
   const date = String(formData.get("date") || "");
+  const time = String(formData.get("time") || "");
   const location = String(formData.get("location") || "");
   const fee = String(formData.get("fee") || "");
   const link = String(formData.get("link") || "");
   const image = String(formData.get("image") || "");
+  const description = String(formData.get("description") || "");
   const imageStyle = String(formData.get("imageStyle") || "cover") as
     | "cover"
     | "contain"
@@ -41,7 +43,7 @@ async function save(formData: FormData) {
   } catch {
     return;
   }
-  updateEvent({ id, title, date, location, fee, link, image, imageStyle });
+  updateEvent({ id, title, date, time, location, fee, link, image, imageStyle, description });
   redirect("/events");
 }
 
@@ -100,12 +102,33 @@ export default function EditEventPage() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Time</label>
+            <input
+              name="time"
+              type="time"
+              placeholder="Select event time"
+              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Location</label>
+            <input
+              name="location"
+              placeholder="Where will this event take place?"
+              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+            />
+          </div>
+        </div>
+
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Location</label>
-          <input
-            name="location"
-            placeholder="Where will this event take place?"
-            className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
+          <textarea
+            name="description"
+            rows={4}
+            placeholder="Provide a detailed description of the event..."
+            className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors resize-vertical"
           />
         </div>
 

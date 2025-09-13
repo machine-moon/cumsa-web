@@ -2,6 +2,15 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.10 (2025-09-13)
+----------------------
+Tarek Ibrahim
+- Updated prayer times to 12h format and added next prayer time quick lookup
+- Updated event images to use WebP format
+- Added a description section to events
+- Made event details more elegant
+- Fixed Linktree icon not visible on mobile
+
 v0.0.9 (2025-09-11)
 ----------------------
 Sarah Abada
@@ -12,10 +21,9 @@ Sarah Abada
 v0.0.8 (2025-09-08)
 ----------------------
 Tarek Ibrahim
-- Added SQLite-backed events storage
-- Added Events page to view and manage events
-- Implemented CRUD API for creating, reading, updating, and deleting events
-- Added Event Portal with pages: add, edit, login, menu, remove, upload-image
+- Updated prayer times to 12h format and added next prayer time quick lookup
+- Updated event images to use WebP format
+- Added an info section to events
 
 v0.0.7 (2025-09-06)
 ----------------------

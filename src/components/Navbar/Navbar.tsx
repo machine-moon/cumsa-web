@@ -61,16 +61,19 @@ export default function Navbar() {
             />
           </Link>
 
-          <button
-            aria-label="Toggle menu"
-            type="button"
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            onClick={() => setMobileOpen((v) => !v)}
-          >
-            <span className="block w-6 h-0.5 bg-slate-600 mb-1" />
-            <span className="block w-6 h-0.5 bg-slate-600 mb-1" />
-            <span className="block w-6 h-0.5 bg-slate-600" />
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LinktreeIcon />
+            <button
+              aria-label="Toggle menu"
+              type="button"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              onClick={() => setMobileOpen((v) => !v)}
+            >
+              <span className="block w-6 h-0.5 bg-slate-600 mb-1" />
+              <span className="block w-6 h-0.5 bg-slate-600 mb-1" />
+              <span className="block w-6 h-0.5 bg-slate-600" />
+            </button>
+          </div>
 
           <nav className="hidden md:flex items-center gap-1 relative">
             {/* Simple highlight background */}

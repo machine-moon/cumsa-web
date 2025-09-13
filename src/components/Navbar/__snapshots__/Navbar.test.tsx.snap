@@ -27,21 +27,71 @@ exports[`Navbar snapshot 1`] = `
             width="220"
           />
         </a>
-        <button
-          aria-label="Toggle menu"
-          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-          type="button"
+        <div
+          class="md:hidden flex items-center gap-3"
         >
-          <span
-            class="block w-6 h-0.5 bg-slate-600 mb-1"
-          />
-          <span
-            class="block w-6 h-0.5 bg-slate-600 mb-1"
-          />
-          <span
-            class="block w-6 h-0.5 bg-slate-600"
-          />
-        </button>
+          <a
+            aria-label="Linktree"
+            class="relative inline-flex items-center justify-center w-9 h-9 rounded-full"
+            href="https://linktr.ee/Carletonmsa?utm_source=linktree_profile_share&ltsid=86b6ac54-9966-4522-981f-6babdf7b9681"
+            rel="noopener noreferrer"
+            tabindex="0"
+            target="_blank"
+          >
+            <span
+              class="absolute z-0 rounded-full"
+              style="width: 36px; height: 36px; border-radius: 9999px; opacity: 0; background-color: rgba(16, 185, 129, 0); transform: scale(0.8);"
+            />
+            <span
+              class="relative z-10 flex items-center justify-center"
+              style="color: rgb(5, 150, 105);"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 10h16"
+                />
+                <path
+                  d="M6.5 4.5l11 11"
+                />
+                <path
+                  d="M6.5 15.5l11 -11"
+                />
+                <path
+                  d="M12 10v-8"
+                />
+                <path
+                  d="M12 15v7"
+                />
+              </svg>
+            </span>
+          </a>
+          <button
+            aria-label="Toggle menu"
+            class="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            type="button"
+          >
+            <span
+              class="block w-6 h-0.5 bg-slate-600 mb-1"
+            />
+            <span
+              class="block w-6 h-0.5 bg-slate-600 mb-1"
+            />
+            <span
+              class="block w-6 h-0.5 bg-slate-600"
+            />
+          </button>
+        </div>
         <nav
           class="hidden md:flex items-center gap-1 relative"
         >

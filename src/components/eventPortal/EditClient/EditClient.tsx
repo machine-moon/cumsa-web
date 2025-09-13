@@ -7,8 +7,10 @@ export function EditClient({ events }: { events: Event[] }) {
   const [preview, setPreview] = useState<PreviewEvent>({
     title: "",
     date: "",
+    time: "",
     location: "",
     imageStyle: "cover",
+    description: "",
   });
   const [image, setImage] = useState<string | undefined>(undefined);
   const [imageStyle, setImageStyle] = useState<
@@ -26,11 +28,13 @@ export function EditClient({ events }: { events: Event[] }) {
       const map: Record<string, string | undefined> = {
         title: ev.title,
         date: ev.date,
+        time: ev.time,
         location: ev.location,
         fee: ev.fee,
         link: ev.link,
         image: ev.image,
         imageStyle: ev.imageStyle || "cover",
+        description: ev.description,
       };
       Object.entries(map).forEach(([name, val]) => {
         const input = document.querySelector(`[name=${name}]`) as
@@ -46,10 +50,12 @@ export function EditClient({ events }: { events: Event[] }) {
       setPreview({
         title: ev.title || "",
         date: ev.date || "",
+        time: ev.time || "",
         location: ev.location || "",
         fee: ev.fee || "",
         link: ev.link || "",
         imageStyle: ev.imageStyle || "cover",
+        description: ev.description || "",
       });
       setImage(ev.image || undefined);
       setImageStyle(ev.imageStyle || "cover");

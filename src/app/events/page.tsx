@@ -8,21 +8,27 @@ import {
   IoCash,
   IoArrowForward,
   IoWarning,
+  IoTimeOutline,
+  IoInformationCircleOutline,
 } from "react-icons/io5";
+import { to12Hour } from "@/lib/to12Hour";
+import { EventModal } from "@/components/EventModal";
 
 type Event = {
   id: number;
   title: string;
   date: string;
+  time?: string;
   location: string;
   fee?: string;
   link?: string;
   image?: string;
   imageStyle?: "cover" | "contain" | "fill" | "scale-down" | "none";
+  description?: string;
 };
 
 // Event Card Component for better maintainability
-function EventCard({ event }: { event: Event }) {
+function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: Event) => void }) {
   const getImageClassName = (style: string | undefined) => {
     switch (style) {
       case "contain":
@@ -64,24 +70,6 @@ function EventCard({ event }: { event: Event }) {
           className={`${getImageClassName(event.imageStyle)} transition-transform duration-300 group-hover:scale-105`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-        {}
-        {event.link && (
-          <div>
-            {}
-            <div className="absolute top-3 right-3 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-              <Link
-                href={event.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-semibold rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-200"
-              >
-                <IoArrowForward className="w-3 h-3" />
-                Register
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Content */}
@@ -99,6 +87,13 @@ function EventCard({ event }: { event: Event }) {
             <span className="font-medium">{formatDate(event.date)}</span>
           </div>
 
+          {event.time && (
+            <div className="flex items-center gap-2">
+              <IoTimeOutline className="w-4 h-4 text-orange-500 flex-shrink-0" />
+              <span className="font-medium">{to12Hour(event.time)}</span>
+            </div>
+          )}
+
           <div className="flex items-center gap-2">
             <IoLocationSharp className="w-4 h-4 text-green-500 flex-shrink-0" />
             <span className="truncate">{event.location}</span>
@@ -109,6 +104,31 @@ function EventCard({ event }: { event: Event }) {
               <IoCash className="w-4 h-4 text-yellow-500 flex-shrink-0" />
               <span className="font-medium text-gray-700">{event.fee}</span>
             </div>
+          )}
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex items-center justify-between pt-2">
+          {event.description && (
+            <button
+              onClick={() => onInfoClick(event)}
+              className="flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-all duration-200"
+            >
+              <IoInformationCircleOutline className="w-3 h-3" />
+              Info
+            </button>
+          )}
+          <div className="flex-1" />
+          {event.link && (
+            <Link
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2 py-1 text-xs text-green-600 hover:text-green-800 hover:bg-green-50 rounded-md transition-all duration-200"
+            >
+              <IoArrowForward className="w-3 h-3" />
+              Register
+            </Link>
           )}
         </div>
       </div>
@@ -161,6 +181,18 @@ export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleInfoClick = (event: Event) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedEvent(null);
+  };
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -230,7 +262,9 @@ export default function EventsPage() {
               Array.from({ length: 8 }, (_, i) => <EventSkeleton key={i} />)
             ) : events.length > 0 ? (
               // Show events
-              events.map((event) => <EventCard key={event.id} event={event} />)
+              events.map((event) => (
+                <EventCard key={event.id} event={event} onInfoClick={handleInfoClick} />
+              ))
             ) : (
               // Show empty state
               <EmptyState />
@@ -248,6 +282,9 @@ export default function EventsPage() {
           )}
         </div>
       </div>
+
+      {/* Event Modal */}
+      <EventModal event={selectedEvent} isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }

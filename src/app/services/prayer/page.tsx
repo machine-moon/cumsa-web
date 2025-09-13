@@ -1,5 +1,7 @@
 import { LINKS } from "@/lib/constants";
 import { getOttawaTimings } from "@/lib/prayer-api";
+import { PrayerCountdown } from "@/components/PrayerCountdown";
+import { to12Hour } from "@/lib/to12Hour";
 
 export const metadata = { title: "Prayer Services | CUMSA" };
 
@@ -31,6 +33,7 @@ export default async function PrayerServicesPage() {
                 {hijri ? ` • ${hijri} AH` : ""} • {tz}
               </p>
             </div>
+            <PrayerCountdown timings={timings} />
           </div>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-left border border-black/10 rounded-lg overflow-hidden bg-white">
@@ -41,12 +44,17 @@ export default async function PrayerServicesPage() {
                 </tr>
               </thead>
               <tbody>
-                {order.map((k) => (
-                  <tr key={k} className="hover:bg-black/5 transition-base">
-                    <td className="p-3 border-b border-black/10 font-medium">{k}</td>
-                    <td className="p-3 border-b border-black/10">{timings ? timings[k] : "—"}</td>
-                  </tr>
-                ))}
+                {order.map((k) => {
+                  const time = timings ? timings[k] : null;
+                  return (
+                    <tr key={k} className="hover:bg-black/5 transition-base">
+                      <td className="p-3 border-b border-black/10 font-medium">{k}</td>
+                      <td className="p-3 border-b border-black/10">
+                        {time ? to12Hour(time) : "—"}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

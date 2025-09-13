@@ -15,18 +15,17 @@ export default function AboutPage() {
         <section>
           <h2 className="text-xl font-semibold">Vision</h2>
           <p className="mt-3 text-gray-700">
-            Driven by our religious foundation, our vision is to empower and inspire students to be a positive 
-            force for change.
-
+            Driven by our religious foundation, our vision is to empower and inspire students to be
+            a positive force for change.
           </p>
         </section>
         <section>
           <h2 className="text-xl font-semibold">Mission</h2>
           <p className="mt-3 text-gray-700">
-            Our mission is to provide a welcoming, supportive, and enriching environment through our educational,
-            spiritual, and social services and events. We also aim to represent the concerns of Carleton University’s
-            Muslim student body, encourage civic engagement, and raise awareness about Islam.
-
+            Our mission is to provide a welcoming, supportive, and enriching environment through our
+            educational, spiritual, and social services and events. We also aim to represent the
+            concerns of Carleton University’s Muslim student body, encourage civic engagement, and
+            raise awareness about Islam.
           </p>
         </section>
       </div>
