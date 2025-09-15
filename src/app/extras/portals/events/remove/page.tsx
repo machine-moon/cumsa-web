@@ -13,43 +13,39 @@ async function remove(formData: FormData) {
 export default function RemoveEventPage() {
   const events = getAllEvents() as Event[];
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <BackButton href="/extras/portals/events/menu" />
 
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-[var(--red)] mb-2">Remove Event</h1>
-        <p className="text-gray-600">Permanently delete an event from the system</p>
+        <p className="text-[var(--navy)]/80">Permanently delete an event from the system</p>
       </div>
 
       {events.length === 0 ? (
         <div className="text-center py-12">
-          <div className="text-6xl mb-4">📅</div>
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">No Events Available</h3>
-          <p className="text-gray-500 mb-6">There are currently no events to remove.</p>
+          <h3 className="text-xl font-semibold text-[var(--navy)] mb-2">No Events Available</h3>
+          <p className="text-[var(--navy)]/70 mb-6">There are currently no events to remove.</p>
           <a href="/extras/portals/events/add" className="btn-cozy btn-primary">
             Create New Event
           </a>
         </div>
       ) : (
         <div className="max-w-md mx-auto">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">⚠️</span>
-              <div>
-                <h3 className="font-semibold text-red-800">Warning</h3>
-                <p className="text-sm text-red-600">This action cannot be undone</p>
-              </div>
+          <div className="bg-[color:var(--red)]/5 border border-[color:var(--red)]/20 rounded-lg p-6">
+            <div className="mb-4">
+              <h3 className="font-semibold text-[var(--red)]">Warning</h3>
+              <p className="text-sm text-[var(--navy)]/80">This action cannot be undone</p>
             </div>
 
             <form action={remove} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
                   Select Event to Delete
                 </label>
                 <select
                   name="id"
                   required
-                  className="w-full border-2 border-red-200 rounded-lg px-4 py-3 focus:border-red-400 focus:outline-none transition-colors"
+                  className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--red)] focus:outline-none transition-colors"
                   defaultValue=""
                 >
                   <option value="" disabled>

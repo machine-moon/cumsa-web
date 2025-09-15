@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ========== CSS Variables ========== */
 :root {
   --background: #edfaff;
   --foreground: #0f172a;
@@ -11,6 +12,7 @@
   --header-top: #123a66;
 }
 
+/* ========== Base Styles ========== */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -21,17 +23,20 @@ a {
   text-underline-offset: 4px;
 }
 
+/* ========== Links ========== */
 .link-cta {
   color: var(--blue);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
+  transition: color 150ms ease;
 }
 
 .link-cta:hover {
   color: var(--red);
 }
 
+/* ========== Buttons ========== */
 .btn-cozy {
   display: inline-flex;
   align-items: center;
@@ -62,11 +67,13 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+/* ========== Accessibility ========== */
 :focus-visible {
   outline: 2px solid color-mix(in oklab, var(--blue) 70%, white);
   outline-offset: 2px;
 }
 
+/* ========== Layout Containers ========== */
 .container-base {
   margin-left: auto;
   margin-right: auto;
@@ -89,20 +96,28 @@ a {
   }
 }
 
+/* ========== Transition Utility ========== */
 .transition-base {
   transition: all 200ms ease-out;
 }
 
+/* ========== Cards ========== */
 .card {
   background: var(--surface);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.75rem;
 }
 
+/* ========== Typography ========== */
 .title {
   color: var(--red);
 }
 
+.typewriter-cursor {
+  color: var(--blue);
+}
+
+/* ========== Icon and Logo ========== */
 .tint-blue {
   filter: invert(28%) sepia(88%) saturate(3612%) hue-rotate(211deg) brightness(93%) contrast(98%);
 }
@@ -120,6 +135,7 @@ a {
   display: inline-block;
 }
 
+/* ========== Special Surfaces ========== */
 .portal-glow {
   width: 100%;
   max-width: 72rem;
@@ -132,96 +148,17 @@ a {
   padding: 0;
 }
 
-/* Custom animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.frost-card {
+  background: color-mix(in oklab, var(--header-top) 45%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  box-shadow:
+    0 20px 70px rgba(10, 22, 40, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px) saturate(120%);
 }
 
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.6s ease-out 0.2s both;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out 0.4s both;
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes sparkle {
-  0%,
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
-}
-
-/* Hero enhancements */
+/* ========== Hero Section ========== */
 .hero-overlay {
   background:
     radial-gradient(1000px 500px at 20% 20%, rgba(90, 206, 216, 0.18), transparent 60%),
@@ -252,22 +189,104 @@ a {
   background: radial-gradient(circle at center, rgba(199, 50, 33, 0.14), transparent 60%);
 }
 
-.frost-card {
-  background: color-mix(in oklab, var(--header-top) 45%, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 1rem;
-  box-shadow:
-    0 20px 70px rgba(10, 22, 40, 0.25),
-    0 2px 6px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px) saturate(120%);
-}
-
-.typewriter-cursor {
-  color: var(--blue);
-}
-
 @media (max-width: 640px) {
   .hero-glow {
     display: none;
   }
+}
+
+/* ========== Animations ========== */
+/* Fade / Slide / Spin / Float / Sparkle */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out 0.2s both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out 0.4s both;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
 }

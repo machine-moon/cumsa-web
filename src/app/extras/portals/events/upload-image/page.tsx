@@ -21,11 +21,14 @@ function listEventImages(): string[] {
   }
 }
 
+const UPLOAD_MAX_MB = Number(process.env.UPLOAD_MAX_MB ?? "10");
+const UPLOAD_MAX_BYTES = UPLOAD_MAX_MB * 1024 * 1024;
+
 function validateImageFile(file: File): string | null {
   if (!file) return "No file provided";
 
-  if (file.size > 10 * 1024 * 1024) {
-    return "File size must be less than 10MB";
+  if (file.size > UPLOAD_MAX_BYTES) {
+    return `File size must be less than ${UPLOAD_MAX_MB}MB`;
   }
 
   if (!SUPPORTED_MIME_TYPES.includes(file.type.toLowerCase())) {
@@ -86,29 +89,28 @@ async function upload(formData: FormData) {
 export default function UploadImagePage() {
   const images = listEventImages();
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <BackButton href="/extras/portals/events/menu" />
 
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-[var(--blue)] mb-2">Upload Event Image</h1>
-        <p className="text-gray-600">Add new images for your events</p>
+        <p className="text-[var(--navy)]/80">Add new images for your events</p>
       </div>
 
       <UploadPreview images={images} />
 
       <div className="max-w-lg mx-auto">
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-2xl">📸</span>
-            <div>
-              <h3 className="font-semibold text-blue-800">Upload New Image</h3>
-              <p className="text-sm text-blue-600">Choose a high-quality image for your event</p>
-            </div>
+        <div className="border border-gray-200 rounded-lg p-6 bg-white/70 backdrop-blur">
+          <div className="mb-4">
+            <h3 className="font-semibold text-[var(--navy)]">Upload New Image</h3>
+            <p className="text-sm text-[var(--navy)]/70">
+              Choose a high‑quality image for your event
+            </p>
           </div>
 
           <form action={upload} className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
                 Select Image File
               </label>
               <input
@@ -116,13 +118,10 @@ export default function UploadImagePage() {
                 name="file"
                 required
                 accept="image/png,image/jpeg,image/jpg,image/webp,image/gif"
-                className="block w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                className="block w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[color:var(--blue)]/10 file:text-[color:var(--navy)] hover:file:bg-[color:var(--blue)]/20"
               />
-              <div className="mt-2 text-xs text-gray-500 space-y-1">
-                <p className="flex items-center gap-1">
-                  <span>✅</span>
-                  Accepted formats: PNG, JPG, JPEG, WebP, GIF
-                </p>
+              <div className="mt-2 text-xs text-[var(--navy)]/70 space-y-1">
+                <p>Accepted formats: PNG, JPG, JPEG, WebP, GIF</p>
               </div>
             </div>
 
@@ -138,16 +137,20 @@ export default function UploadImagePage() {
         </div>
 
         {images.length > 0 && (
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-gray-700 mb-2">Current Images ({images.length})</h4>
-            <div className="grid grid-cols-3 gap-2 text-xs text-gray-600">
+          <div className="mt-6 p-4 bg-white/70 border border-gray-200 rounded-lg">
+            <h4 className="font-semibold text-[var(--navy)] mb-2">
+              Current Images ({images.length})
+            </h4>
+            <div className="grid grid-cols-3 gap-2 text-xs text-[var(--navy)]/80">
               {images.slice(0, 6).map((img) => (
                 <div key={img} className="truncate p-2 bg-white rounded border">
                   {img.split("/").pop()}
                 </div>
               ))}
               {images.length > 6 && (
-                <div className="p-2 text-center text-gray-500">+{images.length - 6} more</div>
+                <div className="p-2 text-center text-[var(--navy)]/60">
+                  +{images.length - 6} more
+                </div>
               )}
             </div>
           </div>

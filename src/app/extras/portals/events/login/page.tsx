@@ -1,39 +1,31 @@
-import { redirect } from "next/navigation";
-import fs from "fs";
-import path from "path";
 import { cookies } from "next/headers";
+import { getIronSession } from "iron-session";
+import { sessionOptions } from "@/lib/eventSession";
+import { redirect } from "next/navigation";
 
-async function verifyPassword(formData: FormData): Promise<void> {
-  "use server";
-  const pwd = String(formData.get("password") || "");
-  const f = path.join(process.cwd(), ".secrets", "event_pwd.txt");
-  let stored = "";
-  try {
-    stored = fs.readFileSync(f, "utf8").trim();
-  } catch {}
-  if (pwd && stored && pwd === stored) {
-    (await cookies()).set("evt_auth", "1", { path: "/", httpOnly: true });
+export default async function LoginPage() {
+  const cookieStore = await cookies();
+  const session = await getIronSession<{ authorized?: boolean }>(cookieStore, sessionOptions);
+  if (session.authorized) {
     redirect("/extras/portals/events/menu");
   }
-}
 
-export default function LoginPage() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="min-h-[60vh] flex items-center justify-center animate-fade-in">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">🔐</div>
           <h1 className="text-3xl font-extrabold text-[var(--blue)] mb-2">Events Portal</h1>
-          <p className="text-gray-600">Authorized access only</p>
+          <p className="text-[var(--navy)]/80">Authorized access only</p>
         </div>
 
         <form
-          action={verifyPassword}
-          className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+          method="POST"
+          action="/api/events/login"
+          className="bg-white/80 rounded-2xl p-8 shadow-lg border border-[color:var(--navy)]/15 backdrop-blur"
         >
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
                 Portal Password
               </label>
               <input
@@ -41,9 +33,9 @@ export default function LoginPage() {
                 type="password"
                 required
                 placeholder="Enter access password"
-                className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+                className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
               />
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-xs text-[var(--navy)]/70 mt-2">
                 Contact the admin if you need access credentials
               </p>
             </div>

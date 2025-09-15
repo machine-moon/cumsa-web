@@ -48,12 +48,14 @@ async function create(formData: FormData) {
 export default function AddEventPage() {
   const images = listEventImages();
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <BackButton href="/extras/portals/events/menu" />
 
       <div className="text-center">
         <h1 className="text-3xl font-extrabold text-[var(--blue)] mb-2">Add New Event</h1>
-        <p className="text-gray-600">Create an engaging event that our community will love</p>
+        <p className="text-[var(--navy)]/80">
+          Create an engaging event that our community will love
+        </p>
       </div>
 
       <AddClient />
@@ -61,87 +63,93 @@ export default function AddEventPage() {
       <form action={create} className="space-y-6 max-w-2xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Event Title *</label>
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
+              Event Title *
+            </label>
             <input
               name="title"
               required
               placeholder="Enter event title"
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Date *</label>
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">Date *</label>
             <input
               name="date"
               type="date"
               required
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Time</label>
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">Time</label>
             <input
               name="time"
               type="time"
               placeholder="Select event time"
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Location *</label>
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
+              Location *
+            </label>
             <input
               name="location"
               required
               placeholder="Where will this event take place?"
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
+          <label className="block text-sm font-semibold text-[var(--navy)] mb-2">Description</label>
           <textarea
             name="description"
             rows={4}
             placeholder="Provide a detailed description of the event..."
-            className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors resize-vertical"
+            className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors resize-vertical"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
               Registration Fee
             </label>
             <input
               name="fee"
               placeholder="e.g., $10 or Free"
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
               Registration Link
             </label>
             <input
               name="link"
               type="url"
               placeholder="https://..."
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Event Image *</label>
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
+              Event Image *
+            </label>
             <select
               name="image"
               required
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
               defaultValue=""
             >
               <option value="" disabled>
@@ -155,12 +163,12 @@ export default function AddEventPage() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-[var(--navy)] mb-2">
               Image Display Style
             </label>
             <select
               name="imageStyle"
-              className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
+              className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--blue)] focus:outline-none transition-colors"
               defaultValue="cover"
             >
               <option value="cover">Cover (crop to fill)</option>
@@ -173,9 +181,8 @@ export default function AddEventPage() {
         </div>
 
         <div className="text-center">
-          <p className="text-xs text-gray-500 flex items-center justify-center gap-1">
-            <span>📁</span>
-            Images are stored in /public/events/. Upload new images using the Upload Image page.
+          <p className="text-xs text-[var(--navy)]/70">
+            Images are stored in /public/events/. Upload new images on the Upload Image page.
           </p>
         </div>
 

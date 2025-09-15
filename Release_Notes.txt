@@ -2,6 +2,15 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.13 (2025-09-15)
+----------------------
+Tarek Ibrahim
+- Added logout button to event portal menu
+- Added animations to event portal pages
+- Fixed cookie event portal bypass security vulnerability bug
+- Increased maximum file upload size to 50MB
+- Added Zakat Nisab page
+
 v0.0.12 (2025-09-15)
 ----------------------
 Tarek Ibrahim

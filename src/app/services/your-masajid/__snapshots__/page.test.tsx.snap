@@ -545,10 +545,9 @@ exports[`your masajid page snapshot 1`] = `
           </div>
           <div>
             <div
-              class="flex items-center justify-center h-[480px] bg-gray-100 rounded-xl"
-            >
-              Loading map...
-            </div>
+              data-testid="stub"
+              mosques="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { sessionOptions } from "@/lib/eventSession";
 
 const PROTECTED_PREFIX = "/extras/portals/events";
 const PUBLIC_PATHS = new Set(["/extras/portals/events/login"]);
@@ -9,8 +10,8 @@ export function middleware(req: NextRequest) {
     req.nextUrl.pathname.startsWith(PROTECTED_PREFIX) &&
     !PUBLIC_PATHS.has(req.nextUrl.pathname)
   ) {
-    const authorized = req.cookies.get("evt_auth")?.value === "1";
-    if (!authorized) {
+    const hasSessionCookie = !!req.cookies.get(sessionOptions.cookieName)?.value;
+    if (!hasSessionCookie) {
       const url = new URL("/extras/portals/events/login", req.url);
       return NextResponse.redirect(url);
     }

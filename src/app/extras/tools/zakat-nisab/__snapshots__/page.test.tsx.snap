@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`zakat nasib page snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="container-base py-10 flex items-center justify-center"
+  >
+    <section
+      class="w-full max-w-3xl card p-6 md:p-8 animate-fade-in"
+    >
+      <header
+        class="mb-6 text-center"
+      >
+        <h1
+          class="text-2xl md:text-3xl font-bold mb-1"
+          style="color: var(--navy);"
+        >
+          Zakat Nisab
+        </h1>
+        <p
+          class="text-sm"
+          style="color: var(--muted);"
+        >
+          Simple way to view Zakat Nisab
+        </p>
+      </header>
+      <div
+        class="card p-6 mb-6"
+        style="background: var(--surface);"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
+        >
+          <div
+            class="relative"
+          >
+            <label
+              class="block text-sm font-medium mb-2"
+              style="color: var(--navy);"
+            >
+              Country
+            </label>
+            <button
+              class="w-full btn-outline px-3 py-2 rounded-md flex items-center justify-between text-left"
+              type="button"
+            >
+              <span>
+                Canada
+              </span>
+            </button>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              style="color: var(--navy);"
+            >
+              Standard
+            </label>
+            <select
+              class="w-full btn-outline px-3 py-2 rounded-md"
+            >
+              <option
+                value="classical"
+              >
+                Classical
+              </option>
+              <option
+                value="common"
+              >
+                Common
+              </option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              style="color: var(--navy);"
+            >
+              Currency
+            </label>
+            <input
+              class="w-full btn-outline px-3 py-2 rounded-md bg-gray-50"
+              readonly=""
+              type="text"
+              value="CAD"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium mb-2"
+              style="color: var(--navy);"
+            >
+              Unit
+            </label>
+            <div
+              class="flex gap-2"
+            >
+              <button
+                class="btn-cozy px-4 py-2 rounded-md flex-1 btn-primary"
+                type="button"
+              >
+                g
+              </button>
+              <button
+                class="btn-cozy px-4 py-2 rounded-md flex-1 btn-outline"
+                type="button"
+              >
+                oz
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid gap-4 md:grid-cols-2 mb-6"
+      >
+        <article
+          class="p-4 card"
+        >
+          <h2
+            class="font-semibold mb-3"
+            style="color: var(--navy);"
+          >
+            Gold Nisab
+          </h2>
+          <div
+            class="space-y-1 text-sm text-slate-600 mb-3"
+          >
+            <div>
+              Weight: — gram
+            </div>
+            <div>
+              Unit price: —
+            </div>
+          </div>
+          <div
+            class="text-xl font-bold"
+            style="color: var(--blue);"
+          >
+            CA$0.00
+          </div>
+        </article>
+        <article
+          class="p-4 card"
+        >
+          <h2
+            class="font-semibold mb-3"
+            style="color: var(--navy);"
+          >
+            Silver Nisab
+          </h2>
+          <div
+            class="space-y-1 text-sm text-slate-600 mb-3"
+          >
+            <div>
+              Weight: — gram
+            </div>
+            <div>
+              Unit price: —
+            </div>
+          </div>
+          <div
+            class="text-xl font-bold"
+            style="color: var(--blue);"
+          >
+            CA$0.00
+          </div>
+        </article>
+      </div>
+      <div
+        class="card p-4 text-center"
+      >
+        <div
+          class="text-2xl font-bold"
+          style="color: var(--blue);"
+        >
+          Total: CA$0.00
+        </div>
+      </div>
+    </section>
+  </main>
+</DocumentFragment>
+`;

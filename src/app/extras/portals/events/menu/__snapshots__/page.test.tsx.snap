@@ -6,7 +6,35 @@ exports[`EventsMenu snapshot 1`] = `
     class="flex flex-col items-center gap-8"
   >
     <div
-      class="text-center max-w-xl"
+      class="w-full max-w-4xl self-stretch"
+    >
+      <a
+        class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[var(--navy)] bg-white/80 backdrop-blur-sm border border-[color:var(--navy)]/20 rounded-lg shadow-sm hover:bg-[color:var(--blue)]/10 hover:text-[var(--red)] hover:border-[color:var(--blue)]/40 hover:shadow-md transition-all duration-200 ease-in-out"
+        href="/api/events/logout"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M304 336v40a40 40 0 0 1-40 40H104a40 40 0 0 1-40-40V136a40 40 0 0 1 40-40h152c22.09 0 48 17.91 48 40v40m64 160 80-80-80-80m-192 80h256"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        Logout
+      </a>
+    </div>
+    <div
+      class="text-center max-w-xl animate-fade-in"
     >
       <h2
         class="text-3xl font-extrabold text-[var(--blue)] tracking-tight"
@@ -14,7 +42,7 @@ exports[`EventsMenu snapshot 1`] = `
         Manage Events
       </h2>
       <p
-        class="mt-2 text-gray-600"
+        class="mt-2 text-[var(--navy)]/80"
       >
         Create, edit, curate and keep the events board fresh.
       </p>
@@ -23,41 +51,41 @@ exports[`EventsMenu snapshot 1`] = `
       class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-2xl"
     >
       <a
-        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        class="card p-6 transition-base hover:shadow animate-slide-in-left flex flex-col items-center text-center"
         href="/extras/portals/events/add"
       >
         <span
-          class="font-semibold text-[var(--foreground)]"
+          class="font-semibold"
         >
           Add Event
         </span>
       </a>
       <a
-        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        class="card p-6 transition-base hover:shadow animate-slide-in-right flex flex-col items-center text-center"
         href="/extras/portals/events/edit"
       >
         <span
-          class="font-semibold text-[var(--foreground)]"
+          class="font-semibold"
         >
           Edit Event
         </span>
       </a>
       <a
-        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        class="card p-6 transition-base hover:shadow animate-slide-in-left flex flex-col items-center text-center"
         href="/extras/portals/events/remove"
       >
         <span
-          class="font-semibold text-[var(--foreground)]"
+          class="font-semibold"
         >
           Remove Event
         </span>
       </a>
       <a
-        class="rounded-xl bg-white/80 backdrop-blur border border-black/10 p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center"
+        class="card p-6 transition-base hover:shadow animate-slide-in-right flex flex-col items-center text-center"
         href="/extras/portals/events/upload-image"
       >
         <span
-          class="font-semibold text-[var(--foreground)]"
+          class="font-semibold"
         >
           Upload Image
         </span>

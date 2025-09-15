@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const UPLOAD_MAX_MB = Number(process.env.UPLOAD_MAX_MB ?? "10");
+
 const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
+      bodySizeLimit: `${UPLOAD_MAX_MB}mb`,
       allowedOrigins: ["cumsa.ca", "www.cumsa.ca", "localhost:3000", "localhost:12345"],
     },
   },

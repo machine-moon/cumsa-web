@@ -9,9 +9,9 @@ export function UploadPreview({ images }: { images: string[] }) {
   >("cover");
 
   return (
-    <div className="flex flex-col md:flex-row items-start gap-8 justify-center">
+    <div className="flex flex-col md:flex-row items-start gap-8 justify-center animate-fade-in">
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-gray-600">Preview Selected Image</span>
+        <span className="text-sm font-medium text-[var(--navy)]">Preview Selected Image</span>
         <EventPreview
           event={{
             title: "Sample Event",
@@ -24,9 +24,9 @@ export function UploadPreview({ images }: { images: string[] }) {
       </div>
       <div className="flex flex-col gap-4 max-w-xs">
         <div className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-gray-600">Available Images</span>
+          <span className="text-sm font-medium text-[var(--navy)]">Available Images</span>
           <select
-            className="w-full border rounded px-3 py-2 text-sm"
+            className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-3 py-2 text-sm focus:border-[var(--blue)] focus:outline-none"
             value={selectedImage || ""}
             onChange={(e) => setSelectedImage(e.target.value || undefined)}
           >
@@ -39,9 +39,9 @@ export function UploadPreview({ images }: { images: string[] }) {
           </select>
         </div>
         <div className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-gray-600">Image Display Style</span>
+          <span className="text-sm font-medium text-[var(--navy)]">Image Display Style</span>
           <select
-            className="w-full border rounded px-3 py-2 text-sm"
+            className="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-3 py-2 text-sm focus:border-[var(--blue)] focus:outline-none"
             value={imageStyle}
             onChange={(e: ChangeEvent<HTMLSelectElement>) =>
               setImageStyle(e.target.value as "cover" | "contain" | "fill" | "scale-down" | "none")
