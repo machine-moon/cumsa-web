@@ -39,7 +39,7 @@ export default function Navbar() {
     <div
       ref={navRef}
       style={{ zIndex: NAV_Z_INDEX }}
-      className="sticky top-0 shadow-sm bg-white/95 backdrop-blur-md border-b border-gray-200"
+      className="sticky top-0 shadow-sm bg-white/95 backdrop-blur-md border-b border-[color:var(--blue)]"
     >
       <div className="text-slate-800 relative z-10">
         <div className="container-base h-16 flex items-center justify-between">
@@ -76,9 +76,8 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden md:flex items-center gap-1 relative">
-            {/* Simple highlight background */}
             <motion.div
-              className="absolute top-1 bottom-1 rounded-lg pointer-events-none z-0 bg-blue-100/60"
+              className="absolute top-1 bottom-1 rounded-lg pointer-events-none z-0 bg-[var(--blue)]"
               animate={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             />

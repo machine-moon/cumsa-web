@@ -40,14 +40,20 @@ export default async function YourMasajidPage() {
   const masajid = await fetchMasajid();
 
   return (
-    <div className="container-base py-12">
-      <h1 className="text-3xl font-bold">United Muslim Organizations of Ottawa–Gatineau</h1>
-      <p className="mt-4 text-gray-700">
-        Explore local masajid and community centers in the Ottawa–Gatineau region.
-      </p>
-      {/* pass fetched masajid to client component */}
-      {/* @ts-expect-error Server -> Client prop */}
-      <YourMasajidClient initialMosques={masajid} />
+    <div className="bg-[var(--background)] min-h-screen py-12">
+      <div className="container-base">
+        <div className="text-center mb-12 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            United Muslim Organizations of Ottawa–Gatineau
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Explore local masajid and community centers in the Ottawa–Gatineau region.
+          </p>
+        </div>
+        <div className="animate-slide-in-left">
+          <YourMasajidClient initialMosques={masajid} />
+        </div>
+      </div>
     </div>
   );
 }

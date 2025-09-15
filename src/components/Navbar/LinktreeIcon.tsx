@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { LINKS } from "@/lib/constants";
 
 const circleVariants = {
-  idle: { scale: 0.8, opacity: 0, backgroundColor: "rgba(16,185,129,0)" }, // transparent
-  hover: { scale: 1, opacity: 1, backgroundColor: "rgba(16,185,129,0.98)" }, // teal/green
+  idle: { scale: 0.8, opacity: 0, backgroundColor: "rgba(16,185,129,0)" },
+  hover: { scale: 1, opacity: 1, backgroundColor: "rgba(16,185,129,0.98)" },
 };
 
 const iconVariants = {
-  idle: { color: "#059669" }, // green-600
+  idle: { color: "#059669" },
   hover: { color: "#ffffff" },
 };
 
@@ -24,7 +24,6 @@ export default function LinktreeIcon() {
       whileHover="hover"
       whileTap="idle"
     >
-      {/* circular green background */}
       <motion.span
         className="absolute z-0 rounded-full"
         style={{ width: 36, height: 36, borderRadius: 9999 }}

@@ -15,7 +15,6 @@ async function verifyPassword(formData: FormData): Promise<void> {
     (await cookies()).set("evt_auth", "1", { path: "/", httpOnly: true });
     redirect("/extras/portals/events/menu");
   }
-  // fallback: stay on page silently
 }
 
 export default function LoginPage() {

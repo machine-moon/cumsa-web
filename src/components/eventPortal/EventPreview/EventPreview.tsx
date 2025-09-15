@@ -142,7 +142,6 @@ export function EventPreview({ event }: { event: PreviewEvent }) {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-4 space-y-2">
         <h3
           className="font-bold text-gray-900 text-sm leading-tight group-hover:text-blue-600 transition-colors duration-200 overflow-hidden"
@@ -185,7 +184,6 @@ export function EventPreview({ event }: { event: PreviewEvent }) {
         </div>
       </div>
 
-      {/* Image style indicator */}
       {event.imageStyle && event.imageStyle !== "cover" && (
         <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/70 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {event.imageStyle}

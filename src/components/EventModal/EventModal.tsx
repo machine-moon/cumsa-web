@@ -118,7 +118,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             variants={backdropVariants}
             initial="hidden"
@@ -128,7 +127,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
             onClick={onClose}
           />
 
-          {/* Modal */}
           <motion.div
             variants={modalVariants}
             initial="hidden"
@@ -136,7 +134,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
             exit="exit"
             className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-2xl z-50 max-h-[60vh] overflow-hidden"
           >
-            {/* Header */}
             <motion.div
               variants={contentVariants}
               className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-3xl"
@@ -155,13 +152,9 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
               </motion.button>
             </motion.div>
 
-            {/* Content */}
             <div className="overflow-y-auto max-h-[calc(60vh-60px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-              {/* Responsive Layout */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                {/* Left Side - Image and Basic Info */}
                 <motion.div variants={contentVariants} className="lg:col-span-2 space-y-3 p-4">
-                  {/* Image */}
                   <motion.div
                     variants={contentVariants}
                     className="relative aspect-[3/2] overflow-hidden rounded-xl shadow-md"
@@ -177,7 +170,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl" />
                   </motion.div>
 
-                  {/* Title */}
                   <motion.h2
                     variants={contentVariants}
                     className="text-lg font-bold text-gray-800 leading-tight"
@@ -186,9 +178,7 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                   </motion.h2>
                 </motion.div>
 
-                {/* Right Side - Event Details */}
                 <motion.div variants={contentVariants} className="lg:col-span-3 p-4 space-y-3">
-                  {/* Event Details Grid */}
                   <motion.div className="space-y-2">
                     <motion.div
                       variants={infoCardVariants}
@@ -243,7 +233,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     )}
                   </motion.div>
 
-                  {/* Description */}
                   {event.description && (
                     <motion.div
                       variants={contentVariants}
@@ -258,7 +247,6 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     </motion.div>
                   )}
 
-                  {/* Action Button */}
                   {event.link && (
                     <motion.div variants={contentVariants} className="pt-2">
                       <Link

@@ -3,7 +3,7 @@
 exports[`Navbar snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sticky top-0 shadow-sm bg-white/95 backdrop-blur-md border-b border-gray-200"
+    class="sticky top-0 shadow-sm bg-white/95 backdrop-blur-md border-b border-[color:var(--blue)]"
     style="z-index: 9999;"
   >
     <div
@@ -96,7 +96,7 @@ exports[`Navbar snapshot 1`] = `
           class="hidden md:flex items-center gap-1 relative"
         >
           <div
-            class="absolute top-1 bottom-1 rounded-lg pointer-events-none z-0 bg-blue-100/60"
+            class="absolute top-1 bottom-1 rounded-lg pointer-events-none z-0 bg-[var(--blue)]"
           />
           <div
             class="relative z-10"
@@ -105,13 +105,13 @@ exports[`Navbar snapshot 1`] = `
               class="relative inline-block"
             >
               <a
-                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-blue-600"
+                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-[var(--blue)]"
                 href="/"
               >
                 Home
               </a>
               <span
-                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 rounded-full bg-blue-600 z-20"
+                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 rounded-full bg-[var(--blue)] z-20"
               />
             </div>
           </div>
@@ -122,7 +122,7 @@ exports[`Navbar snapshot 1`] = `
               class="relative inline-block"
             >
               <a
-                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-blue-600"
+                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-[var(--blue)]"
                 href="/donate"
               >
                 Donate
@@ -140,7 +140,7 @@ exports[`Navbar snapshot 1`] = `
                 aria-haspopup="menu"
                 class="
           flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 relative z-20 font-medium
-          text-slate-700 hover:text-blue-600
+          text-slate-700 hover:text-[var(--blue)]
         "
                 type="button"
               >
@@ -178,7 +178,7 @@ exports[`Navbar snapshot 1`] = `
                 aria-haspopup="menu"
                 class="
           flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 relative z-20 font-medium
-          text-slate-700 hover:text-blue-600
+          text-slate-700 hover:text-[var(--blue)]
         "
                 type="button"
               >
@@ -212,7 +212,7 @@ exports[`Navbar snapshot 1`] = `
               class="relative inline-block"
             >
               <a
-                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-blue-600"
+                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-[var(--blue)]"
                 href="/events"
               >
                 Events
@@ -226,7 +226,7 @@ exports[`Navbar snapshot 1`] = `
               class="relative inline-block"
             >
               <a
-                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-blue-600"
+                class="px-3 py-2 rounded-lg transition-colors duration-150 relative z-10 font-medium text-slate-700 hover:text-[var(--blue)]"
                 href="/contact-us"
               >
                 Contact Us

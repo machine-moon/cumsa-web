@@ -3,27 +3,51 @@
 exports[`land acknowledgement page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container-base py-12"
+    class="bg-[var(--background)] min-h-screen py-12"
   >
-    <h1
-      class="text-3xl font-bold"
-    >
-      Land Acknowledgement
-    </h1>
-    <p
-      class="mt-4 text-gray-700"
-    >
-      As Muslims committed to justice, we recognize that we live, learn, and worship on the unceded, unsurrendered territory of the Algonquin nation. We affirm our responsibility to support Indigenous self-determination and to work toward justice in word and deed.
-    </p>
     <div
-      class="mt-6 space-y-4 text-gray-700"
+      class="container-base"
     >
-      <p>
-        We remember the Qur’anic call to stand firm for justice (4:135) and the Prophetic teachings against oppression. We ask God to help us uphold these commitments and to work in solidarity with the Algonquin people.
-      </p>
-      <p>
-        Ameen.
-      </p>
+      <div
+        class="max-w-4xl mx-auto text-center animate-fade-in"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-bold text-gray-800 mb-8"
+        >
+          Land Acknowledgement
+        </h1>
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 md:p-12 animate-slide-in-left"
+        >
+          <p
+            class="text-xl text-gray-700 leading-relaxed mb-6"
+          >
+            As Muslims committed to justice, we recognize that we live, learn, and worship on the unceded, unsurrendered territory of the Algonquin nation. We affirm our responsibility to support Indigenous self-determination and to work toward justice in word and deed.
+          </p>
+          <div
+            class="space-y-6 text-lg text-gray-700 animate-slide-in-right"
+          >
+            <p>
+              We remember the Qur’anic call to stand firm for justice (
+              <a
+                class="link-cta no-underline"
+                href="https://quran.com/an-nisa/135"
+                rel="noopener noreferrer"
+                style="text-decoration: none;"
+                target="_blank"
+              >
+                4:135
+              </a>
+              ) and the Prophetic teachings against oppression. We ask God to help us uphold these commitments and to work in solidarity with the Algonquin people.
+            </p>
+            <p
+              class="text-2xl font-semibold text-[var(--blue)]"
+            >
+              Ameen.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>

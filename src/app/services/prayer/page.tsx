@@ -19,12 +19,14 @@ export default async function PrayerServicesPage() {
         <span aria-hidden className="logo-mask-blue" style={{ width: 260, height: 100 }} />
       </div>
       <div className="container-base py-10">
-        <h1 className="text-3xl font-bold">Stay Up To Date</h1>
-        <p className="mt-2 text-gray-700">
-          Follow our socials or subscribe for Jummah location and timing updates.
-        </p>
+        <div className="animate-fade-in">
+          <h1 className="text-3xl font-bold">Stay Up To Date</h1>
+          <p className="mt-2 text-gray-700">
+            Follow our socials or subscribe for Jummah location and timing updates.
+          </p>
+        </div>
 
-        <section className="mt-8 rounded-lg border border-black/10 bg-white p-5">
+        <section className="mt-8 rounded-lg border border-black/10 bg-white p-5 animate-slide-in-left">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 className="text-xl font-semibold text-[var(--red)]">Prayer Times</h2>
@@ -67,7 +69,7 @@ export default async function PrayerServicesPage() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-y-0 gap-x-0 md:gap-x-6">
           <div className="flex flex-col gap-10 md:border-r md:border-black/10 md:pr-6">
-            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4">
+            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 animate-slide-in-left hover:shadow-md transition-shadow">
               <h2 className="text-xl font-semibold">Musalla (Prayer Room)</h2>
               <p className="mt-2 text-gray-700">
                 Open daily for all Muslim students with wudhu facilities for brothers and sisters.
@@ -99,7 +101,7 @@ export default async function PrayerServicesPage() {
                 View on ClassFind →
               </a>
             </section>
-            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-10 md:mt-0">
+            <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-10 md:mt-0 animate-slide-in-right hover:shadow-md transition-shadow">
               <h2 className="text-xl font-semibold">Paterson Hall</h2>
               <p className="mt-2 text-gray-700">Another option for prayer on campus.</p>
               <p className="mt-2 text-gray-700">
@@ -115,7 +117,7 @@ export default async function PrayerServicesPage() {
               </a>
             </section>
           </div>
-          <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-12 md:mt-0">
+          <section className="rounded-lg border border-black/10 bg-white p-6 md:p-4 mt-12 md:mt-0 animate-slide-in-right hover:shadow-md transition-shadow">
             <h2 className="text-xl font-semibold text-[var(--red)]">Jummuah</h2>
             <p className="mt-2 text-gray-700">
               Weekly Jummuah prayers at the Fieldhouse or Norm Fenn Gym.

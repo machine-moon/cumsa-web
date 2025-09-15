@@ -3,42 +3,82 @@
 exports[`contact form snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="mt-3 space-y-3"
+    class="space-y-6 animate-fade-in"
   >
     <div
-      data-testid="stub"
-      name="name"
-      placeholder="Your name"
-      required=""
-    />
-    <div
-      data-testid="stub"
-      name="email"
-      placeholder="Your email"
-      required=""
-      type="email"
-    />
-    <div
-      data-testid="stub"
-      name="subject"
-      placeholder="Subject"
-    />
-    <textarea
-      class="w-full rounded-md border border-black/10 bg-[var(--surface)] px-3 py-2 text-[var(--foreground)] placeholder-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
-      name="message"
-      placeholder="Message"
-      required=""
-      rows="5"
-    />
-    <div
-      class="flex items-center gap-3"
+      class="grid gap-4 md:grid-cols-2"
     >
       <div
+        class="animate-slide-in-left"
+      >
+        <div
+          class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+          data-testid="stub"
+          name="name"
+          placeholder="Your name"
+          required=""
+        />
+      </div>
+      <div
+        class="animate-slide-in-right"
+      >
+        <div
+          class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+          data-testid="stub"
+          name="email"
+          placeholder="Your email"
+          required=""
+          type="email"
+        />
+      </div>
+    </div>
+    <div
+      class="animate-slide-in-left"
+    >
+      <div
+        class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+        data-testid="stub"
+        name="subject"
+        placeholder="Subject"
+      />
+    </div>
+    <div
+      class="animate-slide-in-right"
+    >
+      <textarea
+        class="w-full rounded-lg border-2 border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+        name="message"
+        placeholder="Tell us what’s on your mind..."
+        required=""
+        rows="6"
+      />
+    </div>
+    <div
+      class="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in"
+    >
+      <div
+        class="btn-cozy btn-primary flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
         data-testid="stub"
         type="submit"
       >
-        Send
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+          />
+        </svg>
+        Send Message
       </div>
+      <div
+        class="text-sm transition-opacity duration-300 opacity-0"
+      />
     </div>
   </form>
 </DocumentFragment>

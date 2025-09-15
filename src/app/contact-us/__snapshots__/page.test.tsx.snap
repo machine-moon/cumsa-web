@@ -3,102 +3,191 @@
 exports[`contact page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container-base py-12"
+    class="min-h-screen py-12 bg-[var(--background)]"
   >
-    <h1
-      class="text-3xl font-bold"
-    >
-      Contact Us
-    </h1>
     <div
-      class="mt-4 grid gap-8 md:grid-cols-2"
+      class="container-base"
     >
-      <section>
-        <h2
-          class="text-xl font-semibold"
+      <div
+        class="text-center mb-12 animate-fade-in"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
         >
-          General Inquiries
-        </h2>
+          Get in Touch
+        </h1>
         <p
-          class="mt-2"
+          class="text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          <a
-            class="text-[var(--blue)]"
-            href="mailto:info@cumsa.ca"
-          >
-            info@cumsa.ca
-          </a>
+          We’d love to hear from you! Reach out with any questions or just to say hello.
         </p>
-        <div
-          class="mt-4 text-gray-700"
+      </div>
+      <div
+        class="grid gap-8 lg:grid-cols-2"
+      >
+        <section
+          class="card p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-left"
         >
-          <p>
-            Muslim Students’ Association
-          </p>
-          <p>
-            Carleton University
-          </p>
-          <p>
-            426 University Centre
-          </p>
-          <p>
-            1125 Colonel By Drive
-          </p>
-          <p>
-            Ottawa, ON K1S 5B6
-          </p>
-        </div>
-        <div
-          class="mt-6 text-[var(--blue)]"
-          data-testid="stub"
-        />
-      </section>
-      <section>
-        <h2
-          class="text-xl font-semibold"
-        >
-          Send us a message
-        </h2>
-        <form
-          class="mt-3 space-y-3"
-        >
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-6 flex items-center gap-3"
+          >
+            Contact Information
+          </h2>
           <div
-            data-testid="stub"
-            name="name"
-            placeholder="Your name"
-            required=""
-          />
-          <div
-            data-testid="stub"
-            name="email"
-            placeholder="Your email"
-            required=""
-            type="email"
-          />
-          <div
-            data-testid="stub"
-            name="subject"
-            placeholder="Subject"
-          />
-          <textarea
-            class="w-full rounded-md border border-black/10 bg-[var(--surface)] px-3 py-2 text-[var(--foreground)] placeholder-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
-            name="message"
-            placeholder="Message"
-            required=""
-            rows="5"
-          />
-          <div
-            class="flex items-center gap-3"
+            class="space-y-6"
           >
             <div
-              data-testid="stub"
-              type="submit"
+              class="flex items-start gap-4"
             >
-              Send
+              <svg
+                class="mt-1 flex-shrink-0"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: var(--blue);"
+                viewBox="0 0 512 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                />
+              </svg>
+              <div>
+                <a
+                  href="mailto:info@cumsa.ca"
+                  style="color: var(--blue);"
+                >
+                  info@cumsa.ca
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4"
+            >
+              <svg
+                class="mt-1 flex-shrink-0"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: var(--blue);"
+                viewBox="0 0 384 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                />
+              </svg>
+              <div>
+                <address
+                  class="text-gray-600 not-italic"
+                >
+                  Muslim Students’ Association
+                  <br />
+                  Carleton University
+                  <br />
+                  426 University Centre
+                  <br />
+                  1125 Colonel By Drive
+                  <br />
+                  Ottawa, ON K1S 5B6
+                </address>
+              </div>
             </div>
           </div>
-        </form>
-      </section>
+        </section>
+        <section
+          class="card p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right"
+        >
+          <h2
+            class="text-2xl font-semibold text-gray-800 mb-6 flex items-center gap-3"
+          >
+            Send us a Message
+          </h2>
+          <form
+            class="space-y-6 animate-fade-in"
+          >
+            <div
+              class="grid gap-4 md:grid-cols-2"
+            >
+              <div
+                class="animate-slide-in-left"
+              >
+                <div
+                  class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+                  data-testid="stub"
+                  name="name"
+                  placeholder="Your name"
+                  required=""
+                />
+              </div>
+              <div
+                class="animate-slide-in-right"
+              >
+                <div
+                  class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+                  data-testid="stub"
+                  name="email"
+                  placeholder="Your email"
+                  required=""
+                  type="email"
+                />
+              </div>
+            </div>
+            <div
+              class="animate-slide-in-left"
+            >
+              <div
+                class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
+                data-testid="stub"
+                name="subject"
+                placeholder="Subject"
+              />
+            </div>
+            <div
+              class="animate-slide-in-right"
+            >
+              <textarea
+                class="w-full rounded-lg border-2 border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                name="message"
+                placeholder="Tell us what’s on your mind..."
+                required=""
+                rows="6"
+              />
+            </div>
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in"
+            >
+              <div
+                class="btn-cozy btn-primary flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
+                data-testid="stub"
+                type="submit"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+                  />
+                </svg>
+                Send Message
+              </div>
+              <div
+                class="text-sm transition-opacity duration-300 opacity-0"
+              />
+            </div>
+          </form>
+        </section>
+      </div>
     </div>
   </div>
 </DocumentFragment>

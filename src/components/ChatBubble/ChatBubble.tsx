@@ -7,10 +7,16 @@ export default function ChatBubble() {
   return (
     <div className="fixed bottom-4 right-4 z-[60]">
       {open && (
-        <div className="mb-3 w-80 rounded-xl bg-white shadow-xl ring-1 ring-black/10 overflow-hidden">
-          <div className="bg-[var(--header-top)] text-white px-4 py-3 font-semibold">
-            Need help?
-          </div>
+        <div className="mb-3 w-80 rounded-xl bg-white shadow-xl ring-1 ring-black/10 overflow-hidden relative">
+          <button
+            aria-label="Close chat"
+            onClick={() => setOpen(false)}
+            className="absolute top-2 right-2 text-white bg-[var(--blue)] rounded-full w-8 h-8 flex items-center justify-center text-xl hover:bg-[var(--navy)] transition"
+            type="button"
+          >
+            ×
+          </button>
+          <div className="bg-[var(--blue)] text-white px-4 py-3 font-semibold">Need help?</div>
           <div className="p-4 space-y-3">
             <p className="text-sm text-gray-700">
               Hi! Let us know how we can help and we’ll respond shortly.
@@ -74,13 +80,15 @@ export default function ChatBubble() {
           </div>
         </div>
       )}
-      <button
-        aria-label="Open chat"
-        onClick={() => setOpen((v) => !v)}
-        className="btn-cozy btn-primary shadow-lg"
-      >
-        {open ? "Close" : "Chat"}
-      </button>
+      {!open && (
+        <button
+          aria-label="Open chat"
+          onClick={() => setOpen(true)}
+          className="btn-cozy btn-primary shadow-lg"
+        >
+          Chat
+        </button>
+      )}
     </div>
   );
 }

@@ -5,19 +5,15 @@ import { notFound } from "next/navigation";
 export const metadata = { title: "Release Notes | CUMSA" };
 
 function parseReleaseNotes(text: string) {
-  // Remove template section (vX.Y.Z ...)
   const templateIdx = text.indexOf("\nvX.Y.Z");
   const mainText = templateIdx !== -1 ? text.slice(0, templateIdx) : text;
-  // Split by version header
   const sections = mainText.split(/\nv(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)\n[-]+\n/);
-  // sections[0] is header, then [1]=ver, [2]=date, [3]=body, repeat
   const notes = [];
   for (let i = 1; i < sections.length; i += 3) {
     const version = sections[i];
     const date = sections[i + 1];
     const body = sections[i + 2];
     if (version && date && body) {
-      // Author is first non-empty line in body
       const lines = body.split("\n").map((l) => l.trim());
       const author = lines.find((l) => l && !l.startsWith("-")) || "";
       notes.push({ version, date, author, body });

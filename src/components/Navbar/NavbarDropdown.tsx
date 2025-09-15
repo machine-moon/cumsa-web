@@ -14,15 +14,14 @@ interface NavbarDropdownProps {
 export default function NavbarDropdown({ item, isOpen, active, onToggle }: NavbarDropdownProps) {
   return (
     <div className="relative">
-      {/* show a small blue block when active */}
       {active && (
-        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 rounded-full bg-blue-600 z-0" />
+        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 rounded-full bg-[var(--blue)] z-0" />
       )}
 
       <button
         className={`
           flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 relative z-20 font-medium
-          ${isOpen ? "text-blue-600" : "text-slate-700 hover:text-blue-600"}
+          ${isOpen ? "text-[var(--blue)]" : "text-slate-700 hover:text-[var(--blue)]"}
         `}
         type="button"
         onClick={(e) => {
@@ -64,7 +63,7 @@ interface DropdownItemProps {
 
 function DropdownItem({ child }: DropdownItemProps) {
   const itemClass =
-    "block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150 rounded-md mx-2 my-1";
+    "block px-4 py-2 hover:bg-[color:rgba(90,206,216,0.12)] hover:text-[var(--navy)] transition-colors duration-150 rounded-md mx-2 my-1";
 
   if (child.href.startsWith("http")) {
     return (

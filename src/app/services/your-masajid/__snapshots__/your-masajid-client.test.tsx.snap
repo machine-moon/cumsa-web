@@ -522,9 +522,10 @@ exports[`your masajid client snapshot 1`] = `
     </div>
     <div>
       <div
-        data-testid="stub"
-        mosques="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-      />
+        class="flex items-center justify-center h-[480px] bg-gray-100 rounded-xl"
+      >
+        Loading map...
+      </div>
     </div>
   </div>
 </DocumentFragment>

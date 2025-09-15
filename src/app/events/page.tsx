@@ -27,7 +27,6 @@ type Event = {
   description?: string;
 };
 
-// Event Card Component for better maintainability
 function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: Event) => void }) {
   const getImageClassName = (style: string | undefined) => {
     switch (style) {
@@ -61,7 +60,6 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
 
   return (
     <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
-      {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={event.image || "/MSA.png"}
@@ -72,7 +70,6 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      {/* Content */}
       <div className="p-4 space-y-2">
         <h3
           className="font-bold text-gray-900 text-lg leading-tight group-hover:text-blue-600 transition-colors duration-200 overflow-hidden"
@@ -107,7 +104,6 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
           )}
         </div>
 
-        {/* Action buttons */}
         <div className="flex items-center justify-between pt-2">
           {event.description && (
             <button
@@ -136,7 +132,6 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
   );
 }
 
-// Loading skeleton component
 function EventSkeleton() {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
@@ -162,7 +157,6 @@ function EventSkeleton() {
   );
 }
 
-// Empty state component
 function EmptyState() {
   return (
     <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
@@ -235,55 +229,50 @@ export default function EventsPage() {
   }
 
   return (
-    <div className="container-base py-12">
-      <div className="portal-glow">
-        <div className="w-full p-8 space-y-8">
-          {/* Header Section */}
-          <div className="text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-700 font-medium text-sm">
-              <IoCalendarOutline className="w-4 h-4" />
-              Upcoming Events
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-              Join Our Amazing{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Events
-              </span>
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover exciting opportunities to connect, learn, and grow with our community!
-            </p>
-          </div>
-
-          {/* Events Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {loading ? (
-              // Show skeletons while loading
-              Array.from({ length: 8 }, (_, i) => <EventSkeleton key={i} />)
-            ) : events.length > 0 ? (
-              // Show events
-              events.map((event) => (
-                <EventCard key={event.id} event={event} onInfoClick={handleInfoClick} />
-              ))
-            ) : (
-              // Show empty state
-              <EmptyState />
-            )}
-          </div>
-
-          {/* Footer Note */}
-          {!loading && events.length > 0 && (
-            <div className="text-center pt-8 border-t border-gray-100">
-              <p className="text-sm text-gray-500">
-                Found {events.length} upcoming event{events.length !== 1 ? "s" : ""} •
-                <span className="ml-1">More events coming soon!</span>
+    <div className="bg-[var(--background)] min-h-screen py-12">
+      <div className="container-base">
+        <div className="portal-glow animate-fade-in">
+          <div className="w-full p-8 space-y-8">
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-700 font-medium text-sm animate-slide-in-left">
+                <IoCalendarOutline className="w-4 h-4" />
+                Upcoming Events
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
+                Join Our Amazing{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Events
+                </span>
+              </h1>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Discover exciting opportunities to connect, learn, and grow with our community!
               </p>
             </div>
-          )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {loading ? (
+                Array.from({ length: 8 }, (_, i) => <EventSkeleton key={i} />)
+              ) : events.length > 0 ? (
+                events.map((event) => (
+                  <EventCard key={event.id} event={event} onInfoClick={handleInfoClick} />
+                ))
+              ) : (
+                <EmptyState />
+              )}
+            </div>
+
+            {!loading && events.length > 0 && (
+              <div className="text-center pt-8 border-t border-gray-100">
+                <p className="text-sm text-gray-500">
+                  Found {events.length} upcoming event{events.length !== 1 ? "s" : ""} •
+                  <span className="ml-1">More events coming soon!</span>
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Event Modal */}
       <EventModal event={selectedEvent} isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );

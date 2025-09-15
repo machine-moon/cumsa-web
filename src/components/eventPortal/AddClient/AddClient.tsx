@@ -16,7 +16,6 @@ export function AddClient() {
     "cover" | "contain" | "fill" | "scale-down" | "none"
   >("cover");
 
-  // wire inputs by listening for form field changes via delegation
   useEffect(() => {
     function handler(e: globalThis.Event) {
       const target = e.target as HTMLInputElement | HTMLSelectElement | null;

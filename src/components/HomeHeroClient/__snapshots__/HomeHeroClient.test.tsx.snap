@@ -3,67 +3,81 @@
 exports[`HomeHeroClient snapshot 1`] = `
 <DocumentFragment>
   <section
-    class="relative overflow-hidden"
+    class="relative overflow-hidden min-h-[65vh] md:min-h-[75vh]"
   >
     <div
       class="absolute inset-0 -z-10"
     >
       <img
         alt="CUMSA banner"
-        class="object-cover"
-        src="/zahid-lilani-unsplash-scaled.jpg"
+        class="object-cover object-center"
+        src="/UC.jpeg"
         style="position: absolute; inset: 0;"
       />
       <div
-        class="absolute inset-0 bg-[var(--navy)]/55"
+        class="absolute inset-0 hero-overlay"
+      />
+      <div
+        class="hero-glow hero-glow-1"
+      />
+      <div
+        class="hero-glow hero-glow-2"
       />
     </div>
     <div
-      class="container-base py-24 md:py-32 text-white"
+      class="container-base py-16 md:py-28 text-white"
     >
-      <h1
-        class="text-3xl md:text-5xl font-extrabold tracking-tight"
-        style="opacity: 0; transform: translateY(12px);"
-      >
-        Carleton University Muslim Students’ Association
-      </h1>
       <div
-        class="mt-4 max-w-2xl text-white/85 text-lg"
+        class="max-w-3xl"
       >
         <div
-          class="Typewriter"
-          data-testid="typewriter-wrapper"
+          class="frost-card p-6 md:p-8 animate-fade-in"
         >
-          <span
-            class="Typewriter__wrapper"
-          />
-          <span
-            class="Typewriter__cursor"
+          <h1
+            class="text-2xl md:text-6xl font-extrabold leading-tight"
+            style="opacity: 0; transform: translateY(12px);"
           >
-            <span
-              class="typewriter-cursor"
+            Carleton University Muslim Students’ Association
+          </h1>
+          <div
+            class="mt-3 md:mt-4 max-w-2xl text-white/90 text-lg"
+          >
+            <div
+              class="Typewriter"
+              data-testid="typewriter-wrapper"
             >
-              |
-            </span>
-          </span>
+              <span
+                class="Typewriter__wrapper"
+              />
+              <span
+                class="Typewriter__cursor"
+              >
+                <span
+                  class="typewriter-cursor"
+                >
+                  |
+                </span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="mt-6 md:mt-8 flex flex-wrap gap-3"
+            style="opacity: 0;"
+          >
+            <a
+              class="btn-cozy border-2 border-[color-mix(in_oklab,var(--blue)_40%,transparent)] bg-[color-mix(in_oklab,var(--blue)_10%,transparent)] text-white/90 hover:bg-[var(--blue)] hover:text-white transition-base"
+              href="/services/prayer"
+            >
+              Prayers
+            </a>
+            <a
+              class="btn-cozy border-2 border-[color-mix(in_oklab,var(--blue)_40%,transparent)] bg-[color-mix(in_oklab,var(--blue)_10%,transparent)] text-white/90 hover:bg-[var(--blue)] hover:text-white transition-base"
+              href="/events"
+            >
+              Events
+            </a>
+          </div>
         </div>
-      </div>
-      <div
-        class="mt-8 flex flex-wrap gap-3"
-        style="opacity: 0;"
-      >
-        <a
-          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[var(--blue)] text-white hover:opacity-90 focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
-          href="/services/prayer"
-        >
-          Prayers
-        </a>
-        <a
-          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none border border-black/10 bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--blue)] hover:text-white focus-visible:ring-[var(--blue)] ring-offset-[var(--surface)] px-4 py-2"
-          href="/events"
-        >
-          Events
-        </a>
       </div>
     </div>
   </section>

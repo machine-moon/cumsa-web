@@ -26,8 +26,8 @@ interface DeviceOrientationEventWithWebkit extends DeviceOrientationEvent {
 }
 
 const KAABA_LOCATION: Location = { lat: 21.422487, lng: 39.826206 };
-const ALIGNMENT_THRESHOLD = 15; // degrees - more forgiving
-const COMPASS_UPDATE_INTERVAL = 100; // ms
+const ALIGNMENT_THRESHOLD = 15;
+const COMPASS_UPDATE_INTERVAL = 100;
 
 function calcQiblaDirection(userLat: number, userLng: number): number {
   const toRad = (deg: number) => (deg * Math.PI) / 180;
@@ -101,7 +101,6 @@ export default function QiblaFinderPage() {
       }));
 
       if (qibla.direction !== null) {
-        // Calculate the shortest angular distance between current heading and qibla direction
         let angleDiff = Math.abs(qibla.direction - heading);
         if (angleDiff > 180) {
           angleDiff = 360 - angleDiff;
@@ -175,7 +174,7 @@ export default function QiblaFinderPage() {
         {
           enableHighAccuracy: true,
           timeout: 10000,
-          maximumAge: 300000, // 5 minutes
+          maximumAge: 300000,
         },
       );
     });
@@ -195,7 +194,6 @@ export default function QiblaFinderPage() {
       }
     }
 
-    // Test if device orientation is available
     return new Promise((resolve, reject) => {
       let hasReceived = false;
       const testHandler = () => {
@@ -220,11 +218,9 @@ export default function QiblaFinderPage() {
       setAppState("requesting-permission");
       setError(null);
 
-      // Request location first
       const userLocation = await requestLocationPermission();
       setLocation(userLocation);
 
-      // Calculate Qibla direction and distance
       const qiblaDirection = calcQiblaDirection(userLocation.lat, userLocation.lng);
       const distanceToKaaba = calcDistance(
         userLocation.lat,
@@ -239,10 +235,8 @@ export default function QiblaFinderPage() {
         isAligned: false,
       });
 
-      // Request orientation permission
       await requestOrientationPermission();
 
-      // Start listening to device orientation
       const eventName =
         "deviceorientationabsolute" in window ? "deviceorientationabsolute" : "deviceorientation";
 
@@ -282,7 +276,6 @@ export default function QiblaFinderPage() {
   return (
     <div className="container-base min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 p-4">
       <div className="w-full max-w-lg bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-6 flex flex-col items-center border border-white/20">
-        {/* Header */}
         <div className="text-center mb-6">
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
             🕋 Qibla Finder
@@ -292,7 +285,6 @@ export default function QiblaFinderPage() {
           </p>
         </div>
 
-        {/* Status & Error Display */}
         {error && (
           <div className="w-full mb-4 p-4 bg-red-50 border border-red-200 rounded-xl">
             <div className="flex items-start gap-3">
@@ -311,7 +303,6 @@ export default function QiblaFinderPage() {
           </div>
         )}
 
-        {/* Location Info */}
         {location && qibla.distance && (
           <div className="w-full mb-4 p-3 bg-blue-50 border border-blue-200 rounded-xl">
             <div className="text-center">
@@ -325,16 +316,13 @@ export default function QiblaFinderPage() {
           </div>
         )}
 
-        {/* Compass Display */}
         <div className="relative mb-6">
           <div className="relative w-72 h-72 rounded-full shadow-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center border-8 border-white/50 overflow-hidden">
-            {/* North Indicator (Red Triangle) */}
             <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20">
               <div className="w-0 h-0 border-l-3 border-r-3 border-b-6 border-l-transparent border-r-transparent border-b-red-500" />
               <p className="text-red-500 text-xs font-bold mt-1 text-center">N</p>
             </div>
 
-            {/* MASSIVE Qibla Direction Marker - ALWAYS VISIBLE */}
             {qibla.direction !== null && (
               <div
                 className={`absolute w-16 h-16 flex items-center justify-center rounded-full border-4 shadow-2xl z-40 transition-all duration-300 ${
@@ -353,7 +341,6 @@ export default function QiblaFinderPage() {
               </div>
             )}
 
-            {/* BACKUP Qibla Arrow - Just in case emoji doesn't show */}
             {qibla.direction !== null && (
               <div
                 className={`absolute w-0 h-0 z-35 transition-all duration-300 ${
@@ -371,7 +358,6 @@ export default function QiblaFinderPage() {
               />
             )}
 
-            {/* Compass Rose Background - rotates with device */}
             <div
               ref={compassRef}
               className="absolute w-5/6 h-5/6 transition-transform duration-200 ease-out"
@@ -384,10 +370,8 @@ export default function QiblaFinderPage() {
               }}
             />
 
-            {/* Phone Direction Indicator */}
             {compass.heading !== null && appState === "active" && qibla.direction !== null && (
               <>
-                {/* Your Current Direction Line - points where you're actually facing */}
                 <div
                   className={`absolute w-1 transition-all duration-300 ${
                     qibla.isAligned ? "bg-green-500 shadow-lg shadow-green-500/50" : "bg-blue-500"
@@ -401,7 +385,6 @@ export default function QiblaFinderPage() {
                   }}
                 />
 
-                {/* Your Phone Icon - shows where you're pointing relative to Qibla */}
                 <div
                   className={`absolute w-10 h-10 transition-all duration-300 flex items-center justify-center rounded-full border-2 ${
                     qibla.isAligned
@@ -420,16 +403,13 @@ export default function QiblaFinderPage() {
               </>
             )}
 
-            {/* Center Dot */}
             <div className="absolute w-4 h-4 bg-slate-600 rounded-full shadow-md z-10" />
 
-            {/* Alignment Indicator */}
             {qibla.isAligned && appState === "active" && (
               <div className="absolute inset-0 border-4 border-green-400 rounded-full animate-pulse" />
             )}
           </div>
 
-          {/* Calibration Warning - only show if really needed */}
           {compass.calibrationNeeded &&
             compass.accuracy &&
             compass.accuracy > 50 &&
@@ -442,7 +422,6 @@ export default function QiblaFinderPage() {
             )}
         </div>
 
-        {/* Status Messages */}
         <div className="text-center mb-6 min-h-[3rem] flex items-center justify-center">
           {appState === "idle" && (
             <p className="text-gray-600 text-sm">Press the button below to start finding Qibla</p>
@@ -477,7 +456,6 @@ export default function QiblaFinderPage() {
           )}
         </div>
 
-        {/* Action Buttons */}
         <div className="w-full space-y-3">
           {appState === "idle" || appState === "error" ? (
             <button
@@ -506,7 +484,6 @@ export default function QiblaFinderPage() {
           )}
         </div>
 
-        {/* Help Text */}
         <div className="mt-6 text-center space-y-2">
           <div className="text-xs text-gray-500 max-w-sm leading-relaxed">
             <p className="font-semibold mb-2">📖 How to use:</p>

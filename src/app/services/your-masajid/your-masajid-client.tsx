@@ -1,16 +1,39 @@
 "use client";
 import { useState } from "react";
-import MasajidMapClient from "@/components/MasajidMapClient";
+import dynamic from "next/dynamic";
 import { MOSQUES } from "@/lib/constants";
 import { FaChevronDown } from "react-icons/fa";
 
-export default function YourMasajidClient() {
+// Dynamically import MasajidMapClient with SSR disabled to prevent window errors
+const MasajidMapClient = dynamic(() => import("@/components/MasajidMapClient"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-[480px] bg-gray-100 rounded-xl">
+      Loading map...
+    </div>
+  ),
+});
+
+type Masjid = {
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+  website?: string;
+  phone?: string;
+  osm_id?: number;
+};
+
+export default function YourMasajidClient({ initialMosques }: { initialMosques?: Masjid[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  // Use initialMosques if provided and not empty, otherwise fall back to MOSQUES constant
+  const mosques = initialMosques && initialMosques.length > 0 ? initialMosques : MOSQUES;
 
   return (
     <div className="mt-8 grid gap-8 md:grid-cols-2">
       <div className="space-y-3">
-        {MOSQUES.map((m, i) => (
+        {mosques.map((m, i) => (
           <div key={m.name} className="rounded-lg border border-black/10 bg-white">
             <button
               className="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
@@ -46,7 +69,7 @@ export default function YourMasajidClient() {
         ))}
       </div>
       <div>
-        <MasajidMapClient mosques={MOSQUES} />
+        <MasajidMapClient mosques={mosques} />
       </div>
     </div>
   );

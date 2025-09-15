@@ -24,20 +24,24 @@ const CHAPLAINS: Chaplain[] = [
 export default function ChaplaincyServicesPage() {
   return (
     <div className="container-base py-12">
-      <h1 className="text-3xl font-bold">Chaplaincy Services</h1>
-      <p className="mt-4 text-gray-700 max-w-3xl">
-        We aim to provide a safe, inclusive environment to seek mentorship, counselling, and
-        guidance. Our chaplains combine lived experience with formal training to support Muslim
-        students spiritually, emotionally, and intellectually.
-      </p>
+      <div className="animate-fade-in">
+        <h1 className="text-3xl font-bold">Chaplaincy Services</h1>
+        <p className="mt-4 text-gray-700 max-w-3xl">
+          We aim to provide a safe, inclusive environment to seek mentorship, counselling, and
+          guidance. Our chaplains combine lived experience with formal training to support Muslim
+          students spiritually, emotionally, and intellectually.
+        </p>
+      </div>
       <div className="mt-10 grid gap-8 md:grid-cols-2">
-        {CHAPLAINS.map((c) => (
+        {CHAPLAINS.map((c, index) => (
           <article
             key={c.name}
-            className="rounded-lg border border-black/10 bg-white p-5 shadow-sm"
+            className={`rounded-lg border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-300 ${
+              index === 0 ? "animate-slide-in-left" : "animate-slide-in-right"
+            }`}
           >
             <div className="flex items-start gap-4">
-              <div className="relative w-28 h-28 rounded-md overflow-hidden ring-1 ring-black/10 flex-shrink-0">
+              <div className="relative w-28 h-28 rounded-md overflow-hidden ring-1 ring-black/10 flex-shrink-0 hover:ring-blue-300 transition-colors">
                 <Image src={c.photo} alt={c.name} fill className="object-cover" />
               </div>
               <div>
@@ -64,7 +68,7 @@ export default function ChaplaincyServicesPage() {
           </article>
         ))}
       </div>
-      <div className="mt-10 text-sm text-gray-600">
+      <div className="mt-10 text-sm text-gray-600 animate-fade-in">
         By appointment only — email directly to request a meeting.
       </div>
     </div>

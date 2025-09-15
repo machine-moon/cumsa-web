@@ -23,7 +23,7 @@ function ExternalLink(props: React.PropsWithChildren<{ href: string; label?: str
 export default function MentalHealthPage() {
   return (
     <main className="mx-auto max-w-5xl px-5 py-10 flex flex-col gap-10">
-      <header className="text-center flex flex-col gap-3">
+      <header className="text-center flex flex-col gap-3 animate-fade-in">
         <h1 className="text-4xl font-semibold tracking-tight">Mental Health & Well‑Being</h1>
         <p className="text-neutral-600 text-sm max-w-2xl mx-auto">
           Gentle, faith-informed pointers. This page curates quick help, calm steps, and trusted
@@ -32,7 +32,9 @@ export default function MentalHealthPage() {
       </header>
 
       <section aria-labelledby="mh-emergency" className="grid md:grid-cols-2 gap-6">
-        <div className={`${cardBase} bg-rose-50/70 border-rose-200`}>
+        <div
+          className={`${cardBase} bg-rose-50/70 border-rose-200 animate-slide-in-left hover:scale-[1.02] transition-transform`}
+        >
           <h2 id="mh-emergency" className="text-xl font-bold flex items-center gap-2 text-rose-700">
             <span aria-hidden>❗</span> Immediate Help
           </h2>
@@ -50,7 +52,9 @@ export default function MentalHealthPage() {
             You are not alone. Help now is better than silence.
           </p>
         </div>
-        <div className={cardBase}>
+        <div
+          className={`${cardBase} animate-slide-in-right hover:scale-[1.02] transition-transform`}
+        >
           <h2 className="text-xl font-bold flex items-center gap-2">
             <span aria-hidden>🧭</span> Quick Calm
           </h2>
@@ -68,8 +72,11 @@ export default function MentalHealthPage() {
         </div>
       </section>
 
-      <section aria-labelledby="mh-hotlines" className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
-        <div className={cardBase}>
+      <section
+        aria-labelledby="mh-hotlines"
+        className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 animate-fade-in"
+      >
+        <div className={`${cardBase} hover:scale-[1.02] transition-transform`}>
           <h2 id="mh-hotlines" className="text-xl font-bold flex items-center gap-2">
             <span aria-hidden>📞</span> Hotlines
           </h2>

@@ -3,541 +3,554 @@
 exports[`your masajid page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container-base py-12"
+    class="bg-[var(--background)] min-h-screen py-12"
   >
-    <h1
-      class="text-3xl font-bold"
-    >
-      United Muslim Organizations of Ottawa–Gatineau
-    </h1>
-    <p
-      class="mt-4 text-gray-700"
-    >
-      Explore local masajid and community centers in the Ottawa–Gatineau region.
-    </p>
     <div
-      class="mt-8 grid gap-8 md:grid-cols-2"
+      class="container-base"
     >
       <div
-        class="space-y-3"
+        class="text-center mb-12 animate-fade-in"
+      >
+        <h1
+          class="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+        >
+          United Muslim Organizations of Ottawa–Gatineau
+        </h1>
+        <p
+          class="text-lg text-gray-600 max-w-2xl mx-auto"
+        >
+          Explore local masajid and community centers in the Ottawa–Gatineau region.
+        </p>
+      </div>
+      <div
+        class="animate-slide-in-left"
       >
         <div
-          class="rounded-lg border border-black/10 bg-white"
+          class="mt-8 grid gap-8 md:grid-cols-2"
         >
-          <button
-            aria-expanded="true"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Ottawa Mosque (OMA)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform rotate-180"
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
           <div
-            class="px-4 pb-4 text-sm text-gray-700 space-y-1"
+            class="space-y-3"
           >
             <div
-              class="font-semibold text-[var(--red)]"
+              class="rounded-lg border border-black/10 bg-white"
             >
-              Information
-            </div>
-            <div>
-              251 Northwestern Ave, Ottawa, ON
-            </div>
-            <div>
-              (613) 722-8763
-            </div>
-            <div>
-              <a
-                class="link-cta"
-                href="https://ottawamosque.ca/"
-                rel="noopener noreferrer"
-                target="_blank"
+              <button
+                aria-expanded="true"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
               >
-                Website →
-              </a>
+                <span>
+                  Ottawa Mosque (OMA)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform rotate-180"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="px-4 pb-4 text-sm text-gray-700 space-y-1"
+              >
+                <div
+                  class="font-semibold text-[var(--red)]"
+                >
+                  Information
+                </div>
+                <div>
+                  251 Northwestern Ave, Ottawa, ON
+                </div>
+                <div>
+                  (613) 722-8763
+                </div>
+                <div>
+                  <a
+                    class="link-cta"
+                    href="https://ottawamosque.ca/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Website →
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Masjid ar-Rahmah (AMA)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  South Nepean Muslim Community (SNMC)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Kanata Muslim Association (KMA)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Centre Islamique de l'Outaouais (CIO)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Jami Omar
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  MAC Barrhaven Islamic Centre (MAC BIC)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  MAC Qurtuba Islamic Centre (MAC QIC)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Masjid Bilal
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Centretown Mosque
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  The Ottawa Islamic Centre & Assalam Mosque
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Masjid Taqwa
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  East Ottawa Masjid and Community Centre (EOMCC)
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Bukhari Community Centre and Masjid
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Ottawa South Mosque
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Islam Care Centre
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Darul Uloom Ottawa
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="rounded-lg border border-black/10 bg-white"
+            >
+              <button
+                aria-expanded="false"
+                class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
+              >
+                <span>
+                  Ottawa Uyghur Centre
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4 transition-transform "
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div
+              class="flex items-center justify-center h-[480px] bg-gray-100 rounded-xl"
+            >
+              Loading map...
             </div>
           </div>
         </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Masjid ar-Rahmah (AMA)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              South Nepean Muslim Community (SNMC)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Kanata Muslim Association (KMA)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Centre Islamique de l'Outaouais (CIO)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Jami Omar
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              MAC Barrhaven Islamic Centre (MAC BIC)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              MAC Qurtuba Islamic Centre (MAC QIC)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Masjid Bilal
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Centretown Mosque
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              The Ottawa Islamic Centre & Assalam Mosque
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Masjid Taqwa
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              East Ottawa Masjid and Community Centre (EOMCC)
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Bukhari Community Centre and Masjid
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Ottawa South Mosque
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Islam Care Centre
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Darul Uloom Ottawa
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="rounded-lg border border-black/10 bg-white"
-        >
-          <button
-            aria-expanded="false"
-            class="w-full flex items-center justify-between px-4 py-3 text-left font-medium hover:bg-black/[0.03] transition-base"
-          >
-            <span>
-              Ottawa Uyghur Centre
-            </span>
-            <svg
-              aria-hidden="true"
-              class="w-4 h-4 transition-transform "
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div>
-        <div
-          data-testid="stub"
-          mosques="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-        />
       </div>
     </div>
   </div>

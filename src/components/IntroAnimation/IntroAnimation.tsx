@@ -8,7 +8,6 @@ export default function IntroAnimation() {
   const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
-    // Check if intro already played
     const introPlayed = sessionStorage.getItem("cumsa-intro-played");
 
     if (introPlayed) {
@@ -17,18 +16,16 @@ export default function IntroAnimation() {
       return;
     }
 
-    // Mark as played immediately
     sessionStorage.setItem("cumsa-intro-played", "true");
 
-    // Simple timeline - show for 2 seconds, then disperse
     const disperseTimer = setTimeout(() => setPhase("disperse"), 2000);
     const exitTimer = setTimeout(() => {
       setPhase("exit");
       setTimeout(() => {
         setShow(false);
         setHasPlayed(true);
-      }, 400); // Reduced from 800ms to 400ms
-    }, 2500); // Reduced from 2800ms to 2500ms
+      }, 100);
+    }, 1500);
 
     return () => {
       clearTimeout(disperseTimer);
@@ -36,7 +33,6 @@ export default function IntroAnimation() {
     };
   }, []);
 
-  // Don't render if already played
   if (hasPlayed || !show) return null;
 
   return (
@@ -52,7 +48,6 @@ export default function IntroAnimation() {
           rgba(42, 116, 135, 0.1) 100%)`,
       }}
     >
-      {/* Floating particles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <div
@@ -71,11 +66,8 @@ export default function IntroAnimation() {
         ))}
       </div>
 
-      {/* Main content - perfectly centered */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-8">
-        {/* Logo container with animations */}
         <div className="relative flex flex-col items-center">
-          {/* Logo with disperse effects - NO DELAYS */}
           <div
             className={`relative transition-all duration-700 ease-out mb-6 sm:mb-8
               ${phase === "show" ? "scale-100 opacity-100 translate-y-0" : ""}
@@ -86,7 +78,6 @@ export default function IntroAnimation() {
               filter: phase === "disperse" ? "blur(2px)" : "none",
             }}
           >
-            {/* Glow effect */}
             <div
               className={`absolute inset-0 rounded-full transition-all duration-1000
                 ${phase === "show" ? "bg-[var(--blue)] opacity-20 scale-110 blur-xl" : "opacity-0 scale-100"}
@@ -94,7 +85,6 @@ export default function IntroAnimation() {
               `}
             />
 
-            {/* Main logo */}
             <Image
               src="/CU-MSA-LOGO.png"
               alt="CUMSA Logo"
@@ -111,7 +101,6 @@ export default function IntroAnimation() {
               priority
             />
 
-            {/* Disperse particles */}
             {phase === "disperse" && (
               <div className="absolute inset-0">
                 {[...Array(8)].map((_, i) => (
@@ -130,7 +119,6 @@ export default function IntroAnimation() {
             )}
           </div>
 
-          {/* Brand text - NO DELAYS, INSTANT APPEARANCE */}
           <div
             className={`text-center transition-all duration-700 ease-out
               ${phase === "show" ? "opacity-100 translate-y-0" : ""}
@@ -145,7 +133,6 @@ export default function IntroAnimation() {
               Carleton University Muslim Students&apos; Association
             </p>
 
-            {/* Decorative line - INSTANT */}
             <div
               className={`w-16 sm:w-24 h-0.5 bg-gradient-to-r from-[var(--navy)] to-[var(--blue)] 
                 mx-auto mt-3 sm:mt-4 transition-all duration-500
@@ -154,7 +141,6 @@ export default function IntroAnimation() {
             />
           </div>
 
-          {/* Welcome text - INSTANT */}
           <p
             className={`text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6 transition-all duration-500
               ${phase === "show" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
@@ -166,7 +152,6 @@ export default function IntroAnimation() {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/50 to-transparent pointer-events-none" />
     </div>
   );

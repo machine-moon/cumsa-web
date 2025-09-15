@@ -5,34 +5,38 @@ exports[`donate page snapshot 1`] = `
   <div
     class="container-base py-12"
   >
-    <h1
-      class="text-3xl font-bold"
-    >
-      Donate
-    </h1>
-    <p
-      class="mt-3 text-gray-700 max-w-2xl"
-    >
-      Your support sustains student-led programs, prayer services, and community initiatives. JazakumAllahu khairan for contributing.
-    </p>
     <div
-      class="mt-6 flex flex-wrap gap-3"
+      class="animate-fade-in"
+    >
+      <h1
+        class="text-3xl font-bold"
+      >
+        Donate
+      </h1>
+      <p
+        class="mt-3 text-gray-700 max-w-2xl"
+      >
+        Your support sustains student-led programs, prayer services, and community initiatives. JazakumAllahu khairan for contributing.
+      </p>
+    </div>
+    <div
+      class="mt-6 flex flex-wrap gap-3 animate-slide-in-left"
     >
       <a
-        class="btn-cozy btn-primary"
+        class="btn-cozy btn-primary hover:scale-105 transition-transform"
         href="#"
       >
         Donate Monthly
       </a>
       <a
-        class="btn-cozy btn-outline"
+        class="btn-cozy btn-outline hover:scale-105 transition-transform"
         href="#"
       >
         One-time Donation
       </a>
     </div>
     <p
-      class="mt-6 text-sm text-gray-600"
+      class="mt-6 text-sm text-gray-600 animate-fade-in"
     >
       TODO.
     </p>

@@ -46,7 +46,6 @@ export function EditClient({ events }: { events: Event[] }) {
           input.dispatchEvent(new Event("input", { bubbles: true }));
         }
       });
-      // Update preview when event is selected
       setPreview({
         title: ev.title || "",
         date: ev.date || "",
@@ -64,7 +63,6 @@ export function EditClient({ events }: { events: Event[] }) {
     return () => select.removeEventListener("change", fill);
   }, [events]);
 
-  // Wire live preview updates
   useEffect(() => {
     function handler(e: globalThis.Event) {
       const target = e.target as HTMLInputElement | HTMLSelectElement | null;

@@ -36,7 +36,6 @@ async function save(formData: FormData) {
     | "scale-down"
     | "none";
   if (!id) return;
-  // verify image exists in /public
   const imgPath = path.join(process.cwd(), "public", image.replace(/^\//, ""));
   try {
     fs.accessSync(imgPath);

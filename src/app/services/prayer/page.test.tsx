@@ -1,10 +1,8 @@
 import { test, expect, jest, beforeEach, afterEach } from "@jest/globals";
 
-// Mock the fetch function globally
 const mockFetch = jest.fn() as jest.MockedFunction<typeof fetch>;
 global.fetch = mockFetch;
 
-// Mock data for consistent testing
 const mockApiResponse = {
   code: 200,
   data: {
@@ -39,14 +37,12 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-// Test the data fetching function directly
 test("getOttawaTimings returns correct data on success", async () => {
   mockFetch.mockResolvedValue({
     ok: true,
     json: async () => mockApiResponse,
   } as Response);
 
-  // Import the function from the utility file
   const { getOttawaTimings } = await import("@/lib/prayer-api");
 
   const result = await getOttawaTimings();
@@ -98,7 +94,6 @@ test("getOttawaTimings constructs correct API URL", async () => {
   expect(mockFetch).toHaveBeenCalledWith(expectedUrl.toString(), { cache: "no-store" });
 });
 
-// Test the component structure (without async rendering)
 test("prayer services page exports correct metadata", async () => {
   const { metadata } = await import("./page");
 
@@ -108,9 +103,7 @@ test("prayer services page exports correct metadata", async () => {
 });
 
 test("prayer services page has correct prayer order", async () => {
-  // This tests the static data structure
   const expectedOrder = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"];
 
-  // We can't easily test the component render, but we can test the data it uses
   expect(expectedOrder).toEqual(["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"]);
 });

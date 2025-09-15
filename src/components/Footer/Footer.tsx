@@ -17,8 +17,8 @@ export default function Footer() {
   }, [open]);
 
   return (
-    <footer className="relative mt-12 border-t border-black/10">
-      <div className="bg-white">
+    <footer className="relative mt-12 border-t border-[var(--blue-alpha-28)]">
+      <div className="bg-white/95 backdrop-blur-sm">
         <div className="container-base py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="relative flex items-center gap-3">
             <span
@@ -26,7 +26,7 @@ export default function Footer() {
               className="logo-mask-blue rounded-sm"
               style={{ width: 28, height: 28 }}
             />
-            <div className="text-sm text-gray-700">
+            <div className="text-sm text-slate-700">
               <a
                 ref={triggerRef}
                 href="/release-notes"
