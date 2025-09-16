@@ -111,9 +111,9 @@ export default function ZakatNasibPage() {
           <h1 className="text-2xl md:text-3xl font-bold mb-1" style={{ color: "var(--navy)" }}>
             Zakat Nisab
           </h1>
-            <p className="text-sm" style={{ color: "var(--muted)" }}>
-            Simple way to view Zakat Nisab
-            </p>
+          <p className="text-sm" style={{ color: "var(--muted)" }}>
+            Simple way to view current thresholds
+          </p>
         </header>
 
         <div className="card p-6 mb-6" style={{ background: "var(--surface)" }}>

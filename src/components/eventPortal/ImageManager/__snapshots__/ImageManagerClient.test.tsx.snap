@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageManagerClient snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="space-y-6"
+  >
+    <section
+      class="border rounded-lg p-4 bg-white/70"
+    >
+      <h3
+        class="font-semibold mb-3"
+      >
+        Upload
+      </h3>
+      <form
+        class="space-y-3"
+      >
+        <label
+          class="block w-full border-2 border-gray-200 rounded-lg px-3 py-2 cursor-pointer bg-gray-50 hover:bg-gray-100 transition"
+          for="image-upload"
+          style="text-align: center;"
+        >
+          <span
+            class="text-[var(--navy)]/80"
+          >
+            Click to upload image
+          </span>
+          <input
+            accept="image/png,image/jpeg,image/jpg,image/webp,image/gif"
+            class="hidden"
+            id="image-upload"
+            required=""
+            type="file"
+          />
+        </label>
+        <button
+          class="btn-cozy btn-primary w-full"
+          type="submit"
+        >
+          Upload
+        </button>
+        <p
+          class="text-[10px] text-[var(--navy)]/60"
+        >
+          Existing file names are not overwritten.
+        </p>
+      </form>
+    </section>
+    <section
+      class="border rounded-lg p-4 bg-white/70"
+    >
+      <div
+        class="flex items-center justify-between mb-3 gap-3 flex-wrap"
+      >
+        <h3
+          class="font-semibold"
+        >
+          Preview
+        </h3>
+        <label
+          class="text-xs text-[var(--navy)]/80 flex items-center gap-2"
+        >
+          <span>
+            image style
+          </span>
+          <select
+            class="border-2 border-gray-200 rounded-lg px-3 py-1.5 text-xs"
+            title="Image style"
+          >
+            <option
+              value="cover"
+            >
+              cover
+            </option>
+            <option
+              value="contain"
+            >
+              contain
+            </option>
+            <option
+              value="fill"
+            >
+              fill
+            </option>
+            <option
+              value="scale-down"
+            >
+              scale-down
+            </option>
+            <option
+              value="none"
+            >
+              none
+            </option>
+          </select>
+        </label>
+      </div>
+      <div
+        class="text-sm text-[var(--navy)]/70"
+      >
+        Select an image to preview
+      </div>
+    </section>
+    <section
+      class="border rounded-lg p-4 bg-white/70"
+    >
+      <h3
+        class="font-semibold mb-3"
+      >
+        Manage Images
+      </h3>
+      <div
+        class="flex flex-wrap items-center gap-3 mb-4"
+      >
+        <input
+          class="w-full sm:w-auto flex-1 border-2 border-gray-200 rounded-lg px-3 py-2 focus:border-[var(--blue)] focus:outline-none"
+          placeholder="Search by name"
+          value=""
+        />
+        <select
+          class="border-2 border-gray-200 rounded-lg px-3 py-2"
+          title="Time range"
+        >
+          <option
+            value="any"
+          >
+            any time
+          </option>
+          <option
+            value="7d"
+          >
+            last 7 days
+          </option>
+          <option
+            value="30d"
+          >
+            last 30 days
+          </option>
+          <option
+            value="365d"
+          >
+            last year
+          </option>
+        </select>
+        <select
+          class="border-2 border-gray-200 rounded-lg px-3 py-2"
+          title="Sort"
+        >
+          <option
+            value="name"
+          >
+            name
+          </option>
+          <option
+            value="sizeAsc"
+          >
+            size ↑
+          </option>
+          <option
+            value="sizeDesc"
+          >
+            size ↓
+          </option>
+          <option
+            value="dateNew"
+          >
+            date (newest)
+          </option>
+          <option
+            value="dateOld"
+          >
+            date (oldest)
+          </option>
+        </select>
+      </div>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
+      />
+      <div
+        class="flex items-center justify-between text-sm text-[var(--navy)]/70 mt-4"
+      >
+        <div>
+          Page 1 of 1 · 0 image(s)
+        </div>
+        <div
+          class="flex gap-2"
+        >
+          <button
+            class="btn-cozy btn-outline"
+            disabled=""
+          >
+            Prev
+          </button>
+          <button
+            class="btn-cozy btn-outline"
+            disabled=""
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

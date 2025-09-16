@@ -60,6 +60,18 @@ export function deleteEvent(id: number) {
   db.prepare("DELETE FROM events WHERE id=?").run(id);
 }
 
+export function countEventsUsingImage(image: string): number {
+  const row = db.prepare("SELECT COUNT(*) as count FROM events WHERE image = ?").get(image) as {
+    count: number;
+  };
+  return row?.count ?? 0;
+}
+
+export function updateEventsImage(oldImage: string, newImage: string): number {
+  const info = db.prepare("UPDATE events SET image = ? WHERE image = ?").run(newImage, oldImage);
+  return info.changes || 0;
+}
+
 export type Event = {
   id: number;
   title: string;

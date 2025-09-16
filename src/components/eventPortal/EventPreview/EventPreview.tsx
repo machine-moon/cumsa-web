@@ -49,7 +49,7 @@ export function EventPreview({ event }: { event: PreviewEvent }) {
   const formatDate = (dateString: string) => {
     if (!dateString || dateString === "YYYY-MM-DD") return "Select Date";
     try {
-      const date = new Date(dateString);
+      const date = new Date(dateString + "T00:00:00");
       return date.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",

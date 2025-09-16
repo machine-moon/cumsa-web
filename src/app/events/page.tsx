@@ -72,7 +72,7 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
 
       <div className="p-4 space-y-2">
         <h3
-          className="font-bold text-gray-900 text-lg leading-tight group-hover:text-blue-600 transition-colors duration-200 overflow-hidden"
+          className="font-bold text-gray-900 text-lg leading-tight transition-colors duration-200 overflow-hidden"
           style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
         >
           {event.title}
@@ -80,25 +80,25 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
 
         <div className="space-y-1.5 text-sm text-gray-600">
           <div className="flex items-center gap-2">
-            <IoCalendarOutline className="w-4 h-4 text-blue-500 flex-shrink-0" />
+            <IoCalendarOutline className="w-4 h-4 text-[var(--blue)] flex-shrink-0" />
             <span className="font-medium">{formatDate(event.date)}</span>
           </div>
 
           {event.time && (
             <div className="flex items-center gap-2">
-              <IoTimeOutline className="w-4 h-4 text-orange-500 flex-shrink-0" />
+              <IoTimeOutline className="w-4 h-4 text-[var(--red)] flex-shrink-0" />
               <span className="font-medium">{to12Hour(event.time)}</span>
             </div>
           )}
 
           <div className="flex items-center gap-2">
-            <IoLocationSharp className="w-4 h-4 text-green-500 flex-shrink-0" />
+            <IoLocationSharp className="w-4 h-4 text-[var(--navy)] flex-shrink-0" />
             <span className="truncate">{event.location}</span>
           </div>
 
           {event.fee && (
             <div className="flex items-center gap-2">
-              <IoCash className="w-4 h-4 text-yellow-500 flex-shrink-0" />
+              <IoCash className="w-4 h-4 text-[var(--green)] flex-shrink-0" />
               <span className="font-medium text-gray-700">{event.fee}</span>
             </div>
           )}
@@ -108,7 +108,7 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
           {event.description && (
             <button
               onClick={() => onInfoClick(event)}
-              className="flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-all duration-200"
+              className="flex items-center gap-1 px-2 py-1 text-xs text-[var(--blue)] hover:text-[var(--navy)] hover:bg-gray-100 rounded-md transition-all duration-200"
             >
               <IoInformationCircleOutline className="w-3 h-3" />
               Info
@@ -120,7 +120,7 @@ function EventCard({ event, onInfoClick }: { event: Event; onInfoClick: (event: 
               href={event.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 px-2 py-1 text-xs text-green-600 hover:text-green-800 hover:bg-green-50 rounded-md transition-all duration-200"
+              className="flex items-center gap-1 px-2 py-1 text-xs text-[var(--navy)] hover:text-[var(--navy)] hover:bg-gray-100 rounded-md transition-all duration-200"
             >
               <IoArrowForward className="w-3 h-3" />
               Register
@@ -211,8 +211,8 @@ export default function EventsPage() {
       <div className="container-base py-12">
         <div className="portal-glow">
           <div className="w-full p-8 text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <IoWarning className="w-8 h-8 text-red-500" />
+            <div className="w-16 h-16 bg-[var(--red)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <IoWarning className="w-8 h-8 text-[var(--red)]" />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Oops! Something went wrong</h2>
             <p className="text-gray-600 mb-4">{error}</p>
@@ -234,13 +234,13 @@ export default function EventsPage() {
         <div className="portal-glow animate-fade-in">
           <div className="w-full p-8 space-y-8">
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-700 font-medium text-sm animate-slide-in-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--blue)]/10 rounded-full text-[var(--blue)] font-medium text-sm animate-slide-in-left">
                 <IoCalendarOutline className="w-4 h-4" />
                 Upcoming Events
               </div>
               <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
                 Join Our Amazing{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--blue)] to-[var(--navy)]">
                   Events
                 </span>
               </h1>

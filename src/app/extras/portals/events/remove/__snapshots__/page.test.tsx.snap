@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`remove event page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="space-y-6 animate-fade-in"
+  >
+    <div
+      data-testid="stub"
+      href="/extras/portals/events/menu"
+    />
+    <div
+      class="text-center"
+    >
+      <h1
+        class="text-3xl font-extrabold text-[var(--red)] mb-2"
+      >
+        Remove Event
+      </h1>
+      <p
+        class="text-[var(--navy)]/80"
+      >
+        Permanently delete an event from the system
+      </p>
+    </div>
+    <div
+      class="max-w-md mx-auto"
+    >
+      <div
+        class="bg-[color:var(--red)]/5 border border-[color:var(--red)]/20 rounded-lg p-6"
+      >
+        <div
+          class="mb-4"
+        >
+          <h3
+            class="font-semibold text-[var(--red)]"
+          >
+            Warning
+          </h3>
+          <p
+            class="text-sm text-[var(--navy)]/80"
+          >
+            This action cannot be undone
+          </p>
+        </div>
+        <form
+          action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')"
+          class="space-y-4"
+        >
+          <div>
+            <label
+              class="block text-sm font-semibold text-[var(--navy)] mb-2"
+            >
+              Select Event to Delete
+            </label>
+            <select
+              class="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--red)] focus:outline-none transition-colors"
+              name="id"
+              required=""
+            >
+              <option
+                disabled=""
+                selected=""
+                value=""
+              >
+                Choose an event to delete...
+              </option>
+              <option
+                value="1"
+              >
+                gds (2025-09-02)
+              </option>
+            </select>
+          </div>
+          <div
+            class="flex gap-3 pt-4"
+          >
+            <a
+              class="btn-cozy btn-outline flex-1"
+              href="/extras/portals/events/menu"
+            >
+              Cancel
+            </a>
+            <button
+              class="btn-cozy bg-[var(--red)] text-white flex-1"
+              type="submit"
+            >
+              Delete Forever
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

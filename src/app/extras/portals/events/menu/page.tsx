@@ -5,7 +5,7 @@ const links = [
   { href: "/extras/portals/events/add", label: "Add Event" },
   { href: "/extras/portals/events/edit", label: "Edit Event" },
   { href: "/extras/portals/events/remove", label: "Remove Event" },
-  { href: "/extras/portals/events/upload-image", label: "Upload Image" },
+  { href: "/extras/portals/events/image-manager", label: "Image Manager" },
 ];
 
 export default function EventsMenu() {

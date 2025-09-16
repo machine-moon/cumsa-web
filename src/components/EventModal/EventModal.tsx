@@ -136,15 +136,15 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
           >
             <motion.div
               variants={contentVariants}
-              className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-t-3xl"
+              className="flex items-center justify-between p-3 bg-gradient-to-r from-[var(--blue)]/10 to-[var(--navy)]/10 rounded-t-3xl"
             >
               <div className="flex items-center gap-2">
-                <div className="w-6 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+                <div className="w-6 h-1 bg-gradient-to-r from-[var(--blue)] to-[var(--navy)] rounded-full" />
                 <span className="text-xs font-medium text-gray-600">✨ Event Details</span>
               </div>
               <motion.button
                 onClick={onClose}
-                className="p-1.5 hover:bg-white/70 rounded-full transition-colors duration-200"
+                className="p-1.5 hover:bg-gray-100 rounded-full transition-colors duration-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -182,11 +182,11 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                   <motion.div className="space-y-2">
                     <motion.div
                       variants={infoCardVariants}
-                      className="flex items-center gap-2 p-2 bg-blue-50 rounded-lg"
-                      whileHover={{ scale: 1.02, backgroundColor: "rgb(239 246 255)" }}
+                      className="flex items-center gap-2 p-2 bg-[var(--blue)]/10 rounded-lg"
+                      whileHover={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.04)" }}
                     >
-                      <div className="p-1 bg-blue-100 rounded-md">
-                        <IoCalendarOutline className="w-3 h-3 text-blue-600" />
+                      <div className="p-1 bg-[var(--blue)]/20 rounded-md">
+                        <IoCalendarOutline className="w-3 h-3 text-[var(--blue)]" />
                       </div>
                       <span className="text-gray-700 font-medium text-xs">
                         {formatDate(event.date)}
@@ -196,11 +196,11 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     {event.time && (
                       <motion.div
                         variants={infoCardVariants}
-                        className="flex items-center gap-2 p-2 bg-orange-50 rounded-lg"
-                        whileHover={{ scale: 1.02, backgroundColor: "rgb(255 247 237)" }}
+                        className="flex items-center gap-2 p-2 bg-[var(--red)]/10 rounded-lg"
+                        whileHover={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.04)" }}
                       >
-                        <div className="p-1 bg-orange-100 rounded-md">
-                          <IoTimeOutline className="w-3 h-3 text-orange-600" />
+                        <div className="p-1 bg-[var(--red)]/20 rounded-md">
+                          <IoTimeOutline className="w-3 h-3 text-[var(--red)]" />
                         </div>
                         <span className="text-gray-700 font-medium text-xs">
                           {to12Hour(event.time)}
@@ -210,11 +210,11 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
 
                     <motion.div
                       variants={infoCardVariants}
-                      className="flex items-center gap-2 p-2 bg-green-50 rounded-lg"
-                      whileHover={{ scale: 1.02, backgroundColor: "rgb(240 253 244)" }}
+                      className="flex items-center gap-2 p-2 bg-[var(--navy)]/10 rounded-lg"
+                      whileHover={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.04)" }}
                     >
-                      <div className="p-1 bg-green-100 rounded-md">
-                        <IoLocationSharp className="w-3 h-3 text-green-600" />
+                      <div className="p-1 bg-[var(--navy)]/20 rounded-md">
+                        <IoLocationSharp className="w-3 h-3 text-[var(--navy)]" />
                       </div>
                       <span className="text-gray-700 text-xs">{event.location}</span>
                     </motion.div>
@@ -222,11 +222,11 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                     {event.fee && (
                       <motion.div
                         variants={infoCardVariants}
-                        className="flex items-center gap-2 p-2 bg-yellow-50 rounded-lg"
-                        whileHover={{ scale: 1.02, backgroundColor: "rgb(254 249 195)" }}
+                        className="flex items-center gap-2 p-2 bg-[var(--green)]/10 rounded-lg"
+                        whileHover={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.04)" }}
                       >
-                        <div className="p-1 bg-yellow-100 rounded-md">
-                          <IoCash className="w-3 h-3 text-yellow-600" />
+                        <div className="p-1 bg-[var(--green)]/20 rounded-md">
+                          <IoCash className="w-3 h-3 text-[var(--green)]" />
                         </div>
                         <span className="text-gray-700 font-medium text-xs">{event.fee}</span>
                       </motion.div>
@@ -236,7 +236,7 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                   {event.description && (
                     <motion.div
                       variants={contentVariants}
-                      className="bg-gradient-to-br from-gray-50 to-blue-50/30 p-3 rounded-xl border border-gray-100"
+                      className="bg-gradient-to-br from-gray-50 to-[var(--blue)]/10 p-3 rounded-xl border border-gray-100"
                     >
                       <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--blue)" }}>
                         About this Event
@@ -264,6 +264,7 @@ export function EventModal({ event, isOpen, onClose }: EventModalProps) {
                           whileHover={{
                             scale: 1.02,
                             boxShadow: "0 8px 25px -8px rgba(59, 130, 246, 0.5)",
+                            background: "var(--navy)",
                           }}
                           whileTap={{ scale: 0.98 }}
                         >

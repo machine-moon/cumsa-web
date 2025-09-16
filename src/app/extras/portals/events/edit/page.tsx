@@ -197,7 +197,7 @@ export default function EditEventPage() {
 
         <div className="text-center">
           <p className="text-xs text-[var(--navy)]/70">
-            Images are stored in /public/events/. Upload new images on the Upload Image page.
+            Images are stored in /public/events/. Manage them in Image Manager.
           </p>
         </div>
 

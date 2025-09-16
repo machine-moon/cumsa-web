@@ -182,7 +182,7 @@ export default function AddEventPage() {
 
         <div className="text-center">
           <p className="text-xs text-[var(--navy)]/70">
-            Images are stored in /public/events/. Upload new images on the Upload Image page.
+            Images are stored in /public/events/. Manage them in Image Manager.
           </p>
         </div>
 
@@ -190,8 +190,8 @@ export default function AddEventPage() {
           <button className="btn-cozy btn-primary flex-1" type="submit">
             Create Event
           </button>
-          <a href="/extras/portals/events/upload-image" className="btn-cozy btn-outline px-6">
-            Upload Image
+          <a href="/extras/portals/events/image-manager" className="btn-cozy btn-outline px-6">
+            Image Manager
           </a>
         </div>
       </form>

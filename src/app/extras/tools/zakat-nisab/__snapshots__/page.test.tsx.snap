@@ -21,7 +21,7 @@ exports[`zakat nasib page snapshot 1`] = `
           class="text-sm"
           style="color: var(--muted);"
         >
-          Simple way to view Zakat Nisab
+          Simple way to view current thresholds
         </p>
       </header>
       <div

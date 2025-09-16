@@ -82,12 +82,12 @@ exports[`EventsMenu snapshot 1`] = `
       </a>
       <a
         class="card p-6 transition-base hover:shadow animate-slide-in-right flex flex-col items-center text-center"
-        href="/extras/portals/events/upload-image"
+        href="/extras/portals/events/image-manager"
       >
         <span
           class="font-semibold"
         >
-          Upload Image
+          Image Manager
         </span>
       </a>
     </div>
