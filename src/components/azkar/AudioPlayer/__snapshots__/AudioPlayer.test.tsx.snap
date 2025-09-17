@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioPlayer renders correctly when active 1`] = `
+<div
+  class="flex items-center gap-2"
+>
+  <button
+    class="min-w-[64px] text-center px-3 py-1 rounded-md text-xs font-medium transition-colors border shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--blue)]/50 bg-[var(--blue)] border-[var(--blue)] text-white"
+    type="button"
+  >
+    Pause
+  </button>
+</div>
+`;
+
+exports[`AudioPlayer renders correctly when inactive 1`] = `
+<div
+  class="flex items-center gap-2"
+>
+  <button
+    class="min-w-[64px] text-center px-3 py-1 rounded-md text-xs font-medium transition-colors border shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--blue)]/50 bg-white border-[var(--blue)]/30 text-[var(--foreground)] hover:bg-[var(--blue)] hover:text-white"
+    type="button"
+  >
+    Play
+  </button>
+</div>
+`;
+
+exports[`AudioPlayer renders correctly when loading 1`] = `
+<div
+  class="flex items-center gap-2"
+>
+  <button
+    class="min-w-[64px] text-center px-3 py-1 rounded-md text-xs font-medium transition-colors border shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--blue)]/50 bg-[var(--blue)] border-[var(--blue)] text-white"
+    disabled=""
+    type="button"
+  >
+    ...
+  </button>
+</div>
+`;
+
+exports[`AudioPlayer renders correctly with error 1`] = `
+<div
+  class="flex items-center gap-2"
+>
+  <button
+    class="min-w-[64px] text-center px-3 py-1 rounded-md text-xs font-medium transition-colors border shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--blue)]/50 bg-[var(--blue)] border-[var(--blue)] text-white"
+    type="button"
+  >
+    Pause
+  </button>
+  <span
+    class="text-[10px] text-[var(--red)]"
+  >
+    Audio failed to load
+  </span>
+</div>
+`;
+
+exports[`AudioPlayer renders correctly with label 1`] = `
+<div
+  class="flex items-center gap-2"
+>
+  <button
+    class="min-w-[64px] text-center px-3 py-1 rounded-md text-xs font-medium transition-colors border shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--blue)]/50 bg-white border-[var(--blue)]/30 text-[var(--foreground)] hover:bg-[var(--blue)] hover:text-white"
+    type="button"
+  >
+    Play
+  </button>
+  <span
+    class="text-[10px] text-[var(--muted)]"
+  >
+    Audio Label
+  </span>
+</div>
+`;

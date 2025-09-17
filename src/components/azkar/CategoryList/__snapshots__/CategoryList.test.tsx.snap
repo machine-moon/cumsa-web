@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryList renders correctly with active category 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-[var(--blue)]/20 overflow-y-auto h-full bg-gradient-to-b from-white via-[#f1fdff] to-[#e3f7fa] text-xs sm:text-sm custom-scroll"
+>
+  <ul
+    class="p-2 space-y-1"
+  >
+    <li
+      class="rounded transition-colors animate-fade-in bg-[var(--blue)]/15 ring-1 ring-[var(--blue)]/40"
+      style="animation-delay: 0ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--blue)]"
+        >
+          Morning Azkar
+        </span>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 40ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Evening Azkar
+        </span>
+        <div
+          class="flex justify-center pt-1"
+        >
+          <div
+            data-active="false"
+            data-id="cat-2"
+            data-loading="false"
+            data-testid="audio-player"
+          >
+            Play
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 80ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Sleep Azkar
+        </span>
+      </div>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`CategoryList renders correctly with audio error 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-[var(--blue)]/20 overflow-y-auto h-full bg-gradient-to-b from-white via-[#f1fdff] to-[#e3f7fa] text-xs sm:text-sm custom-scroll"
+>
+  <ul
+    class="p-2 space-y-1"
+  >
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 0ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Morning Azkar
+        </span>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 40ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Evening Azkar
+        </span>
+        <div
+          class="flex justify-center pt-1"
+        >
+          <div
+            data-active="false"
+            data-id="cat-2"
+            data-loading="false"
+            data-testid="audio-player"
+          >
+            Play
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 80ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Sleep Azkar
+        </span>
+      </div>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`CategoryList renders correctly with audio loading 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-[var(--blue)]/20 overflow-y-auto h-full bg-gradient-to-b from-white via-[#f1fdff] to-[#e3f7fa] text-xs sm:text-sm custom-scroll"
+>
+  <ul
+    class="p-2 space-y-1"
+  >
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 0ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Morning Azkar
+        </span>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 40ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Evening Azkar
+        </span>
+        <div
+          class="flex justify-center pt-1"
+        >
+          <div
+            data-active="true"
+            data-id="cat-2"
+            data-loading="true"
+            data-testid="audio-player"
+          >
+            Loading...
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 80ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Sleep Azkar
+        </span>
+      </div>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`CategoryList renders correctly with categories 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-[var(--blue)]/20 overflow-y-auto h-full bg-gradient-to-b from-white via-[#f1fdff] to-[#e3f7fa] text-xs sm:text-sm custom-scroll"
+>
+  <ul
+    class="p-2 space-y-1"
+  >
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 0ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Morning Azkar
+        </span>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 40ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Evening Azkar
+        </span>
+        <div
+          class="flex justify-center pt-1"
+        >
+          <div
+            data-active="false"
+            data-id="cat-2"
+            data-loading="false"
+            data-testid="audio-player"
+          >
+            Play
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="rounded transition-colors animate-fade-in hover:bg-[var(--blue)]/8"
+      style="animation-delay: 80ms;"
+    >
+      <div
+        class="w-full px-3 py-2 flex flex-col gap-2 cursor-pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="text-sm font-medium text-[var(--foreground)]"
+        >
+          Sleep Azkar
+        </span>
+      </div>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`CategoryList renders correctly with empty categories 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-[var(--blue)]/20 overflow-y-auto h-full bg-gradient-to-b from-white via-[#f1fdff] to-[#e3f7fa] text-xs sm:text-sm custom-scroll"
+>
+  <ul
+    class="p-2 space-y-1"
+  />
+</aside>
+`;
+
+exports[`CategoryList renders correctly with invalid categories 1`] = `
+<aside
+  class="w-60 sm:w-64 shrink-0 border-r border-black/10 h-full flex items-center justify-center text-[10px] text-[var(--red)]"
+>
+  Invalid categories
+</aside>
+`;
