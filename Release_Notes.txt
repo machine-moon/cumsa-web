@@ -2,17 +2,10 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
-
-v0.0.16 (2025-09-17)
-----------------------
-Tarek Ibrahim
-- added notification subscriber and portal 
-
 v0.0.15 (2025-09-17)
 ----------------------
 Tarek Ibrahim
-- added Muslim Fortress 
-- added Qibla Finder
+- added Muslim Fortress to apps
 
 v0.0.14 (2025-09-16)
 ----------------------
