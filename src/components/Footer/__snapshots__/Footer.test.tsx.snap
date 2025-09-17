@@ -26,7 +26,7 @@ exports[`Footer snapshot 1`] = `
               aria-expanded="false"
               aria-haspopup="menu"
               class="hover:underline focus:underline outline-none cursor-pointer"
-              href="/release-notes"
+              href="/extras/release-notes"
             >
               © 2025 CUMSA
             </a>

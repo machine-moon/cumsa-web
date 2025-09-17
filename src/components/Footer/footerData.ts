@@ -16,10 +16,11 @@ export const SECRET_SECTIONS: SecretSection[] = [
     links: [{ label: "Events", href: "/extras/portals/events" }],
   },
   {
-    title: "Tools",
+    title: "Apps",
     links: [
-      { label: "Qibla Finder", href: "/extras/tools/qibla-finder" },
-      { label: "Zakat Nisab", href: "/extras/tools/zakat-nisab" },
+      { label: "Qibla Finder", href: "/extras/apps/qibla-finder" },
+      { label: "Zakat Nisab", href: "/extras/apps/zakat-nisab" },
+      { label: "Hisnul Muslim", href: "/extras/apps/hisnul-muslim" },
     ],
   },
   {

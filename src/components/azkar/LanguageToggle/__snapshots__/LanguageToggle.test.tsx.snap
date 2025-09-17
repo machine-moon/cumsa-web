@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageToggle renders correctly with all options enabled 1`] = `
+<div
+  class="flex items-center gap-2 text-xs relative"
+>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Arabic
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Transliteration
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Translation
+  </button>
+</div>
+`;
+
+exports[`LanguageToggle renders correctly with arabic and transliteration enabled 1`] = `
+<div
+  class="flex items-center gap-2 text-xs relative"
+>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Arabic
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Transliteration
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-white border-[var(--blue)]/40 text-[var(--foreground)] hover:bg-[var(--blue)]/10"
+    type="button"
+  >
+    Translation
+  </button>
+</div>
+`;
+
+exports[`LanguageToggle renders correctly with only arabic enabled 1`] = `
+<div
+  class="flex items-center gap-2 text-xs relative"
+>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Arabic
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-white border-[var(--blue)]/40 text-[var(--foreground)] hover:bg-[var(--blue)]/10"
+    type="button"
+  >
+    Transliteration
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-white border-[var(--blue)]/40 text-[var(--foreground)] hover:bg-[var(--blue)]/10"
+    type="button"
+  >
+    Translation
+  </button>
+</div>
+`;
+
+exports[`LanguageToggle renders correctly with only translation enabled 1`] = `
+<div
+  class="flex items-center gap-2 text-xs relative"
+>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-white border-[var(--blue)]/40 text-[var(--foreground)] hover:bg-[var(--blue)]/10"
+    type="button"
+  >
+    Arabic
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-white border-[var(--blue)]/40 text-[var(--foreground)] hover:bg-[var(--blue)]/10"
+    type="button"
+  >
+    Transliteration
+  </button>
+  <button
+    class="relative px-2 py-1 rounded-md border text-xs transition-colors min-w-[88px] bg-[var(--blue)] border-[var(--blue)] text-white shadow-sm"
+    type="button"
+  >
+    Translation
+  </button>
+</div>
+`;

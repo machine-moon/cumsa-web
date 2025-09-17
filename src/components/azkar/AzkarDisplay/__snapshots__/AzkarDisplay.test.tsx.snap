@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AzkarDisplay renders correctly when loading 1`] = `
+<div
+  data-testid="azkar-display-loading"
+>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`AzkarDisplay renders correctly with azkar 1`] = `
+<div
+  data-testid="azkar-display"
+>
+  <div
+    data-testid="language-toggle"
+  >
+    Language Toggle
+  </div>
+  <div
+    data-testid="zikr-item"
+  >
+    Glory is to Allah
+  </div>
+  <div
+    data-testid="zikr-item"
+  >
+    Praise is to Allah
+  </div>
+</div>
+`;
+
+exports[`AzkarDisplay renders correctly with empty azkar (introduction) 1`] = `
+<div
+  data-testid="azkar-display-empty"
+>
+  <div>
+    Introduction text
+  </div>
+</div>
+`;

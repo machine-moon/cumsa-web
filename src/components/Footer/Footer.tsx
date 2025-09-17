@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="text-sm text-slate-700">
               <a
                 ref={triggerRef}
-                href="/release-notes"
+                href="/extras/release-notes"
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen((o) => !o);

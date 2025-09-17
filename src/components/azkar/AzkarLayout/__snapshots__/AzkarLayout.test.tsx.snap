@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AzkarLayout renders correctly as snapshot 1`] = `
+<div
+  data-testid="azkar-layout"
+>
+  <div
+    data-testid="category-list"
+  >
+    Categories
+  </div>
+  <div
+    data-testid="azkar-display"
+  >
+    Azkar Display
+  </div>
+</div>
+`;
