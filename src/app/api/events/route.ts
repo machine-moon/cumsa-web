@@ -1,5 +1,19 @@
 import { NextResponse } from "next/server";
 import { getAllEvents, addEvent, updateEvent, deleteEvent } from "@/lib/eventsDb";
+import { getIronSession } from "iron-session";
+import { sessionOptions } from "@/lib/eventSession";
+
+async function requireAuth(req: Request) {
+  const response = new NextResponse();
+  const session = await getIronSession<{ authorized?: boolean }>(req, response, sessionOptions);
+  if (!session.authorized) {
+    return {
+      authorized: false,
+      response: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
+    };
+  }
+  return { authorized: true, response };
+}
 
 export async function GET() {
   try {
@@ -13,6 +27,8 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const { authorized, response } = await requireAuth(req);
+  if (!authorized) return response;
   let data;
   try {
     data = await req.json();
@@ -31,6 +47,8 @@ export async function POST(req: Request) {
 }
 
 export async function PUT(req: Request) {
+  const { authorized, response } = await requireAuth(req);
+  if (!authorized) return response;
   let data;
   try {
     data = await req.json();
@@ -49,6 +67,8 @@ export async function PUT(req: Request) {
 }
 
 export async function DELETE(req: Request) {
+  const { authorized, response } = await requireAuth(req);
+  if (!authorized) return response;
   let data;
   try {
     data = await req.json();

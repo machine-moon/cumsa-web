@@ -1,5 +1,4 @@
 import fetch from "./__mocks__/fetch";
-import "@testing-library/jest-dom";
 
 // Setup global fetch mock
 (global.fetch as jest.Mock) = fetch;
@@ -11,3 +10,8 @@ jest.mock("next/navigation", () => ({
   useSearchParams: jest.fn(() => new URLSearchParams()),
   usePathname: jest.fn(() => "/"),
 }));
+
+// Set required environment variables for testing
+
+process.env.EVENT_PORTAL_SESSION_SECRET =
+  process.env.EVENT_PORTAL_SESSION_SECRET || "test-secret-for-testing-only";

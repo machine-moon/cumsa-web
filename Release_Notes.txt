@@ -2,6 +2,11 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.23 (2025-09-28)
+----------------------
+Sarah Abada
+- Added API tests & patched event API auth vulnerability
+
 v0.0.22 (2025-09-20)
 ----------------------
 Amr Moustafa

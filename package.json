@@ -1,6 +1,6 @@
 {
   "name": "cumsa-web",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": true,
   "scripts": {
     "https-proxy": "local-ssl-proxy --source 3443 --target 3000 --cert certs/cert.pem --key certs/key.pem",
@@ -12,6 +12,8 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "test": "jest",
+    "test:api": "jest --selectProjects api",
+    "test:ui": "jest --selectProjects ui",
     "qc": "clear ;yarn lint ;yarn test -u;yarn format; yarn build",
     "sync": "BRANCH=$(git rev-parse --abbrev-ref HEAD) && git fetch origin && git reset --hard origin/$BRANCH",
     "deploy": "yarn sync && yarn install && yarn build && yarn start"
