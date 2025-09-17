@@ -1,7 +1,7 @@
 import Database from "better-sqlite3";
 import path from "path";
 
-const dbFile = path.join(process.cwd(), "events.sqlite");
+const dbFile = path.join(process.cwd(), "db.sqlite");
 const db = new Database(dbFile);
 
 db.exec(`CREATE TABLE IF NOT EXISTS events (

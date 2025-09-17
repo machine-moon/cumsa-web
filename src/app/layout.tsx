@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import IntroAnimation from "@/components/IntroAnimation";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import { LOGOS } from "@/lib/constants";
 
 const geistSans = Geist({
@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
-        <IntroAnimation />
+        <ServiceWorkerRegister />
         <Navbar />
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
         {/*<ChatBubble />*/}

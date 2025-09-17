@@ -346,6 +346,27 @@ export default function QiblaFinderPage() {
         <p className="mt-6 text-[10px] text-[var(--blue)] text-center leading-relaxed">
           Calibrate if the direction seems off or inaccurate.
         </p>
+        {state === "error" && error?.toLowerCase().includes("permission") && (
+          <div className="mb-4 text-center text-[11px] text-[var(--red)]">
+            <p>
+              Location permission denied. Please enable location access for this site in your
+              browser settings.
+            </p>
+            <button
+              className="mt-2 px-3 py-1 bg-[var(--blue)] text-white rounded text-xs font-medium hover:scale-105 transition"
+              onClick={() => {
+                window.open("chrome://settings/content/location", "_blank");
+              }}
+            >
+              Open Settings
+            </button>
+          </div>
+        )}
+        {state === "error" && error === "User denied Geolocation" && (
+          <Overlay
+            msg={`Denied access Geolocation\nFor IOS: close and re-open\nFor Android: press the "preferences" button on the LEFT side of the address bar in Chrome. If you are in the app, go to cumsa.ca in the browser to change this setting.`}
+          />
+        )}
       </div>
     </div>
   );

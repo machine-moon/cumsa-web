@@ -13,7 +13,10 @@ export const SECRET_SECTIONS: SecretSection[] = [
   },
   {
     title: "Portals",
-    links: [{ label: "Events", href: "/extras/portals/events" }],
+    links: [
+      { label: "Events", href: "/extras/portals/events" },
+      { label: "Notifications", href: "/extras/portals/notifications" },
+    ],
   },
   {
     title: "Apps",
@@ -21,6 +24,7 @@ export const SECRET_SECTIONS: SecretSection[] = [
       { label: "Qibla Finder", href: "/extras/apps/qibla-finder" },
       { label: "Zakat Nisab", href: "/extras/apps/zakat-nisab" },
       { label: "Hisnul Muslim", href: "/extras/apps/hisnul-muslim" },
+      { label: "Notifications", href: "/extras/apps/notifications" },
     ],
   },
   {
