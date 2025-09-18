@@ -12,6 +12,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "test": "jest",
+    "update-snapshots": "jest -u",
     "qc": "clear ;yarn lint ;yarn test -u;yarn format; yarn build",
     "sync": "BRANCH=$(git rev-parse --abbrev-ref HEAD) && git fetch origin && git reset --hard origin/$BRANCH",
     "deploy": "yarn sync && yarn install && yarn build && yarn start"
