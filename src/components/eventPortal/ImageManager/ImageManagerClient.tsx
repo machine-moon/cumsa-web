@@ -123,7 +123,7 @@ export function ImageManagerClient({
   }
 
   async function handleDelete(name: string) {
-    const url = `/events/${name}`;
+    const url = `/api/event-images/${name}`;
     const fdCheck = new FormData();
     fdCheck.append("url", url);
     const used = await usageAction(fdCheck);
@@ -168,7 +168,7 @@ export function ImageManagerClient({
       }
       startTransition(() => router.refresh());
       if (selected?.name === oldName)
-        setSelected({ ...selected, name: newName, url: `/events/${newName}` });
+        setSelected({ ...selected, name: newName, url: `/api/event-images/${newName}` });
       notify("Rename successful.");
     } finally {
       setBusy(false);

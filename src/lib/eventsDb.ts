@@ -40,20 +40,23 @@ export function addEvent(event: Omit<Event, "id">) {
 }
 
 export function updateEvent(event: Event) {
-  db.prepare(
-    "UPDATE events SET title=?, date=?, time=?, location=?, fee=?, link=?, image=?, imageStyle=?, description=? WHERE id=?",
-  ).run(
-    event.title,
-    event.date,
-    event.time,
-    event.location,
-    event.fee,
-    event.link,
-    event.image,
-    event.imageStyle || "cover",
-    event.description,
-    event.id,
-  );
+  const result = db
+    .prepare(
+      "UPDATE events SET title=?, date=?, time=?, location=?, fee=?, link=?, image=?, imageStyle=?, description=? WHERE id=?",
+    )
+    .run(
+      event.title,
+      event.date,
+      event.time || null,
+      event.location,
+      event.fee || null,
+      event.link || null,
+      event.image || null,
+      event.imageStyle || "cover",
+      event.description || null,
+      event.id,
+    );
+  return result;
 }
 
 export function deleteEvent(id: number) {

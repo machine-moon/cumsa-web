@@ -2,6 +2,12 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.17 (2025-09-18)
+----------------------
+Tarek Ibrahim
+- added event-images api wrapper
+- fixed session auth bug
+- fixed event portal edit
 
 v0.0.16 (2025-09-17)
 ----------------------
