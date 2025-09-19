@@ -40,9 +40,10 @@ export function EditClient({ events }: { events: Event[] }) {
         const input = document.querySelector(`[name=${name}]`) as
           | HTMLInputElement
           | HTMLSelectElement
+          | HTMLTextAreaElement
           | null;
-        if (input && val !== undefined) {
-          input.value = val;
+        if (input) {
+          input.value = val || "";
           input.dispatchEvent(new Event("input", { bubbles: true }));
         }
       });

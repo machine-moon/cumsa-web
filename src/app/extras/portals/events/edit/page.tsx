@@ -12,7 +12,7 @@ function listEventImages(): string[] {
       .readdirSync(dir)
       .filter((f) => !f.startsWith("."))
       .filter((f) => /(png|jpe?g|webp|gif)$/i.test(f))
-      .map((f) => `/events/${f}`);
+      .map((f) => `/api/event-images/${f}`);
   } catch {
     return [];
   }
@@ -20,32 +20,66 @@ function listEventImages(): string[] {
 
 async function save(formData: FormData) {
   "use server";
-  const id = Number(formData.get("id"));
-  const title = String(formData.get("title") || "");
-  const date = String(formData.get("date") || "");
-  const time = String(formData.get("time") || "");
-  const location = String(formData.get("location") || "");
-  const fee = String(formData.get("fee") || "");
-  const link = String(formData.get("link") || "");
-  const image = String(formData.get("image") || "");
-  const description = String(formData.get("description") || "");
-  const imageStyle = String(formData.get("imageStyle") || "cover") as
-    | "cover"
-    | "contain"
-    | "fill"
-    | "scale-down"
-    | "none";
-  if (!id) return;
-  const imgPath = path.join(process.cwd(), "public", image.replace(/^\//, ""));
+
   try {
-    fs.accessSync(imgPath);
-  } catch {
-    return;
+    const id = Number(formData.get("id"));
+    const title = String(formData.get("title") || "");
+    const date = String(formData.get("date") || "");
+    const time = formData.get("time") ? String(formData.get("time")) : "";
+    const location = String(formData.get("location") || "");
+    const fee = formData.get("fee") ? String(formData.get("fee")) : "";
+    const link = formData.get("link") ? String(formData.get("link")) : "";
+    const image = formData.get("image") ? String(formData.get("image")) : "";
+    const description = formData.get("description") ? String(formData.get("description")) : "";
+    const imageStyle = String(formData.get("imageStyle") || "cover") as
+      | "cover"
+      | "contain"
+      | "fill"
+      | "scale-down"
+      | "none";
+
+    // Validate required fields
+    if (!id || isNaN(id)) {
+      throw new Error("Please select an event to edit");
+    }
+    if (!title.trim()) {
+      throw new Error("Event title is required");
+    }
+    if (!date) {
+      throw new Error("Event date is required");
+    }
+    if (!location.trim()) {
+      throw new Error("Event location is required");
+    }
+
+    // Only validate image if one is provided
+    if (image) {
+      // Handle both direct paths and API paths
+      let imgPath: string;
+      if (image.startsWith("/api/event-images/")) {
+        // Extract filename from API path
+        const filename = image.split("/").pop();
+        imgPath = path.join(process.cwd(), "public", "events", filename || "");
+      } else {
+        // Direct path to image
+        imgPath = path.join(process.cwd(), "public", image.replace(/^\//, ""));
+      }
+
+      try {
+        fs.accessSync(imgPath);
+      } catch {
+        throw new Error("Selected image file does not exist");
+      }
+    }
+
+    updateEvent({ id, title, date, time, location, fee, link, image, imageStyle, description });
+  } catch (error) {
+    console.error("Error in save function:", error);
+    throw error;
   }
-  updateEvent({ id, title, date, time, location, fee, link, image, imageStyle, description });
+
   redirect("/events");
 }
-
 export default function EditEventPage() {
   const events = getAllEvents() as Event[];
   const images = listEventImages();
@@ -172,7 +206,7 @@ export default function EditEventPage() {
               <option value="">No image</option>
               {images.map((img) => (
                 <option key={img} value={img}>
-                  {img}
+                  {img.split("/").pop()}
                 </option>
               ))}
             </select>
