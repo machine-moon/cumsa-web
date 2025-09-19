@@ -14,12 +14,6 @@ export default function IntroAnimation({ isExiting = false }: { isExiting?: bool
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const introShown = typeof window !== "undefined" && localStorage.getItem("introShown");
-    if (introShown) {
-      setShow(false);
-      return;
-    }
-
     let retryTimer: NodeJS.Timeout | null = null;
     let progressTimer: NodeJS.Timeout | null = null;
 
@@ -42,7 +36,6 @@ export default function IntroAnimation({ isExiting = false }: { isExiting?: bool
       setProgress((p) => {
         if (p >= 100) {
           setShow(false);
-          localStorage.setItem("introShown", "true");
           return 100;
         }
         return p + 2;

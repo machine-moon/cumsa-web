@@ -66,11 +66,6 @@ exports[`remove event page snapshot 1`] = `
                 Choose an event to delete...
               </option>
               <option
-                value="10"
-              >
-                a (2025-05-13)
-              </option>
-              <option
                 value="9"
               >
                 BUMBA (2025-09-22)
@@ -93,12 +88,12 @@ exports[`remove event page snapshot 1`] = `
               <option
                 value="5"
               >
-                a (2025-09-21)
+                a (2025-09-22)
               </option>
               <option
                 value="4"
               >
-                a (2025-09-25)
+                a (2025-09-22)
               </option>
               <option
                 value="3"
@@ -108,7 +103,7 @@ exports[`remove event page snapshot 1`] = `
               <option
                 value="2"
               >
-                a (2025-10-01)
+                a (2025-09-22)
               </option>
               <option
                 value="1"

@@ -1,0 +1,31 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#c8440e",
+        "activityBar.background": "#c8440e",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#0fd147",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#c8440e",
+        "statusBar.background": "#98340b",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#c8440e",
+        "statusBarItem.remoteBackground": "#98340b",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#98340b",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#98340b99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#98340b",
+    "workbench.colorTheme": "Bearded Theme feat. Will",
+    "themeRandomizer.themes.blacklist": [
+        "Red",
+        "Bearded Theme Black & Ruby Soft",
+        "Bearded Theme Earth",
+        "Brave (rainglow)",
+        "Spitfire (rainglow)",
+        "Carbonight (rainglow)"
+    ]
+}
