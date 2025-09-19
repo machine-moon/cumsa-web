@@ -54,11 +54,15 @@ async function uploadAction(formData: FormData): Promise<boolean> {
     try {
       fs.accessSync(filePath);
       return false; // do not overwrite
-    } catch {}
+    } catch (error) {
+      console.log("ERROR:", error)
+      
+    }
     const buffer = Buffer.from(await file.arrayBuffer());
     fs.writeFileSync(filePath, buffer);
     return true;
-  } catch {
+  } catch (error){
+    console.log("an error happened", error)
     return false;
   }
 }
