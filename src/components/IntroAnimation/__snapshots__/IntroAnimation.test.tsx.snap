@@ -3,126 +3,68 @@
 exports[`IntroAnimation snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 transition-all duration-400 ease-in-out
-        opacity-100
-      "
-    style="background: linear-gradient(135deg, rgba(90, 206, 216, 0.1) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.95) 60%, rgba(42, 116, 135, 0.1) 100%);"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center transition-all duration-800 ease-in-out opacity-100 scale-100"
+    style="background: rgb(255, 255, 255);"
   >
+    <img
+      alt="CUMSA Logo"
+      class="mb-8 animate-bounce"
+      height="100"
+      src="/CU-MSA-LOGO.png"
+      style="filter: drop-shadow(0 0 16px var(--blue));"
+      width="100"
+    />
     <div
-      class="absolute inset-0 overflow-hidden pointer-events-none"
+      class="w-full max-w-lg mb-8"
     >
       <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 15%; top: 20%; animation-delay: 0s; animation-duration: 3s;"
-      />
-      <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 30%; top: 80%; animation-delay: 0.5s; animation-duration: 3s;"
-      />
-      <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 45%; top: 20%; animation-delay: 1s; animation-duration: 3s;"
-      />
-      <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 60%; top: 80%; animation-delay: 1.5s; animation-duration: 3s;"
-      />
-      <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 75%; top: 20%; animation-delay: 2s; animation-duration: 3s;"
-      />
-      <div
-        class="absolute w-2 h-2 bg-[var(--blue)] rounded-full opacity-20
-              animate-pulse
-              
-            "
-        style="left: 90%; top: 80%; animation-delay: 2.5s; animation-duration: 3s;"
-      />
-    </div>
-    <div
-      class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-8"
-    >
-      <div
-        class="relative flex flex-col items-center"
+        class="bg-[var(--blue)]/10 rounded-xl p-6 border border-[var(--blue)]/30 shadow-lg"
       >
         <div
-          class="relative transition-all duration-700 ease-out mb-6 sm:mb-8
-              scale-100 opacity-100 translate-y-0
-              
-              
-            "
-          style="filter: none;"
+          class="text-center"
         >
           <div
-            class="absolute inset-0 rounded-full transition-all duration-1000
-                bg-[var(--blue)] opacity-20 scale-110 blur-xl
-                
-              "
-          />
-          <img
-            alt="CUMSA Logo"
-            class="relative z-10 
-                animate-bounce
-                sm:w-48 sm:h-48
-              "
-            height="160"
-            src="/CU-MSA-LOGO.png"
-            style="animation-duration: 2s; animation-iteration-count: infinite;"
-            width="160"
-          />
-        </div>
-        <div
-          class="text-center transition-all duration-700 ease-out
-              opacity-100 translate-y-0
-              
-              
-            "
-        >
-          <h1
-            class="text-2xl sm:text-4xl font-bold text-[var(--navy)] mb-2 sm:mb-3 tracking-wide"
+            class="animate-pulse"
           >
-            CUMSA
-          </h1>
-          <p
-            class="text-sm sm:text-base text-slate-600 font-light px-4 leading-relaxed"
-          >
-            Carleton University Muslim Students' Association
-          </p>
-          <div
-            class="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-[var(--navy)] to-[var(--blue)] 
-                mx-auto mt-3 sm:mt-4 transition-all duration-500
-                opacity-60 scale-100
-              "
-          />
+            <div
+              class="h-4 bg-[var(--blue)]/20 rounded mb-2"
+            />
+            <div
+              class="h-4 bg-[var(--blue)]/20 rounded mb-2"
+            />
+            <div
+              class="h-3 bg-[var(--blue)]/20 rounded w-1/2 mx-auto"
+            />
+          </div>
         </div>
-        <p
-          class="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6 transition-all duration-500
-              opacity-100 translate-y-0
-              
-            "
-        >
-          ✨ Welcome ✨
-        </p>
       </div>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/50 to-transparent pointer-events-none"
-    />
+      class="w-full max-w-lg mb-2"
+    >
+      <div
+        class="flex justify-between items-center mb-2"
+      >
+        <span
+          class="text-[var(--blue)] text-sm font-medium"
+        >
+          Loading...
+        </span>
+        <span
+          class="text-[var(--blue)] text-sm"
+        >
+          0%
+        </span>
+      </div>
+      <div
+        class="w-full bg-[var(--blue)]/20 rounded-full h-4"
+      >
+        <div
+          class="bg-[var(--blue)] h-4 rounded-full transition-all duration-200 ease-out"
+          style="width: 0%;"
+        />
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
