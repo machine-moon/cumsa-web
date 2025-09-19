@@ -79,6 +79,7 @@ yarn test
 - Use mocks for external dependencies in tests (see `__mocks__`).
 - Follow the existing folder structure and naming conventions.
 - Document any new features or changes in `Release_Notes.txt`.
+- Run `yarn test -u` to update test snapshots.
 
 ## Support
 

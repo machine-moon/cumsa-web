@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getIronSession } from "iron-session";
 import { sessionOptions } from "@/lib/eventSession";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export async function POST(req: NextRequest) {
   try {

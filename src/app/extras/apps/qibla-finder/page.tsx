@@ -1,514 +1,371 @@
 "use client";
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
-type AppState = "idle" | "locating" | "fetching" | "ready" | "error";
-
-interface AbsoluteOrientationSensor {
-  quaternion?: number[];
-  onreading?: () => void;
-  onerror?: (event: Event) => void;
-  start(): void;
-  stop(): void;
+interface Location {
+  lat: number;
+  lng: number;
 }
 
-interface WindowWithSensors extends Window {
-  AbsoluteOrientationSensor?: new (options?: { frequency?: number }) => AbsoluteOrientationSensor;
-  absoluteOrientationSensor?: new (options?: { frequency?: number }) => AbsoluteOrientationSensor;
+interface CompassState {
+  heading: number | null;
+  qiblaDirection: number | null;
+  isAligned: boolean;
+  accuracy: number | null;
 }
 
-interface DeviceOrientationEventWithWebkit extends DeviceOrientationEvent {
-  webkitCompassHeading?: number;
+type AppState = "idle" | "requesting" | "active" | "error";
+
+const KAABA_LOCATION: Location = { lat: 21.422487, lng: 39.826206 };
+const ALIGNMENT_THRESHOLD = 10;
+
+function calculateQiblaDirection(userLat: number, userLng: number): number {
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const toDeg = (rad: number) => (rad * 180) / Math.PI;
+
+  const dLng = toRad(KAABA_LOCATION.lng - userLng);
+  const lat1 = toRad(userLat);
+  const lat2 = toRad(KAABA_LOCATION.lat);
+
+  const y = Math.sin(dLng) * Math.cos(lat2);
+  const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+
+  const bearing = toDeg(Math.atan2(y, x));
+  return (bearing + 360) % 360;
 }
 
-interface DeviceOrientationEventClass {
-  requestPermission?: () => Promise<string>;
+function calculateDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLng / 2) *
+      Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function isIOS(): boolean {
+  return typeof window !== "undefined" && /iPad|iPhone|iPod/.test(navigator.userAgent);
 }
 
 export default function QiblaFinderPage() {
-  const [state, setState] = useState<AppState>("idle");
+  const [appState, setAppState] = useState<AppState>("idle");
+  const [compass, setCompass] = useState<CompassState>({
+    heading: null,
+    qiblaDirection: null,
+    isAligned: false,
+    accuracy: null,
+  });
   const [error, setError] = useState<string | null>(null);
-  const [qibla, setQibla] = useState<number | null>(null);
-  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
-  const [displayHeading, setDisplayHeading] = useState<number | null>(null);
-  const [relative, setRelative] = useState<number | null>(null);
+  const [location, setLocation] = useState<Location | null>(null);
+  const [distance, setDistance] = useState<number | null>(null);
 
-  const unwrappedRef = useRef<number | null>(null);
-  const smoothedRef = useRef<number | null>(null);
-  const continuousRef = useRef<number>(0);
-  const offsetRef = useRef<number>(0);
-  const lastCompassFaceDegRef = useRef<number | null>(null);
-  const sensorActiveRef = useRef(false);
-  const absSensorRef = useRef<AbsoluteOrientationSensor | null>(null);
-  const headingWindowRef = useRef<number[]>([]);
+  const intervalRef = useRef<number | null>(null);
+  const qiblaDirectionRef = useRef<number | null>(null);
+  const currentEventType = useRef<string | null>(null);
 
-  const BASE_SMOOTH = 0.15;
+  const handleOrientation = useCallback((event: DeviceOrientationEvent) => {
+    type WebkitDeviceOrientationEvent = DeviceOrientationEvent & {
+      webkitCompassHeading?: number;
+      webkitCompassAccuracy?: number;
+    };
+    const webkitEvent = event as WebkitDeviceOrientationEvent;
+    let heading: number | null = null;
+    let accuracy: number | null = null;
 
-  const normalize = (d: number) => ((d % 360) + 360) % 360;
-  const applyOffset = useCallback((d: number) => normalize(d + offsetRef.current), []);
-
-  const updateRelative = useCallback((heading: number, q: number | null) => {
-    if (q == null) {
-      setRelative(null);
-      return;
+    if (typeof webkitEvent.webkitCompassHeading === "number") {
+      heading = webkitEvent.webkitCompassHeading;
+      accuracy =
+        typeof webkitEvent.webkitCompassAccuracy === "number"
+          ? webkitEvent.webkitCompassAccuracy
+          : null;
+    } else if (typeof event.alpha === "number") {
+      heading = event.alpha;
     }
-    setRelative(normalize(q - heading));
+
+    if (heading !== null && qiblaDirectionRef.current !== null) {
+      let angleDiff = Math.abs(qiblaDirectionRef.current - heading);
+      if (angleDiff > 180) {
+        angleDiff = 360 - angleDiff;
+      }
+
+      setCompass((prev) => ({
+        ...prev,
+        heading,
+        accuracy,
+        isAligned: angleDiff <= ALIGNMENT_THRESHOLD,
+      }));
+    }
   }, []);
 
-  const medianCircular = (values: number[]) => {
-    if (!values.length) return 0;
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    const adjustWrap = max - min > 180;
-    const adjusted = adjustWrap ? values.map((v) => (v < 180 ? v + 360 : v)) : values.slice();
-    adjusted.sort((a, b) => a - b);
-    const m = adjusted[Math.floor(adjusted.length / 2)];
-    return adjustWrap ? m % 360 : m;
-  };
+  const requestPermissions = useCallback(async (): Promise<Location> => {
+    if (!navigator.geolocation) {
+      throw new Error("Geolocation not supported");
+    }
 
-  const processHeading = useCallback(
-    (raw: number) => {
-      const rawNorm = normalize(raw);
-      const win = headingWindowRef.current;
-      win.push(rawNorm);
-      if (win.length > 5) win.shift();
-      if (win.length < 3) {
-        setDisplayHeading(applyOffset(rawNorm));
-        updateRelative(applyOffset(rawNorm), qibla);
-        return;
-      }
-      const med = medianCircular(win);
-      const final = applyOffset(med);
-      if (unwrappedRef.current == null) {
-        unwrappedRef.current = final;
-        smoothedRef.current = final;
-        continuousRef.current = final;
-      } else {
-        const delta = final - (unwrappedRef.current % 360);
-        const wrappedDelta = delta > 180 ? delta - 360 : delta < -180 ? delta + 360 : delta;
-        unwrappedRef.current += wrappedDelta;
-        if (smoothedRef.current == null) smoothedRef.current = unwrappedRef.current;
-        else {
-          const k = BASE_SMOOTH;
-          smoothedRef.current =
-            smoothedRef.current! + k * (unwrappedRef.current - smoothedRef.current!);
+    const position = await new Promise<GeolocationPosition>((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 300000,
+      });
+    });
+
+    const userLocation: Location = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+
+    if (
+      isIOS() &&
+      "requestPermission" in DeviceOrientationEvent &&
+      typeof (
+        DeviceOrientationEvent as typeof DeviceOrientationEvent & {
+          requestPermission?: () => Promise<string>;
         }
-        continuousRef.current = smoothedRef.current!;
-        if (Math.abs(continuousRef.current) > 1440) {
-          const adjust = Math.floor(continuousRef.current / 360) * 360;
-          continuousRef.current -= adjust;
-          unwrappedRef.current -= adjust;
-          smoothedRef.current! -= adjust;
+      ).requestPermission === "function"
+    ) {
+      const permission = await (
+        DeviceOrientationEvent as typeof DeviceOrientationEvent & {
+          requestPermission: () => Promise<string>;
         }
-      }
-      const disp = normalize(smoothedRef.current!);
-      setDisplayHeading(disp);
-      updateRelative(disp, qibla);
-    },
-    [qibla, updateRelative, applyOffset],
-  );
-
-  const handleOrientation = useCallback(
-    (e: DeviceOrientationEvent) => {
-      if (sensorActiveRef.current) return;
-      let h: number | null = null;
-      const we = e as DeviceOrientationEventWithWebkit;
-      if (typeof we.webkitCompassHeading === "number") h = we.webkitCompassHeading;
-      else if (typeof e.alpha === "number") {
-        const screenAngle =
-          screen.orientation && typeof screen.orientation.angle === "number"
-            ? screen.orientation.angle
-            : typeof (window as WindowWithSensors).orientation === "number"
-              ? (window as WindowWithSensors).orientation!
-              : 0;
-        h = 360 - e.alpha - screenAngle;
-      }
-      if (h == null) return;
-      processHeading(h);
-    },
-    [processHeading],
-  );
-
-  useEffect(() => {
-    if (state !== "ready") return;
-    let started = false;
-    const W = window as WindowWithSensors;
-    const SensorCtor = W.AbsoluteOrientationSensor || W.absoluteOrientationSensor;
-    if (SensorCtor) {
-      try {
-        const sensor = new SensorCtor({ frequency: 60 });
-        absSensorRef.current = sensor;
-        sensor.onreading = () => {
-          if (!sensor.quaternion) return;
-          const [qx, qy, qz, qw] = sensor.quaternion;
-          const ys = 2 * (qw * qz + qx * qy);
-          const yc = 1 - 2 * (qy * qy + qz * qz);
-          let yaw = (Math.atan2(ys, yc) * 180) / Math.PI;
-          yaw = (360 - yaw) % 360;
-          sensorActiveRef.current = true;
-          processHeading(yaw);
-        };
-        sensor.onerror = () => {
-          try {
-            sensor.stop();
-          } catch {}
-          sensorActiveRef.current = false;
-        };
-        sensor.start();
-        started = true;
-        setTimeout(() => {
-          if (!sensorActiveRef.current) {
-            try {
-              sensor.stop();
-            } catch {}
-          }
-        }, 1200);
-      } catch {
-        // ignore
+      ).requestPermission();
+      if (permission !== "granted") {
+        throw new Error("Device orientation permission denied");
       }
     }
-    return () => {
-      if (started && absSensorRef.current) {
-        try {
-          absSensorRef.current.stop();
-        } catch {}
-        absSensorRef.current = null;
-      }
-      sensorActiveRef.current = false;
-    };
-  }, [state, processHeading]);
 
-  useEffect(() => {
-    if (state !== "ready") return;
-    window.addEventListener("deviceorientation", handleOrientation as EventListener);
-    window.addEventListener("deviceorientationabsolute", handleOrientation as EventListener);
-    return () => {
-      window.removeEventListener("deviceorientation", handleOrientation as EventListener);
-      window.removeEventListener("deviceorientationabsolute", handleOrientation as EventListener);
-    };
-  }, [state, handleOrientation]);
-
-  useEffect(() => {
-    const resetOnRotate = () => {
-      unwrappedRef.current = null;
-      smoothedRef.current = null;
-      continuousRef.current = 0;
-      headingWindowRef.current = [];
-    };
-    window.addEventListener("orientationchange", resetOnRotate);
-    return () => window.removeEventListener("orientationchange", resetOnRotate);
+    return userLocation;
   }, []);
 
-  const requestOrientationPermission = async () => {
-    const DOE = globalThis.DeviceOrientationEvent as DeviceOrientationEventClass | undefined;
-    if (DOE && typeof DOE.requestPermission === "function") {
-      try {
-        const r = await DOE.requestPermission();
-        if (r !== "granted") throw new Error("denied");
-      } catch {}
-    }
-  };
-
-  const start = useCallback(async () => {
+  const startCompass = useCallback(async () => {
     try {
-      setState("locating");
+      setAppState("requesting");
       setError(null);
-      setQibla(null);
-      setDisplayHeading(null);
-      setRelative(null);
-      await requestOrientationPermission();
-      if (!navigator.geolocation) throw new Error("No geolocation");
-      const pos = await new Promise<GeolocationPosition>((res, rej) =>
-        navigator.geolocation.getCurrentPosition(res, rej, {
-          enableHighAccuracy: true,
-          timeout: 15000,
-        }),
+
+      const userLocation = await requestPermissions();
+      setLocation(userLocation);
+
+      const qiblaDirection = calculateQiblaDirection(userLocation.lat, userLocation.lng);
+      const distanceToKaaba = calculateDistance(
+        userLocation.lat,
+        userLocation.lng,
+        KAABA_LOCATION.lat,
+        KAABA_LOCATION.lng,
       );
-      const lat = pos.coords.latitude;
-      const lng = pos.coords.longitude;
-      setCoords({ lat, lng });
-      setState("fetching");
-      const r = await fetch(`https://api.aladhan.com/v1/qibla/${lat}/${lng}`);
-      if (!r.ok) throw new Error("API " + r.status);
-      const j = await r.json();
-      if (j.code !== 200 || !j.data?.direction) throw new Error("Bad API");
-      setQibla(j.data.direction);
-      unwrappedRef.current = null;
-      smoothedRef.current = null;
-      continuousRef.current = 0;
-      lastCompassFaceDegRef.current = null;
-      headingWindowRef.current = [];
-      setState("ready");
-    } catch (e) {
-      const error = e as Error;
-      setError(error.message || "Failed");
-      setState("error");
+
+      setDistance(distanceToKaaba);
+      qiblaDirectionRef.current = qiblaDirection;
+      setCompass((prev) => ({ ...prev, qiblaDirection }));
+
+      const eventName =
+        "deviceorientationabsolute" in window ? "deviceorientationabsolute" : "deviceorientation";
+      currentEventType.current = eventName;
+      window.addEventListener(eventName, handleOrientation as EventListener);
+
+      setAppState("active");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Permission denied or unavailable";
+      setError(message);
+      setAppState("error");
     }
-  }, []);
+  }, [requestPermissions, handleOrientation]);
 
-  const refresh = () => start();
-
-  const setNorth = () => {
-    if (displayHeading == null) return;
-    offsetRef.current = (360 - displayHeading) % 360;
-    unwrappedRef.current = null;
-    smoothedRef.current = null;
-    continuousRef.current = 0;
-    headingWindowRef.current = [];
-    if (sensorActiveRef.current && absSensorRef.current?.quaternion) {
-      const [qx, qy, qz, qw] = absSensorRef.current.quaternion as number[];
-      const ys = 2 * (qw * qz + qx * qy);
-      const yc = 1 - 2 * (qy * qy + qz * qz);
-      let yaw = (Math.atan2(ys, yc) * 180) / Math.PI;
-      yaw = (360 - yaw) % 360;
-      processHeading(yaw);
+  const stopCompass = useCallback(() => {
+    if (currentEventType.current) {
+      window.removeEventListener(currentEventType.current, handleOrientation as EventListener);
+      currentEventType.current = null;
     }
-  };
-  const resetCal = () => {
-    offsetRef.current = 0;
-    unwrappedRef.current = null;
-    smoothedRef.current = null;
-    continuousRef.current = 0;
-    headingWindowRef.current = [];
-  };
 
-  const relForRender = relative == null ? null : relative;
-  const compassFaceRotation = continuousRef.current;
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
+    qiblaDirectionRef.current = null;
+    setAppState("idle");
+    setCompass({
+      heading: null,
+      qiblaDirection: null,
+      isAligned: false,
+      accuracy: null,
+    });
+    setLocation(null);
+    setDistance(null);
+    setError(null);
+  }, [handleOrientation]);
+
+  useEffect(() => {
+    return () => {
+      stopCompass();
+    };
+  }, [stopCompass]);
+
+  const compassRotation = compass.heading !== null ? -compass.heading : 0;
+  const qiblaIndicatorRotation =
+    compass.qiblaDirection !== null ? compass.qiblaDirection - (compass.heading || 0) : 0;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white p-6">
-      <div className="w-full max-w-sm bg-white border border-[var(--blue)] rounded-3xl shadow-sm p-6 flex flex-col items-center">
-        <h1 className="text-2xl font-light tracking-wide mb-1 text-[var(--navy)]">Qibla Finder</h1>
-        <div className="w-72 h-72 relative mb-6 select-none">
-          <Compass rotation={compassFaceRotation} relativeDirection={relForRender} />
-          {state === "idle" && <Overlay msg="" />}
-          {state === "locating" && <Overlay msg="Locating" spinner />}
-          {state === "fetching" && <Overlay msg="Getting" spinner />}
-          {state === "error" && <Overlay msg={error || "Error"} />}
+    <div className="container-base min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[var(--background)] via-white to-[var(--blue)]/5 p-4">
+      <div className="w-full max-w-sm bg-[var(--surface)] rounded-2xl shadow-lg border border-[var(--blue)]/10 p-6 flex flex-col items-center">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-[var(--navy)] mb-2">🕋 Qibla Finder</h1>
+          <p className="text-sm text-[var(--muted)]">Find the direction to Mecca</p>
         </div>
-        {qibla != null && (
-          <div className="mb-4 text-center text-[11px] text-[var(--navy)]">
-            <p className="font-mono text-[var(--blue)]">Qibla {qibla.toFixed(2)}°</p>
-            {displayHeading != null && (
-              <p className="mt-1 font-mono text-[var(--blue)]">
-                Device {displayHeading.toFixed(1)}°
-              </p>
-            )}
-            {coords && (
-              <p className="mt-1 text-[var(--navy)]">
-                {coords.lat.toFixed(4)}, {coords.lng.toFixed(4)}
-              </p>
-            )}
-            {relForRender != null && (
-              <p className="mt-1 text-[var(--blue)]">Rotate until line hits top</p>
-            )}
-            <div className="mt-2 flex gap-2 justify-center">
-              <button
-                onClick={resetCal}
-                className="px-2 py-1 bg-[var(--blue)]/10 rounded text-[10px] text-[var(--navy)]"
-              >
-                Reset
-              </button>
-              <button
-                onClick={setNorth}
-                className="px-2 py-1 bg-[var(--blue)]/10 rounded text-[10px] text-[var(--navy)]"
-              >
-                Set North
-              </button>
-            </div>
+
+        {error && (
+          <div className="w-full mb-4 p-3 bg-[var(--red)]/10 border border-[var(--red)]/20 rounded-lg">
+            <p className="text-[var(--red)] text-sm text-center">{error}</p>
+            <button
+              onClick={startCompass}
+              className="w-full mt-2 py-1 bg-[var(--red)] text-white rounded text-sm font-medium"
+            >
+              Try Again
+            </button>
           </div>
         )}
-        <div className="w-full flex flex-col gap-3">
-          {(state === "idle" || state === "error") && (
-            <button
-              onClick={start}
-              className="w-full py-3 bg-[var(--blue)] text-white rounded-xl text-sm font-medium hover:bg-[var(--navy)] active:scale-[.98] transition"
-            >
-              Start
-            </button>
-          )}
-          {(state === "locating" || state === "fetching") && (
-            <button
-              disabled
-              className="w-full py-3 bg-[var(--blue)]/20 text-[var(--navy)] rounded-xl text-sm font-medium"
-            >
-              Working...
-            </button>
-          )}
-          {state === "ready" && (
-            <button
-              onClick={refresh}
-              className="w-full py-3 bg-[var(--navy)] text-white rounded-xl text-sm font-medium hover:bg-[var(--blue)] active:scale-[.98] transition"
-            >
-              Refresh
-            </button>
-          )}
-        </div>
-        <p className="mt-6 text-[10px] text-[var(--blue)] text-center leading-relaxed">
-          Calibrate if the direction seems off or inaccurate.
-        </p>
-        {state === "error" && error?.toLowerCase().includes("permission") && (
-          <div className="mb-4 text-center text-[11px] text-[var(--red)]">
-            <p>
-              Location permission denied. Please enable location access for this site in your
-              browser settings.
+
+        {location && distance && (
+          <div className="w-full mb-4 p-3 bg-[var(--blue)]/10 border border-[var(--blue)]/20 rounded-lg text-center">
+            <p className="text-[var(--blue)] text-xs">
+              📍 {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
             </p>
-            <button
-              className="mt-2 px-3 py-1 bg-[var(--blue)] text-white rounded text-xs font-medium hover:scale-105 transition"
-              onClick={() => {
-                window.open("chrome://settings/content/location", "_blank");
-              }}
-            >
-              Open Settings
-            </button>
+            <p className="text-[var(--muted)] text-xs">🕋 {distance.toFixed(0)} km to Kaaba</p>
           </div>
         )}
-        {state === "error" && error === "User denied Geolocation" && (
-          <Overlay
-            msg={`Denied access Geolocation\nFor IOS: close and re-open\nFor Android: press the "preferences" button on the LEFT side of the address bar in Chrome. If you are in the app, go to cumsa.ca in the browser to change this setting.`}
-          />
-        )}
-      </div>
-    </div>
-  );
-}
 
-function Compass({
-  rotation,
-  relativeDirection,
-}: {
-  rotation: number;
-  relativeDirection: number | null;
-}) {
-  const within = relativeDirection != null && (relativeDirection < 5 || relativeDirection > 355);
-  const relDisplay =
-    within && relativeDirection != null
-      ? relativeDirection > 355
-        ? (relativeDirection - 360).toFixed(1)
-        : relativeDirection.toFixed(1)
-      : null;
-  return (
-    <div className="relative w-full h-full">
-      <svg viewBox="0 0 200 200" className="w-full h-full text-gray-700">
-        <g
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            transformOrigin: "100px 100px",
-            transition: "transform 0.12s linear",
-          }}
-        >
-          <circle cx="100" cy="100" r="98" className="stroke-gray-300 fill-white" strokeWidth={2} />
-          {[0, 90, 180, 270].map((a) => (
-            <line
-              key={a}
-              x1="100"
-              y1="14"
-              x2="100"
-              y2="32"
-              stroke="#555"
-              strokeWidth={3}
-              transform={`rotate(${a} 100 100)`}
+        <div className="relative mb-6">
+          <div className="relative w-64 h-64 rounded-full bg-gradient-to-br from-[var(--surface)] to-[var(--blue)]/5 border-4 border-[var(--blue)]/20 shadow-inner flex items-center justify-center overflow-hidden">
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20">
+              <div className="w-0 h-0 border-l-2 border-r-2 border-b-4 border-l-transparent border-r-transparent border-b-[var(--red)]" />
+              <p className="text-[var(--red)] text-xs font-bold mt-1 text-center">N</p>
+            </div>
+
+            {compass.qiblaDirection !== null && (
+              <div
+                className={`absolute w-12 h-12 flex items-center justify-center rounded-full border-2 z-30 transition-all duration-300 ${
+                  compass.isAligned
+                    ? "bg-[var(--green)] border-[var(--green)]/60 shadow-lg animate-pulse scale-110"
+                    : "bg-[var(--blue)] border-[var(--blue)]/60"
+                }`}
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  transform: `translate(-50%, -50%) translateY(-100px) rotate(${qiblaIndicatorRotation}deg)`,
+                  transformOrigin: "50% 100px",
+                }}
+              >
+                <span className="text-white text-xl">🕋</span>
+              </div>
+            )}
+
+            <div
+              className="absolute w-5/6 h-5/6 transition-transform duration-200 ease-out"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23e2e8f0' stroke-width='1'/%3E%3Cg stroke='%2364748b' stroke-width='0.5'%3E%3Cline x1='100' y1='10' x2='100' y2='20'/%3E%3Cline x1='100' y1='180' x2='100' y2='190'/%3E%3Cline x1='10' y1='100' x2='20' y2='100'/%3E%3Cline x1='180' y1='100' x2='190' y2='100'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                transform: `rotate(${compassRotation}deg)`,
+              }}
             />
-          ))}
-          {Array.from({ length: 36 }).map((_, i) => {
-            const a = i * 10;
-            if (a % 90 === 0) return null;
-            return (
-              <line
-                key={a}
-                x1="100"
-                y1="18"
-                x2="100"
-                y2="30"
-                stroke="#999"
-                strokeWidth={1.1}
-                transform={`rotate(${a} 100 100)`}
-              />
-            );
-          })}
-          <CompassLabel a={0} t="N" />
-          <CompassLabel a={90} t="E" />
-          <CompassLabel a={180} t="S" />
-          <CompassLabel a={270} t="W" />
-        </g>
-        {relativeDirection != null && (
-          <g>
-            <g
-              style={{ transition: "transform 0.18s ease-out" }}
-              transform={`rotate(${relativeDirection} 100 100)`}
-            >
-              <line
-                x1="100"
-                y1="100"
-                x2="100"
-                y2="26"
-                stroke={within ? "#16a34a" : "#0d6efd"}
-                strokeWidth={7}
-                strokeLinecap="round"
-              />
-              <circle cx="100" cy="26" r="6" fill={within ? "#16a34a" : "#0d6efd"} />
-            </g>
-            <circle cx="100" cy="100" r="4" fill={within ? "#16a34a" : "#0d6efd"} />
-            <path d="M100 18 L108 34 L92 34 Z" fill="#16a34a" opacity={0.15} />
-            <path d="M100 18 A82 82 0 0 1 100 18" stroke="#16a34a" strokeWidth={0} />
-            <g opacity={0.18} stroke="#16a34a" strokeWidth={10} strokeLinecap="round">
-              <path d="M100 30 L100 22" />
-            </g>
-            <g
-              opacity={0.1}
-              stroke="#16a34a"
-              strokeWidth={18}
-              strokeLinecap="round"
-              transform="rotate(4 100 100)"
-            >
-              <path d="M100 30 L100 18" />
-            </g>
-            <g
-              opacity={0.1}
-              stroke="#16a34a"
-              strokeWidth={18}
-              strokeLinecap="round"
-              transform="rotate(-4 100 100)"
-            >
-              <path d="M100 30 L100 18" />
-            </g>
-          </g>
-        )}
-      </svg>
-      {within && relDisplay && (
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[10px] px-2 py-1 rounded-full shadow">
-          {relDisplay}°
+
+            {compass.heading !== null && appState === "active" && (
+              <div
+                className={`absolute w-8 h-8 transition-all duration-300 flex items-center justify-center rounded-full border-2 ${
+                  compass.isAligned
+                    ? "bg-[var(--green)] border-[var(--green)]/60 shadow-lg animate-pulse"
+                    : "bg-[var(--navy)] border-[var(--navy)]/60"
+                }`}
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  transform: `translate(-50%, -50%) translateY(-100px)`,
+                  transformOrigin: "50% 100px",
+                }}
+              >
+                <span className="text-white text-sm">📱</span>
+              </div>
+            )}
+
+            <div className="absolute w-3 h-3 bg-[var(--navy)] rounded-full z-10" />
+
+            {compass.isAligned && appState === "active" && (
+              <div className="absolute inset-0 border-4 border-[var(--green)] rounded-full animate-pulse" />
+            )}
+          </div>
         </div>
-      )}
-    </div>
-  );
-}
 
-function CompassLabel({ a, t }: { a: number; t: string }) {
-  const r = 46;
-  const rad = ((a - 90) * Math.PI) / 180;
-  const cx = 100 + r * Math.cos(rad);
-  const cy = 100 + r * Math.sin(rad);
-  return (
-    <text
-      x={cx}
-      y={cy}
-      textAnchor="middle"
-      dominantBaseline="middle"
-      fontSize={14}
-      className="fill-gray-700 font-medium"
-    >
-      {t}
-    </text>
-  );
-}
+        <div className="text-center mb-6 min-h-[3rem] flex items-center justify-center">
+          {appState === "idle" && (
+            <p className="text-[var(--muted)] text-sm">Tap the button to find Qibla</p>
+          )}
+          {appState === "requesting" && (
+            <div className="flex items-center gap-2">
+              <div className="animate-spin w-4 h-4 border-2 border-[var(--blue)] border-t-transparent rounded-full" />
+              <p className="text-[var(--blue)] text-sm">Requesting permissions...</p>
+            </div>
+          )}
+          {appState === "active" && compass.isAligned && (
+            <div className="text-center">
+              <p className="text-[var(--green)] text-lg font-bold">✅ Facing Qibla!</p>
+              <p className="text-[var(--green)] text-xs">Direction to Mecca found</p>
+            </div>
+          )}
+          {appState === "active" && !compass.isAligned && compass.heading !== null && (
+            <div className="text-center">
+              <p className="text-[var(--blue)] text-base font-medium">🧭 Turn to find Qibla</p>
+              <p className="text-[var(--muted)] text-xs mt-1">
+                Qibla: {compass.qiblaDirection?.toFixed(0)}° | Device: {compass.heading.toFixed(0)}°
+              </p>
+              <p className="text-[var(--muted)] text-xs">
+                Diff:{" "}
+                {compass.qiblaDirection && compass.heading
+                  ? Math.abs(compass.qiblaDirection - compass.heading).toFixed(0)
+                  : "---"}
+                °
+              </p>
+            </div>
+          )}
+        </div>
 
-function Overlay({ msg, spinner }: { msg: string; spinner?: boolean }) {
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center backdrop-blur-[1px] rounded-full bg-white/70 text-gray-600 text-sm">
-      {spinner && (
-        <div className="mb-2 w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
-      )}
-      <span>{msg}</span>
+        <div className="w-full">
+          {appState === "idle" || appState === "error" ? (
+            <button
+              onClick={startCompass}
+              className="btn-cozy btn-primary w-full py-3 text-base font-semibold"
+            >
+              Find Qibla
+            </button>
+          ) : appState === "requesting" ? (
+            <button disabled className="btn-cozy w-full py-3 bg-[var(--muted)] text-white">
+              <span className="flex items-center justify-center gap-2">
+                <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
+                Starting...
+              </span>
+            </button>
+          ) : (
+            <button
+              onClick={stopCompass}
+              className="btn-cozy w-full py-3 bg-[var(--red)] text-white font-semibold"
+            >
+              🛑 Stop
+            </button>
+          )}
+        </div>
+
+        <div className="mt-4 text-center text-xs text-[var(--muted)] leading-relaxed">
+          Hold your device flat and turn until the Kaaba symbol turns green.
+          {compass.accuracy !== null && appState === "active" && (
+            <p className="mt-1">
+              Accuracy: {compass.accuracy > 20 ? "Low" : compass.accuracy > 10 ? "Medium" : "High"}
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

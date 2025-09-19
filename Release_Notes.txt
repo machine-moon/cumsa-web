@@ -14,16 +14,13 @@ Tarek Ibrahim
 - fixed session auth bug
 - fixed event portal edit
 
-v0.0.16 (2025-09-17)
-----------------------
-Tarek Ibrahim
-- added notification subscriber and portal 
+Amr Moustafa
+- Fixed prayer times countdown to be right aligned on desktop and mobile
 
 v0.0.15 (2025-09-17)
 ----------------------
 Tarek Ibrahim
-- added Muslim Fortress 
-- added Qibla Finder
+- added Muslim Fortress to apps
 
 v0.0.14 (2025-09-16)
 ----------------------

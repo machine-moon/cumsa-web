@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { CategoryList } from "@/components/azkar/CategoryList";
 import { AzkarDisplay } from "@/components/azkar/AzkarDisplay";
 import { useAzkarData, useAudioController } from "@/lib/azkar/state";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 interface Props {
   initialCategoryId?: number;
@@ -42,17 +41,11 @@ export function AzkarLayout({ initialCategoryId }: Props) {
       <div className="md:hidden flex items-center justify-between px-3 py-2 border-b border-white/10 bg-[var(--navy)]/60">
         <button
           onClick={() => setShowMenu((s) => !s)}
-          className="text-sm px-3 py-1 rounded bg-[var(--blue)] text-white shadow-lg flex items-center gap-2 active:scale-95 transition-transform font-semibold border border-white/20"
-          style={{
-            boxShadow: "0 2px 12px 0 rgba(90,206,216,0.18)",
-            background: "linear-gradient(90deg, var(--blue) 70%, #5aced8 100%)",
-          }}
+          className="text-sm px-3 py-1 rounded bg-[var(--blue)]"
         >
-          <span className="inline-block w-5 h-5 text-white">
-            <HiOutlineMenuAlt3 />
-          </span>
           {showMenu ? "Close" : "Categories"}
         </button>
+        <span className="text-sm font-medium">Azkar</span>
       </div>
       <div className="flex flex-1 overflow-hidden">
         <div className={`${showMenu ? "block" : "hidden"} md:block`}>
