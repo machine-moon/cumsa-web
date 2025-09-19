@@ -8,17 +8,23 @@ export async function GET(
 ) {
   try {
     const { filename } = await params;
-    const filePath = path.join(process.cwd(), "public", "events", filename);
-
+    const decoded = decodeURIComponent(filename);
+    // Disallow path traversal and suspicious characters
+    if (decoded.includes("..") || decoded.includes("/") || decoded.includes("\\")) {
+      return new NextResponse("Invalid filename", { status: 400 });
+    }
+    const eventsDir = path.resolve(process.cwd(), "public", "events");
+    const filePath = path.resolve(eventsDir, decoded);
+    // Ensure filePath is inside eventsDir
+    if (!filePath.startsWith(eventsDir + path.sep)) {
+      return new NextResponse("Forbidden", { status: 403 });
+    }
     if (!fs.existsSync(filePath)) {
       return new NextResponse("File not found", { status: 404 });
     }
-
     const fileBuffer = fs.readFileSync(filePath);
-
-    const ext = path.extname(filename).toLowerCase();
+    const ext = path.extname(decoded).toLowerCase();
     let contentType = "application/octet-stream";
-
     switch (ext) {
       case ".png":
         contentType = "image/png";
@@ -34,7 +40,6 @@ export async function GET(
         contentType = "image/gif";
         break;
     }
-
     return new NextResponse(fileBuffer, {
       headers: {
         "Content-Type": contentType,
