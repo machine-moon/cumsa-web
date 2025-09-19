@@ -1,8 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { Category, Zikr } from "./types";
-
-const CACHE_DIR = path.resolve(process.cwd(), ".cache");
+const CACHE_DIR = path.resolve(process.cwd(), process.env.CACHE_DIR || ".cache");
 if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 
 const CATEGORY_FILE = path.join(CACHE_DIR, "azkar-categories.json");
