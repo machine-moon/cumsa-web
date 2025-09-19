@@ -16,7 +16,12 @@ function listEventImages(): ImageInfo[] {
       .filter((f) => /(png|jpe?g|webp|gif)$/i.test(f))
       .map((f) => {
         const s = fs.statSync(path.join(dir, f));
-        return { url: `/events/${f}`, name: f, size: s.size, mtime: s.mtimeMs } as ImageInfo;
+        return {
+          url: `/api/event-images/${f}`,
+          name: f,
+          size: s.size,
+          mtime: s.mtimeMs,
+        } as ImageInfo;
       });
   } catch {
     return [] as ImageInfo[];
@@ -71,7 +76,7 @@ async function deleteAction(formData: FormData): Promise<boolean> {
   "use server";
   const name = String(formData.get("name") || "");
   if (!name) return false;
-  const url = `/events/${name}`;
+  const url = `/api/event-images/${name}`;
   if (countEventsUsingImage(url) > 0) return false;
   const p = path.join(process.cwd(), "public", "events", name);
   try {
@@ -102,8 +107,8 @@ async function renameAction(formData: FormData): Promise<boolean> {
       return false; // do not overwrite
     } catch {}
     fs.renameSync(from, to);
-    const oldUrl = `/events/${oldName}`;
-    const newUrl = `/events/${safeNewName}`;
+    const oldUrl = `/api/event-images/${oldName}`;
+    const newUrl = `/api/event-images/${safeNewName}`;
     updateEventsImage(oldUrl, newUrl);
     return true;
   } catch {

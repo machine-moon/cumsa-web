@@ -12,7 +12,718 @@ exports[`release notes page snapshot 1`] = `
     </h1>
     <div
       class="space-y-8"
-    />
+    >
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.17
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-18
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            added event-images api wrapper
+          </li>
+          <li>
+            fixed session auth bug
+          </li>
+          <li>
+            fixed event portal edit
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.16
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-17
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            added notification subscriber and portal 
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.15
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-17
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            added Muslim Fortress 
+          </li>
+          <li>
+            added Qibla Finder
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.14
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-16
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated date formatting to display the correct year in event previews
+          </li>
+          <li>
+            Added image manager to rename, delete, upload, and preview images in the catalogue
+          </li>
+          <li>
+            Increased Home page typewriter effect interval to 4 seconds for each message
+          </li>
+          <li>
+            Commented out ChatBubble
+          </li>
+          <li>
+            Home hero image is now a slideshow with arrow buttons
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.13
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-15
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Added logout button to event portal menu
+          </li>
+          <li>
+            Added animations to event portal pages
+          </li>
+          <li>
+            Fixed cookie event portal bypass security vulnerability bug
+          </li>
+          <li>
+            Increased maximum file upload size to 50MB
+          </li>
+          <li>
+            Added Zakat Nisab page
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.12
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-15
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Added sliding animations
+          </li>
+          <li>
+            Enhanced ChatBubble with a close button and refined styles
+          </li>
+          <li>
+            Updated HomeHeroClient with new hero image
+          </li>
+          <li>
+            Improved Navbar and Dropdown components with consistent color usage
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.11
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-13
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Removed roommate service
+          </li>
+          <li>
+            Updated countdown for mobile and home page
+          </li>
+          <li>
+            Added IntroAnimation component with animation effects and tests
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.10
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-13
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated prayer times to 12h format and added next prayer time quick lookup
+          </li>
+          <li>
+            Updated event images to use WebP format
+          </li>
+          <li>
+            Added a description section to events
+          </li>
+          <li>
+            Made event details more elegant
+          </li>
+          <li>
+            Fixed Linktree icon not visible on mobile
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.9
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Sarah Abada
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-11
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated "Who we are" and "What we do" sections
+          </li>
+          <li>
+            Added Vision and Mission from the MSA constitution
+          </li>
+          <li>
+            Fixed cramming Jummah in prayers
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.8
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-08
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated prayer times to 12h format and added next prayer time quick lookup
+          </li>
+          <li>
+            Updated event images to use WebP format
+          </li>
+          <li>
+            Added an info section to events
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.7
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-06
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated prayer directions and added snapshots for pages
+          </li>
+          <li>
+            Fixed navbar being blocked by map
+          </li>
+          <li>
+            Added constitution and guidebook
+          </li>
+          <li>
+            Removed old social medias
+          </li>
+          <li>
+            Updated Linktree icon
+          </li>
+          <li>
+            Added navbar stubs to indicate current page
+          </li>
+          <li>
+            Added shadow effect for mouse hover on navbar
+          </li>
+          <li>
+            Added draft Mental Health & Well-Being page under Services
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.6
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-06
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Cleaned up codebase
+          </li>
+          <li>
+            Added secret menu with drafts: gallery, new muslims, roommate service
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.5
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Sarah Abada
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-06
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated the information about the mosques
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.4
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-05
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Added Revert Network signup form and newsletter
+          </li>
+          <li>
+            Banned the use of SVG icons directly in components
+          </li>
+          <li>
+            Added react-icons as a dependency
+          </li>
+          <li>
+            Moved Linktree to an icon
+          </li>
+          <li>
+            Added animation on home logo
+          </li>
+          <li>
+            Animated navbar tab highlight on hover
+          </li>
+          <li>
+            Updated website icon for mobile "Add to Home" feature
+          </li>
+          <li>
+            Added Musalla (prayer room) info section [prayer room]
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.3
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-05
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Updated Chaplin services
+          </li>
+          <li>
+            Added New Muslim page
+          </li>
+          <li>
+            Updated volunteer application form and discord invite link
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.2
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-04
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Refactored monolithic app into modular components
+          </li>
+          <li>
+            Added snapshot tests for each page and component library
+          </li>
+          <li>
+            Added GitHub Actions CI workflow for automated test runs
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
+              v0.0.1
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-09-03
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Initial release of CUMSA web app
+          </li>
+          <li>
+            Built with Next.js, React, TypeScript, Tailwind CSS
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
 </DocumentFragment>
 `;

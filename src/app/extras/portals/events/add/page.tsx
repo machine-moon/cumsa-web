@@ -12,7 +12,7 @@ function listEventImages(): string[] {
       .readdirSync(dir)
       .filter((f) => !f.startsWith("."))
       .filter((f) => /(png|jpe?g|webp|gif)$/i.test(f))
-      .map((f) => `/events/${f}`);
+      .map((f) => `/api/event-images/${f}`);
   } catch {
     return [];
   }
@@ -35,12 +35,20 @@ async function create(formData: FormData) {
     | "scale-down"
     | "none";
   if (!title || !date || !location) return;
-  const imgPath = path.join(process.cwd(), "public", image.replace(/^\//, ""));
-  try {
-    fs.accessSync(imgPath);
-  } catch {
-    return;
+
+  // Validate image exists if provided
+  if (image) {
+    const filename = image.startsWith("/api/event-images/")
+      ? image.replace("/api/event-images/", "")
+      : image.replace(/^\/events\//, "");
+    const imgPath = path.join(process.cwd(), "public", "events", filename);
+    try {
+      fs.accessSync(imgPath);
+    } catch {
+      return;
+    }
   }
+
   addEvent({ title, date, time, location, fee, link, image, imageStyle, description });
   redirect("/events");
 }
@@ -157,7 +165,7 @@ export default function AddEventPage() {
               </option>
               {images.map((img) => (
                 <option key={img} value={img}>
-                  {img}
+                  {img.split("/").pop()}
                 </option>
               ))}
             </select>
