@@ -12,7 +12,6 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "test": "jest",
-    "update-snapshots": "jest -u",
     "qc": "clear ;yarn lint ;yarn test -u;yarn format; yarn build",
     "sync": "BRANCH=$(git rev-parse --abbrev-ref HEAD) && git fetch origin && git reset --hard origin/$BRANCH",
     "deploy": "yarn sync && yarn install && yarn build && yarn start"
@@ -44,6 +43,7 @@
     "@types/node": "^24.3.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.2",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "identity-obj-proxy": "^3.0.0",
