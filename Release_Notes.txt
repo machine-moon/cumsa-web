@@ -2,6 +2,16 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.20 (2025-09-20)
+----------------------
+Amr Moustafa
+- fixed prayer countdown dialog to be right aligned
+
+v0.0.19 (2025-09-19)
+----------------------
+Amr Moustafa
+- added exception handling for failed image uploads with user alerts
+
 v0.0.18 (2025-09-18)
 ----------------------
 Tarek Ibrahim
