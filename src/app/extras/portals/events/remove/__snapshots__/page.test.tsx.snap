@@ -24,117 +24,24 @@ exports[`remove event page snapshot 1`] = `
       </p>
     </div>
     <div
-      class="max-w-md mx-auto"
+      class="text-center py-12"
     >
-      <div
-        class="bg-[color:var(--red)]/5 border border-[color:var(--red)]/20 rounded-lg p-6"
+      <h3
+        class="text-xl font-semibold text-[var(--navy)] mb-2"
       >
-        <div
-          class="mb-4"
-        >
-          <h3
-            class="font-semibold text-[var(--red)]"
-          >
-            Warning
-          </h3>
-          <p
-            class="text-sm text-[var(--navy)]/80"
-          >
-            This action cannot be undone
-          </p>
-        </div>
-        <form
-          action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')"
-          class="space-y-4"
-        >
-          <div>
-            <label
-              class="block text-sm font-semibold text-[var(--navy)] mb-2"
-            >
-              Select Event to Delete
-            </label>
-            <select
-              class="w-full border-2 border-[color:var(--navy)]/20 rounded-lg px-4 py-3 focus:border-[var(--red)] focus:outline-none transition-colors"
-              name="id"
-              required=""
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                Choose an event to delete...
-              </option>
-              <option
-                value="10"
-              >
-                a (2025-05-13)
-              </option>
-              <option
-                value="9"
-              >
-                BUMBA (2025-09-22)
-              </option>
-              <option
-                value="8"
-              >
-                a (2025-09-22)
-              </option>
-              <option
-                value="7"
-              >
-                a (2025-09-22)
-              </option>
-              <option
-                value="6"
-              >
-                a (2025-09-22)
-              </option>
-              <option
-                value="5"
-              >
-                a (2025-09-21)
-              </option>
-              <option
-                value="4"
-              >
-                a (2025-09-25)
-              </option>
-              <option
-                value="3"
-              >
-                a (2025-09-22)
-              </option>
-              <option
-                value="2"
-              >
-                a (2025-10-01)
-              </option>
-              <option
-                value="1"
-              >
-                a (2025-09-22)
-              </option>
-            </select>
-          </div>
-          <div
-            class="flex gap-3 pt-4"
-          >
-            <a
-              class="btn-cozy btn-outline flex-1"
-              href="/extras/portals/events/menu"
-            >
-              Cancel
-            </a>
-            <button
-              class="btn-cozy bg-[var(--red)] text-white flex-1"
-              type="submit"
-            >
-              Delete Forever
-            </button>
-          </div>
-        </form>
-      </div>
+        No Events Available
+      </h3>
+      <p
+        class="text-[var(--navy)]/70 mb-6"
+      >
+        There are currently no events to remove.
+      </p>
+      <a
+        class="btn-cozy btn-primary"
+        href="/extras/portals/events/add"
+      >
+        Create New Event
+      </a>
     </div>
   </div>
 </DocumentFragment>

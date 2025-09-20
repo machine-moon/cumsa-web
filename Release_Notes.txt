@@ -2,6 +2,11 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.22 (2025-09-20)
+----------------------
+Amr Moustafa
+- fixed prayer countdown dialog to be right aligned
+
 v0.0.21 (2025-09-21)
 ----------------------
 Tarek Ibrahim

@@ -69,7 +69,7 @@ export function PrayerCountdown({ timings }: PrayerCountdownProps) {
   }
 
   return (
-    <div className="rounded-lg bg-[var(--red)]/10 px-3 py-2 text-center w-full max-w-xs mx-auto">
+    <div className="rounded-lg bg-[var(--red)]/10 px-3 py-2 text-center w-full max-w-xs ml-auto">
       <div className="text-[var(--red)] text-sm font-semibold leading-tight">
         Next: <span className="font-bold">{countdown.nextPrayer}</span>
       </div>

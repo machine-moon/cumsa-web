@@ -1,8 +1,9 @@
 *secrets/
 events.sqlite
 db.sqlite
-
+.cache
 # dependencies
+
 /node_modules
 /.pnp
 .pnp.*
@@ -33,7 +34,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
 
 # vercel
 .vercel
@@ -41,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#vscode files
+.vscode/settings.json
