@@ -117,6 +117,9 @@ export function ImageManagerClient({
       if (fileRef.current) fileRef.current.value = "";
       if (nameRef.current) nameRef.current.value = "";
       notify("Upload successful.");
+    } catch(error) {
+        console.error("File upload error ocurred:", error)
+        notify(error instanceof Error ? "Error: " + error.message.slice(0, error.message.indexOf("\n")) : "An error occurred during upload.");
     } finally {
       setBusy(false);
     }
@@ -187,7 +190,7 @@ export function ImageManagerClient({
   return (
     <div className="space-y-6">
       {message && (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-blue-600 text-white px-4 py-2 rounded shadow-lg flex items-center gap-2">
+        <div className="fixed left-1/2 -translate-x-1/2 z-50 bg-blue-600 text-white px-4 py-2 rounded shadow-lg flex items-center gap-2" style={{ top: 'calc(var(--spacing) * 18)' }}>
           <span>{message}</span>
           <button
             onClick={() => setMessage("")}
