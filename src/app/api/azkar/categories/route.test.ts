@@ -1,6 +1,6 @@
 test("mytest - myunit", async() => {
     //const props = { params: { category: "morning" } };
-    //const res = await fetch(`http://localhost:3000/api/azkar/categories/${props.params.category}`);
+    //const res = await fetch(`http://test.com/api/azkar/categories/${props.params.category}`);
     const res = await fetch("http://localhost:3000/api/azkar/categories/");
     // ✅ Step 1: Check status
     expect(res.status).toBe(200);

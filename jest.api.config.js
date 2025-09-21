@@ -14,4 +14,7 @@ module.exports = {
   testEnvironment: "node", // perfect for API routes
   testMatch: ["**/app/api/**/*.test.ts"], // only match API tests
   moduleFileExtensions: ["ts", "js"],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
 };
