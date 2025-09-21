@@ -2,6 +2,12 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.20 (2025-09-20)
+----------------------
+Tarek Ibrahim
+- Added upcoming/past event toggle and sorted events by month/date
+
+
 v0.0.19 (2025-09-19)
 ----------------------
 Amr Moustafa

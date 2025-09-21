@@ -177,6 +177,8 @@ export default function EventsPage() {
   const [error, setError] = useState<string | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [view, setView] = useState<"upcoming" | "past">("upcoming");
+  const [transitioning, setTransitioning] = useState(false);
 
   const handleInfoClick = (event: Event) => {
     setSelectedEvent(event);
@@ -186,6 +188,16 @@ export default function EventsPage() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedEvent(null);
+  };
+
+  const handleViewChange = (newView: "upcoming" | "past") => {
+    if (view !== newView) {
+      setTransitioning(true);
+      setTimeout(() => {
+        setView(newView);
+        setTransitioning(false);
+      }, 300); // Match the animation duration
+    }
   };
 
   useEffect(() => {
@@ -205,6 +217,26 @@ export default function EventsPage() {
 
     fetchEvents();
   }, []);
+
+  useEffect(() => {
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const q = sp.get("view");
+      const ls = localStorage.getItem("eventsView");
+      const initial = q === "past" || q === "upcoming" ? q : ls === "past" ? "past" : "upcoming";
+      setView(initial as "upcoming" | "past");
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("eventsView", view);
+      const url = new URL(window.location.href);
+      if (view === "upcoming") url.searchParams.delete("view");
+      else url.searchParams.set("view", "past");
+      window.history.replaceState({}, "", url.toString());
+    } catch {}
+  }, [view]);
 
   if (error) {
     return (
@@ -228,6 +260,32 @@ export default function EventsPage() {
     );
   }
 
+  const getEventDateTime = (e: Event) => new Date(e.date + "T" + (e.time || "23:59:59"));
+  const now = new Date();
+  const upcomingEvents = events
+    .filter((e) => getEventDateTime(e).getTime() >= now.getTime())
+    .sort((a, b) => getEventDateTime(a).getTime() - getEventDateTime(b).getTime());
+  const pastEvents = events
+    .filter((e) => getEventDateTime(e).getTime() < now.getTime())
+    .sort((a, b) => getEventDateTime(b).getTime() - getEventDateTime(a).getTime());
+
+  const monthFormatter = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
+  const groupByMonth = (list: Event[]) => {
+    const groups: { label: string; items: Event[] }[] = [];
+    const map = new Map<string, Event[]>();
+    for (const ev of list) {
+      const d = new Date(ev.date + "T00:00:00");
+      const label = isNaN(d.getTime()) ? "Unknown" : monthFormatter.format(d);
+      if (!map.has(label)) map.set(label, []);
+      map.get(label)!.push(ev);
+    }
+    for (const [label, items] of map.entries()) groups.push({ label, items });
+    return groups;
+  };
+
+  const upcomingGroups = groupByMonth(upcomingEvents);
+  const pastGroups = groupByMonth(pastEvents);
+
   return (
     <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="container-base">
@@ -249,23 +307,117 @@ export default function EventsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {loading ? (
-                Array.from({ length: 8 }, (_, i) => <EventSkeleton key={i} />)
-              ) : events.length > 0 ? (
-                events.map((event) => (
-                  <EventCard key={event.id} event={event} onInfoClick={handleInfoClick} />
-                ))
-              ) : (
-                <EmptyState />
-              )}
+            <div
+              className={`flex items-center justify-center ${transitioning ? "pointer-events-none" : ""}`}
+            >
+              <div
+                role="tablist"
+                aria-label="Event view"
+                className="inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 p-1 relative overflow-hidden"
+              >
+                <div
+                  className={`absolute top-0 bottom-0 left-0 transition-transform duration-300 bg-[var(--blue)]/10 rounded-md pointer-events-none ${view === "upcoming" ? "translate-x-0" : "translate-x-full"}`}
+                  style={{ width: "50%" }}
+                />
+                <button
+                  role="tab"
+                  aria-selected={view === "upcoming"}
+                  onClick={() => handleViewChange("upcoming")}
+                  className={`px-3 py-1.5 relative z-10 rounded-md text-sm font-medium transition-all duration-300 transform ${view === "upcoming" ? "text-[var(--blue)]" : "text-gray-700 hover:text-gray-900 hover:scale-105 hover:bg-gray-100"}`}
+                >
+                  Upcoming
+                </button>
+                <button
+                  role="tab"
+                  aria-selected={view === "past"}
+                  onClick={() => handleViewChange("past")}
+                  className={`px-3 py-1.5 relative z-10 rounded-md text-sm font-medium transition-all duration-300 transform ${view === "past" ? "text-[var(--blue)]" : "text-gray-700 hover:text-gray-900 hover:scale-105 hover:bg-gray-100"}`}
+                >
+                  Past
+                </button>
+              </div>
             </div>
 
-            {!loading && events.length > 0 && (
+            <div
+              className={`transition-opacity duration-300 ${transitioning ? "opacity-0" : "opacity-100"}`}
+            >
+              {loading ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {Array.from({ length: 8 }, (_, i) => (
+                    <EventSkeleton key={i} />
+                  ))}
+                </div>
+              ) : view === "upcoming" ? (
+                upcomingGroups.length > 0 ? (
+                  <div className="space-y-10">
+                    {upcomingGroups.map((group) => (
+                      <section key={group.label} aria-label={group.label} className="space-y-4">
+                        <div className="sticky top-2 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 py-1">
+                          <div className="flex items-center gap-3">
+                            <div className="h-5 w-1 rounded bg-[var(--blue)]" />
+                            <h2 className="text-xl font-semibold text-gray-900">{group.label}</h2>
+                            <span className="text-sm text-gray-500">{group.items.length}</span>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                          {group.items.map((event) => (
+                            <EventCard key={event.id} event={event} onInfoClick={handleInfoClick} />
+                          ))}
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                ) : (
+                  <EmptyState />
+                )
+              ) : view === "past" ? (
+                pastGroups.length > 0 ? (
+                  <div className="space-y-8 pt-2">
+                    {pastGroups.map((group) => (
+                      <section
+                        key={`past-${group.label}`}
+                        aria-label={`Past ${group.label}`}
+                        className="space-y-4"
+                      >
+                        <div className="sticky top-2 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 py-1">
+                          <div className="flex items-center gap-3">
+                            <div className="h-4 w-1 rounded bg-[var(--blue)]/60" />
+                            <h3 className="text-lg font-semibold text-gray-800">{group.label}</h3>
+                            <span className="text-sm text-gray-500">{group.items.length}</span>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                          {group.items.map((event) => (
+                            <EventCard
+                              key={`past-${event.id}`}
+                              event={event}
+                              onInfoClick={handleInfoClick}
+                            />
+                          ))}
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center text-sm text-gray-500">No past events</div>
+                )
+              ) : null}
+            </div>
+
+            {!loading && view === "upcoming" && upcomingEvents.length > 0 && (
               <div className="text-center pt-8 border-t border-gray-100">
                 <p className="text-sm text-gray-500">
-                  Found {events.length} upcoming event{events.length !== 1 ? "s" : ""} •
+                  Found {upcomingEvents.length} upcoming event
+                  {upcomingEvents.length !== 1 ? "s" : ""} •
                   <span className="ml-1">More events coming soon!</span>
+                </p>
+              </div>
+            )}
+
+            {view === "past" && !loading && pastEvents.length > 0 && (
+              <div className="text-center pt-8 border-t border-gray-100">
+                <p className="text-sm text-gray-500">
+                  {pastEvents.length} past event{pastEvents.length !== 1 ? "s" : ""}
                 </p>
               </div>
             )}
