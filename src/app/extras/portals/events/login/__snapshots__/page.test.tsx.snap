@@ -60,12 +60,11 @@ exports[`LoginPage snapshot 1`] = `
       <div
         class="text-center mt-6"
       >
-        <a
-          class="text-sm text-[var(--blue)] hover:text-[var(--red)] underline"
+        <div
+          data-testid="stub"
           href="/events"
-        >
-          ← Back to Public Events
-        </a>
+          label="Back to Public Events"
+        />
       </div>
     </div>
   </div>

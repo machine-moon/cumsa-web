@@ -16,6 +16,7 @@ export const SECRET_SECTIONS: SecretSection[] = [
     links: [
       { label: "Events", href: "/extras/portals/events" },
       { label: "Notifications", href: "/extras/portals/notifications" },
+      { label: "Page Drafts", href: "/extras/portals/drafts" },
     ],
   },
   {
@@ -25,22 +26,6 @@ export const SECRET_SECTIONS: SecretSection[] = [
       { label: "Zakat Nisab", href: "/extras/apps/zakat-nisab" },
       { label: "Hisnul Muslim", href: "/extras/apps/hisnul-muslim" },
       { label: "Notifications", href: "/extras/apps/notifications" },
-    ],
-  },
-  {
-    title: "Pages Drafts",
-    groups: [
-      {
-        label: "About Us",
-        links: [{ label: "Gallery", href: "/about-us/gallery" }],
-      },
-      {
-        label: "Services",
-        links: [
-          { label: "New Muslims", href: "/services/new-muslims" },
-          { label: "Mental Health", href: "/services/mental-health" },
-        ],
-      },
     ],
   },
 ];

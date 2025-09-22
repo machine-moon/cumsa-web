@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { getIronSession } from "iron-session";
 import { sessionOptions } from "@/lib/eventSession";
 import { redirect } from "next/navigation";
+import BackButton from "@/components/BackButton";
 
 export default async function LoginPage() {
   const cookieStore = await cookies();
@@ -48,12 +49,7 @@ export default async function LoginPage() {
         </form>
 
         <div className="text-center mt-6">
-          <a
-            href="/extras/apps/notifications"
-            className="text-sm text-[var(--blue)] hover:text-[var(--red)] underline"
-          >
-            ← Back to Public Subscriptions
-          </a>
+          <BackButton href="/extras/apps/notifications" label="Back to Public Subscriptions" />
         </div>
       </div>
     </div>

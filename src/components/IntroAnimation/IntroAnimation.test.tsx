@@ -1,7 +1,9 @@
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import IntroAnimation from "./IntroAnimation";
 
-test("IntroAnimation snapshot", () => {
+test("IntroAnimation snapshot", async () => {
   const { asFragment } = render(<IntroAnimation />);
-  expect(asFragment()).toMatchSnapshot();
+  await waitFor(() => {
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
