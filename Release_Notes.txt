@@ -2,15 +2,10 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
-v0.0.21 (2025-09-21)
-----------------------
-Tarek Ibrahim
-- Added draft portal
-
 v0.0.20 (2025-09-20)
 ----------------------
-Tarek Ibrahim
-- Added upcoming/past event toggle and sorted events by month/date
+Amr Moustafa
+- fixed prayer countdown dialog to be right aligned
 
 v0.0.19 (2025-09-19)
 ----------------------
