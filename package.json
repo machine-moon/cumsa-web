@@ -12,12 +12,12 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "test": "jest",
-    "qc": "yarn run lint; yarn run test; yarn run format; yarn run build",
+    "qc": "yarn lint && yarn test && yarn format && yarn build",
     "sync": "BRANCH=$(git rev-parse --abbrev-ref HEAD) && git fetch origin && git reset --hard origin/$BRANCH",
     "deploy": "yarn sync && yarn install && yarn build && yarn start"
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0",
+    "better-sqlite3": "^12.4.1",
     "flat-cache": "6.1.14",
     "framer-motion": "^12.23.12",
     "iron-session": "^8.0.4",

@@ -19,7 +19,7 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#98340b",
-    "workbench.colorTheme": "Gruvbox Dark (Soft)",
+    "workbench.colorTheme": "Stark Contrast (rainglow)",
     "themeRandomizer.themes.blacklist": [
         "Red",
         "Bearded Theme Black & Ruby Soft",
