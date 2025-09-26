@@ -7,10 +7,13 @@ async function requireAuth(req: Request, res?: Response) {
   // iron-session needs both a req + a response object
   const response = res ?? new NextResponse();
   const session = await getIronSession<{ authorized?: boolean }>(req, response, sessionOptions);
-  if(!session.authorized) {
-    return {authorized: false, response: NextResponse.json({ error: "Unauthorized" }, { status: 401 })};
+  if (!session.authorized) {
+    return {
+      authorized: false,
+      response: NextResponse.json({ error: "Unauthorized" }, { status: 401 }),
+    };
   }
-  return {authorized: true, response};
+  return { authorized: true, response };
 }
 
 export async function GET() {

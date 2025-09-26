@@ -6,7 +6,6 @@ import { NextRequest } from "next/server";
 const BASE_URL = "http://localhost";
 
 describe("GET /api/azkar/category", () => {
-
   it("returns 400 for invalid id", async () => {
     const req = new NextRequest(`${BASE_URL}/api/azkar/category?id=abc`);
     const res = await GET(req);
@@ -19,7 +18,7 @@ describe("GET /api/azkar/category", () => {
 
   it("returns data for valid id", async () => {
     // Example: pick an ID that exists in your test dataset
-    const validId = 1; 
+    const validId = 1;
     const req = new NextRequest(`${BASE_URL}/api/azkar/category?id=${validId}`);
     const res = await GET(req);
     const json = await res.json();
@@ -34,7 +33,5 @@ describe("GET /api/azkar/category", () => {
     expect(first).toHaveProperty("ARABIC_TEXT");
     expect(first).toHaveProperty("TRANSLATED_TEXT");
     expect(first).toHaveProperty("AUDIO");
-
   });
-
 });

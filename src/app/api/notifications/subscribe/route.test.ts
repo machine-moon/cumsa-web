@@ -21,11 +21,10 @@ describe("notifications/subscribe API", () => {
         url: "http://localhost/api/notifications/subscribe",
         cookies: {
           get: jest.fn().mockReturnValue({
-          name: "subs",
-          value: JSON.stringify({ announcements: true }),
+            name: "subs",
+            value: JSON.stringify({ announcements: true }),
           }),
         },
-
       } as unknown as NextRequest;
 
       const res = await GET(req);
@@ -42,12 +41,11 @@ describe("notifications/subscribe API", () => {
       const req = {
         url: `http://localhost/api/notifications/subscribe?endpoint=${endpoint}`,
         cookies: {
-        get: jest.fn().mockReturnValue({
-        name: "subs",
-        value: JSON.stringify({ announcements: true }),
-        }),
-},
-
+          get: jest.fn().mockReturnValue({
+            name: "subs",
+            value: JSON.stringify({ announcements: true }),
+          }),
+        },
       } as unknown as NextRequest;
 
       const res = await GET(req);
@@ -82,11 +80,10 @@ describe("notifications/subscribe API", () => {
         }),
         cookies: {
           get: jest.fn().mockReturnValue({
-          name: "subs",
-          value: "{}",
-      }),
-    },
-
+            name: "subs",
+            value: "{}",
+          }),
+        },
       } as unknown as NextRequest;
 
       const res = await POST(req);
@@ -109,10 +106,10 @@ describe("notifications/subscribe API", () => {
         }),
         cookies: {
           get: jest.fn().mockReturnValue({
-          name: "subs",
-          value: "{}",
-      }),
-    },
+            name: "subs",
+            value: "{}",
+          }),
+        },
       } as unknown as NextRequest;
 
       const res = await POST(req);
