@@ -17,7 +17,7 @@ export default function EquityServicesPage() {
         </p>
         <div className="mt-3 text-gray-700">
           <p>
-            <strong>Phone:</strong> (613) 520‑5622
+            <strong>Phone:</strong> (613) 520‑2500 ext. 5622
           </p>
           <p>
             <strong>Email:</strong>{" "}
@@ -26,7 +26,7 @@ export default function EquityServicesPage() {
             </a>
           </p>
           <p className="mt-2">
-            <strong>Office:</strong> Room 503 Robertson Hall, Carleton University
+            <strong>Office:</strong> Carleton Technology and Training Centre, Room 3800, Carleton University
           </p>
         </div>
       </div>
