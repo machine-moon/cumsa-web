@@ -44,7 +44,7 @@ export default async function YourMasajidPage() {
       <div className="container-base">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Your Masajid in Ottawa–Gatineau
+            Local Mosques
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Explore local masajid and community centers in the Ottawa–Gatineau region.
