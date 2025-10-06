@@ -51,7 +51,7 @@ exports[`chaplaincy services page snapshot 1`] = `
                 class="link-cta"
                 href="mailto:akhalil@macnet.ca"
               >
-                akhalil@macnet.ca
+                Contact Imam Ahmed Khalil
               </a>
             </p>
           </div>
@@ -91,7 +91,7 @@ exports[`chaplaincy services page snapshot 1`] = `
                 class="link-cta"
                 href="mailto:aisha.sherazi@gmail.com"
               >
-                aisha.sherazi@gmail.com
+                Contact Dr. Aisha Sherazi
               </a>
             </p>
           </div>
@@ -104,9 +104,16 @@ exports[`chaplaincy services page snapshot 1`] = `
       </article>
     </div>
     <div
-      class="mt-10 text-sm text-gray-600 animate-fade-in"
+      class="flex justify-center mt-6"
     >
-      By appointment only — email directly to request a meeting.
+      <a
+        class="link-cta"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc-AxOb8ThFcEOVQFe8B4x_G3riq6jv_cMLhJvIyxsGt3mlcA/viewform"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Fill out the Chaplaincy Request Form
+      </a>
     </div>
   </div>
 </DocumentFragment>
