@@ -29,7 +29,8 @@ export default function EquityServicesPage() {
             </a>
           </p>
           <p className="mt-2">
-            <strong>Office:</strong> Carleton Technology and Training Centre, Room 3800, Carleton University
+            <strong>Office:</strong> Carleton Technology and Training Centre, Room 3800, Carleton
+            University
           </p>
         </div>
       </div>

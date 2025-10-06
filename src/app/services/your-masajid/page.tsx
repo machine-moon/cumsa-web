@@ -43,9 +43,7 @@ export default async function YourMasajidPage() {
     <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="container-base">
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Local Mosques
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Local Mosques</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Explore local masajid and community centers in the Ottawa–Gatineau region.
           </p>
