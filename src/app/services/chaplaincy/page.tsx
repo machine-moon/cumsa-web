@@ -1,6 +1,7 @@
 export const metadata = { title: "Chaplaincy Services | CUMSA" };
 import Image from "next/image";
 import { CHAPLAIN_EMAILS } from "@/lib/constants";
+import { CHAPLAINCY_GOOGLE_FORM_URL } from "@/lib/constants";
 
 type Chaplain = {
   name: string;
@@ -71,6 +72,11 @@ export default function ChaplaincyServicesPage() {
       <div className="mt-10 text-sm text-gray-600 animate-fade-in">
         By appointment only — email directly to request a meeting.
       </div>
+
+      <a href={CHAPLAINCY_GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+          Fill out the Chaplaincy Request Form
+      </a>
+
     </div>
   );
 }

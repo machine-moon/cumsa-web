@@ -201,3 +201,5 @@ export const MENTAL_HEALTH_LINKS = {
   hopeForWellness: "https://www.hopeforwellness.ca/",
   carletonHealth: "https://carleton.ca/health/",
 } as const;
+
+export const CHAPLAINCY_GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-AxOb8ThFcEOVQFe8B4x_G3riq6jv_cMLhJvIyxsGt3mlcA/viewform";
