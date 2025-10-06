@@ -69,14 +69,12 @@ export default function ChaplaincyServicesPage() {
           </article>
         ))}
       </div>
-      <div className="mt-10 text-sm text-gray-600 animate-fade-in">
-        By appointment only — email directly to request a meeting.
-      </div>
 
-      <a href={CHAPLAINCY_GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+      <div className="flex justify-center mt-6">
+      <a className="link-cta" href={CHAPLAINCY_GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
           Fill out the Chaplaincy Request Form
       </a>
-
+      </div>
     </div>
   );
 }
