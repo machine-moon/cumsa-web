@@ -1,9 +1,11 @@
+console.log("Loaded the calendar route file");
+
 import { NextResponse } from "next/server";
 
 const CALENDAR_ID = process.env.CALENDAR_ID;
 const API_KEY = process.env.API_KEY;
 if (!CALENDAR_ID || !API_KEY) {
-  console.log("Missing CALENDAR_ID or API_KEY environment variables"); // wasn't printed
+  console.log("Missing CALENDAR_ID or API_KEY environment variables");
   throw new Error("Missing CALENDAR_ID or API_KEY environment variables");
 }
 
