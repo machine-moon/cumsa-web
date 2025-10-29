@@ -83,8 +83,8 @@ export default function NewMuslimsPage() {
           </p>
           <ul className="list-disc pl-5 text-gray-700 space-y-1">
             <li>
-              <strong>Campus Musalla (prayer room):</strong> Daily presence of students who can
-              assist.
+              <strong>Campus Main Prayer Room (Musalla).:</strong> Daily presence of students who
+              can assist.
             </li>
             <li>
               <strong>Chaplaincy:</strong> Reach out via our Chaplaincy page for 1:1 support.
@@ -102,7 +102,7 @@ export default function NewMuslimsPage() {
             {resources.map((r) => (
               <li key={r.href}>
                 <a href={r.href} target="_blank" rel="noopener noreferrer" className="link-cta">
-                  {r.label} →
+                  {r.label}
                 </a>
               </li>
             ))}

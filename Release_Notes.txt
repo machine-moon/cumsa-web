@@ -2,6 +2,23 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.24 (2025-10-29)
+----------------------
+Tarek Ibrahim
+- Created Resources page with VPI document content
+- Merged Equity Services info into Resources
+- Updated spelling syntax
+- Updated Paterson Hall directions link and added Mussallah guide video
+- Updated Jummuah info with new location options, khateeb name display, and 3rd Jummuah placeholder
+- Moved Your Masjid page to community section in navbar as Local Mosques
+- Removed Mental Health page draft
+- Replaced Guidebook Google Docs link with uploaded PDF
+- Updated Chaplain services form
+- Removed Home button from navbar
+- Improved About the MSA page aesthetics
+- Added asterisk indicators for obligatory fields on Contact page
+- Added prayer time icons for visual enhancement
+
 v0.0.23 (2025-09-28)
 ----------------------
 Sarah Abada
@@ -118,7 +135,6 @@ Tarek Ibrahim
 - Added shadow effect for mouse hover on navbar
 - Added draft Mental Health & Well-Being page under Services
 
-
 v0.0.6 (2025-09-06)
 ----------------------
 Tarek Ibrahim
@@ -140,7 +156,7 @@ Tarek Ibrahim
 - Added animation on home logo
 - Animated navbar tab highlight on hover
 - Updated website icon for mobile "Add to Home" feature
-- Added Musalla (prayer room) info section [prayer room]
+- Added Main Prayer Room (Musalla). info section [prayer room]
 
 v0.0.3 (2025-09-05)
 ----------------------

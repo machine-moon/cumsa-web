@@ -53,7 +53,7 @@ export default function MasajidMapClient({ mosques }: { mosques: Mosque[] }) {
                 {m.website && (
                   <div className="mt-1">
                     <a href={m.website} target="_blank" rel="noreferrer" className="link-cta">
-                      Website →
+                      Website
                     </a>
                   </div>
                 )}

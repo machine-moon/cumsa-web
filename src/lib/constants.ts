@@ -7,9 +7,9 @@ export const LINKS = {
   website: "/",
   donate: "/donate",
   musallaDirections: "https://www.classfind.com/carleton/room/UC231",
-  patersonDirections: "https://share.google/l95AKvHeHUuX4we2W",
-  coordinatorsGuidebook:
-    "https://docs.google.com/document/d/1nEDXwGm3eeO0vd2eKmP1idH8PeEZnXlo2HpWb06vF0w/",
+  musallaDirectionsVideo: "https://www.instagram.com/carletonmsa/reel/DAhFcABxWTB/",
+  patersonDirections: "https://www.classfind.com/carleton/room/PA218",
+  coordinatorsGuidebook: "/CU-MSA Guidebook_2025.pdf",
   constitution: "/constitution.pdf",
 };
 

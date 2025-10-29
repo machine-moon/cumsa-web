@@ -24,7 +24,7 @@ type Masjid = {
   osm_id?: number;
 };
 
-export default function YourMasajidClient({ initialMosques }: { initialMosques?: Masjid[] }) {
+export default function LocalMosquesClient({ initialMosques }: { initialMosques?: Masjid[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   // Use initialMosques if provided and not empty, otherwise fall back to MOSQUES constant
@@ -59,7 +59,7 @@ export default function YourMasajidClient({ initialMosques }: { initialMosques?:
                       rel="noopener noreferrer"
                       className="link-cta"
                     >
-                      Website →
+                      Website
                     </a>
                   </div>
                 )}

@@ -132,7 +132,7 @@ exports[`new muslims page snapshot 1`] = `
         >
           <li>
             <strong>
-              Campus Musalla (prayer room):
+              Campus Main Prayer Room (Musalla).:
             </strong>
              Daily presence of students who can assist.
           </li>
@@ -168,7 +168,7 @@ exports[`new muslims page snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              New Muslim Academy →
+              New Muslim Academy
             </a>
           </li>
           <li>
@@ -178,7 +178,7 @@ exports[`new muslims page snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              WhyIslam →
+              WhyIslam
             </a>
           </li>
           <li>
@@ -188,7 +188,7 @@ exports[`new muslims page snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Yaqeen Institute (Beginner Series) →
+              Yaqeen Institute (Beginner Series)
             </a>
           </li>
           <li>
@@ -198,7 +198,7 @@ exports[`new muslims page snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Learn Quran (Tajweed Basics) →
+              Learn Quran (Tajweed Basics)
             </a>
           </li>
           <li>
@@ -208,7 +208,7 @@ exports[`new muslims page snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Hadith Collection →
+              Hadith Collection
             </a>
           </li>
         </ul>

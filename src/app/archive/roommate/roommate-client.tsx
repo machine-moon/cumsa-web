@@ -86,7 +86,7 @@ export default function RoommateClient() {
                 rel="noopener noreferrer"
                 className="mt-3 inline-block text-[var(--blue)]"
               >
-                View post →
+                View post
               </a>
             )}
           </div>

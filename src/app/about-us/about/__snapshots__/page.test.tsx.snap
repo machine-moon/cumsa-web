@@ -3,57 +3,131 @@
 exports[`about page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="bg-[var(--background)]"
+    class="bg-gradient-to-b from-blue-50/30 to-white min-h-screen"
   >
     <section
-      class="bg-[var(--navy)] text-white"
+      class="relative overflow-hidden"
     >
       <div
-        class="container-base py-12 animate-fade-in"
+        class="absolute inset-0 bg-gradient-to-br from-[var(--navy)] via-[var(--navy)] to-[var(--blue)]/80"
+      />
+      <div
+        class="hero-glow hero-glow-1"
+      />
+      <div
+        class="hero-glow hero-glow-2"
+      />
+      <div
+        class="relative container-base py-16 md:py-20"
       >
-        <h1
-          class="text-3xl md:text-4xl font-extrabold"
+        <div
+          class="max-w-4xl mx-auto text-center animate-fade-in"
         >
-          About the MSA
-        </h1>
-        <p
-          class="mt-3 text-white/85 max-w-3xl"
-        >
-          Welcome to Carleton University’s Muslim Students’ Association. We’re your on-campus resource for practicing your faith comfortably, building community, and serving others.
-        </p>
+          <h1
+            class="text-4xl md:text-5xl font-bold text-white mb-6"
+          >
+            About the MSA
+          </h1>
+          <p
+            class="text-lg md:text-xl text-white/90 leading-relaxed"
+          >
+            Welcome to Carleton University's Muslim Students' Association. We're your on-campus resource for practicing your faith comfortably, building community, and serving others.
+          </p>
+        </div>
       </div>
     </section>
     <div
-      class="container-base py-12 grid gap-10 md:grid-cols-2"
+      class="container-base py-16"
     >
-      <section
-        class="animate-slide-in-left"
+      <div
+        class="max-w-5xl mx-auto"
       >
-        <h2
-          class="text-xl font-semibold"
+        <div
+          class="grid gap-8 md:grid-cols-2 mb-12"
         >
-          Vision
-        </h2>
-        <p
-          class="mt-3 text-gray-700"
+          <section
+            class="card p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-left"
+          >
+            <div
+              class="flex items-center gap-3 mb-4"
+            >
+              <div
+                class="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--blue)] to-[var(--navy)] flex items-center justify-center"
+              >
+                <span
+                  class="text-2xl"
+                >
+                  🎯
+                </span>
+              </div>
+              <h2
+                class="text-2xl font-bold text-[var(--navy)]"
+              >
+                Vision
+              </h2>
+            </div>
+            <p
+              class="text-gray-700 leading-relaxed"
+            >
+              Driven by our religious foundation, our vision is to empower and inspire students to be a positive force for change.
+            </p>
+          </section>
+          <section
+            class="card p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right"
+          >
+            <div
+              class="flex items-center gap-3 mb-4"
+            >
+              <div
+                class="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--red)] to-[var(--navy)] flex items-center justify-center"
+              >
+                <span
+                  class="text-2xl"
+                >
+                  🤝
+                </span>
+              </div>
+              <h2
+                class="text-2xl font-bold text-[var(--navy)]"
+              >
+                Mission
+              </h2>
+            </div>
+            <p
+              class="text-gray-700 leading-relaxed"
+            >
+              Our mission is to provide a welcoming, supportive, and enriching environment through our educational, spiritual, and social services and events. We also aim to represent the concerns of Carleton University's Muslim student body, encourage civic engagement, and raise awareness about Islam.
+            </p>
+          </section>
+        </div>
+        <section
+          class="card p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in bg-gradient-to-br from-white to-blue-50/20"
         >
-          Driven by our religious foundation, our vision is to empower and inspire students to be a positive force for change.
-        </p>
-      </section>
-      <section
-        class="animate-slide-in-right"
-      >
-        <h2
-          class="text-xl font-semibold"
-        >
-          Mission
-        </h2>
-        <p
-          class="mt-3 text-gray-700"
-        >
-          Our mission is to provide a welcoming, supportive, and enriching environment through our educational, spiritual, and social services and events. We also aim to represent the concerns of Carleton University’s Muslim student body, encourage civic engagement, and raise awareness about Islam.
-        </p>
-      </section>
+          <div
+            class="flex items-center gap-3 mb-6"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--green)] to-[var(--blue)] flex items-center justify-center"
+            >
+              <span
+                class="text-2xl"
+              >
+                💚
+              </span>
+            </div>
+            <h2
+              class="text-2xl font-bold text-[var(--navy)]"
+            >
+              Our Community
+            </h2>
+          </div>
+          <p
+            class="text-gray-700 leading-relaxed mb-6"
+          >
+            The Carleton University Muslim Students' Association serves as a vibrant hub for Muslim students and allies to connect, grow, and make a difference. Through our diverse programming, we create spaces for spiritual development, academic support, social connection, and community service.
+          </p>
+        </section>
+      </div>
     </div>
   </div>
 </DocumentFragment>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`your masajid page snapshot 1`] = `
+exports[`local mosques page snapshot 1`] = `
 <DocumentFragment>
   <div
     class="bg-[var(--background)] min-h-screen py-12"
@@ -14,13 +14,8 @@ exports[`your masajid page snapshot 1`] = `
         <h1
           class="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
         >
-          United Muslim Organizations of Ottawa–Gatineau
+          Explore local mosques and community centers in the region.
         </h1>
-        <p
-          class="text-lg text-gray-600 max-w-2xl mx-auto"
-        >
-          Explore local masajid and community centers in the Ottawa–Gatineau region.
-        </p>
       </div>
       <div
         class="animate-slide-in-left"
@@ -78,7 +73,7 @@ exports[`your masajid page snapshot 1`] = `
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Website →
+                    Website
                   </a>
                 </div>
               </div>

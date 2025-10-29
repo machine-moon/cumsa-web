@@ -1,12 +1,13 @@
 import { test, expect } from "@jest/globals";
 import { render, act } from "@testing-library/react";
-import YourMasajidClient from "./your-masajid-client";
+import Page from "./page";
 
-test("your masajid client snapshot", async () => {
+test("local mosques page snapshot", async () => {
+  const resolvedPage = await Page();
   let component: ReturnType<typeof render> | undefined;
 
   await act(async () => {
-    component = render(<YourMasajidClient />);
+    component = render(resolvedPage);
   });
 
   if (!component) {

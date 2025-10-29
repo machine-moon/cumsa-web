@@ -116,9 +116,23 @@ exports[`contact page snapshot 1`] = `
               <div
                 class="animate-slide-in-left"
               >
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  for="name"
+                >
+                  Name 
+                  <span
+                    class="text-[var(--red)]"
+                  >
+                    *
+                  </span>
+                </label>
                 <div
+                  aria-invalid="false"
+                  aria-required="true"
                   class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
                   data-testid="stub"
+                  id="name"
                   name="name"
                   placeholder="Your name"
                   required=""
@@ -127,9 +141,23 @@ exports[`contact page snapshot 1`] = `
               <div
                 class="animate-slide-in-right"
               >
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  for="email"
+                >
+                  Email 
+                  <span
+                    class="text-[var(--red)]"
+                  >
+                    *
+                  </span>
+                </label>
                 <div
+                  aria-invalid="false"
+                  aria-required="true"
                   class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
                   data-testid="stub"
+                  id="email"
                   name="email"
                   placeholder="Your email"
                   required=""
@@ -140,9 +168,16 @@ exports[`contact page snapshot 1`] = `
             <div
               class="animate-slide-in-left"
             >
+              <label
+                class="block text-sm font-medium text-gray-700 mb-2"
+                for="subject"
+              >
+                Subject
+              </label>
               <div
                 class="rounded-lg border-2 border-gray-200 focus:border-blue-400 transition-colors"
                 data-testid="stub"
+                id="subject"
                 name="subject"
                 placeholder="Subject"
               />
@@ -150,10 +185,24 @@ exports[`contact page snapshot 1`] = `
             <div
               class="animate-slide-in-right"
             >
+              <label
+                class="block text-sm font-medium text-gray-700 mb-2"
+                for="message"
+              >
+                Message 
+                <span
+                  class="text-[var(--red)]"
+                >
+                  *
+                </span>
+              </label>
               <textarea
+                aria-invalid="false"
+                aria-required="true"
                 class="w-full rounded-lg border-2 border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                id="message"
                 name="message"
-                placeholder="Tell us what’s on your mind..."
+                placeholder="Tell us what's on your mind..."
                 required=""
                 rows="6"
               />

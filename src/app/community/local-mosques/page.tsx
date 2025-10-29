@@ -1,5 +1,5 @@
-export const metadata = { title: "Your Masajid | CUMSA" };
-import YourMasajidClient from "@/app/services/your-masajid/your-masajid-client";
+export const metadata = { title: "Local Mosques | CUMSA" };
+import LocalMosquesClient from "@/app/community/local-mosques/local-mosques-client";
 
 type NominatimPlace = {
   name?: string;
@@ -44,14 +44,11 @@ export default async function YourMasajidPage() {
       <div className="container-base">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            United Muslim Organizations of Ottawa–Gatineau
+            Explore local mosques and community centers in the region.
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore local masajid and community centers in the Ottawa–Gatineau region.
-          </p>
         </div>
         <div className="animate-slide-in-left">
-          <YourMasajidClient initialMosques={masajid} />
+          <LocalMosquesClient initialMosques={masajid} />
         </div>
       </div>
     </div>

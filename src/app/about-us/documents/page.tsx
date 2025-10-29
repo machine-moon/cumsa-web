@@ -26,11 +26,11 @@ export default function DocumentsPage() {
               elections.
             </p>
             <span className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold group-hover:gap-3 transition-all">
-              Read More →
+              Read More
             </span>
           </a>
           <a
-            href="https://docs.google.com/document/d/1nEDXwGm3eeO0vd2eKmP1idH8PeEZnXlo2HpWb06vF0w/edit?tab=t.0"
+            href={LINKS.coordinatorsGuidebook}
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 animate-slide-in-right hover:scale-[1.02]"
@@ -43,7 +43,7 @@ export default function DocumentsPage() {
               MSA.
             </p>
             <span className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold group-hover:gap-3 transition-all">
-              Read More →
+              Read More
             </span>
           </a>
         </div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`your masajid client snapshot 1`] = `
+exports[`local mosques client snapshot 1`] = `
 <DocumentFragment>
   <div
     class="mt-8 grid gap-8 md:grid-cols-2"
@@ -55,7 +55,7 @@ exports[`your masajid client snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Website →
+              Website
             </a>
           </div>
         </div>

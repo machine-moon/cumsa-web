@@ -25,6 +25,76 @@ exports[`release notes page snapshot 1`] = `
             <span
               class="text-2xl font-bold text-[var(--blue)]"
             >
+              v0.0.24
+            </span>
+            <span
+              class="text-xs text-gray-700 font-semibold truncate"
+            >
+              Tarek Ibrahim
+            </span>
+          </div>
+          <span
+            class="text-xs text-gray-500 font-mono whitespace-nowrap"
+          >
+            2025-10-29
+          </span>
+        </div>
+        <ul
+          class="list-disc pl-6 text-gray-800 space-y-1 text-base"
+        >
+          <li>
+            Created Resources page with VPI document content
+          </li>
+          <li>
+            Merged Equity Services info into Resources
+          </li>
+          <li>
+            Updated spelling syntax
+          </li>
+          <li>
+            Updated Paterson Hall directions link and added Mussallah guide video
+          </li>
+          <li>
+            Updated Jummuah info with new location options, khateeb name display, and 3rd Jummuah placeholder
+          </li>
+          <li>
+            Moved Your Masjid page to community section in navbar as Local Mosques
+          </li>
+          <li>
+            Removed Mental Health page draft
+          </li>
+          <li>
+            Replaced Guidebook Google Docs link with uploaded PDF
+          </li>
+          <li>
+            Updated Chaplain services form
+          </li>
+          <li>
+            Removed Home button from navbar
+          </li>
+          <li>
+            Improved About the MSA page aesthetics
+          </li>
+          <li>
+            Added asterisk indicators for obligatory fields on Contact page
+          </li>
+          <li>
+            Added prayer time icons for visual enhancement
+          </li>
+        </ul>
+      </section>
+      <section
+        class="group transition-all duration-200 mb-0 rounded-2xl border border-black/10 bg-white/90 p-6 shadow hover:shadow-lg hover:border-[var(--blue)] hover:bg-white/100"
+      >
+        <div
+          class="flex items-center mb-3 justify-between gap-2 flex-wrap"
+        >
+          <div
+            class="flex items-center gap-3 min-w-0"
+          >
+            <span
+              class="text-2xl font-bold text-[var(--blue)]"
+            >
               v0.0.23
             </span>
             <span
@@ -806,7 +876,7 @@ exports[`release notes page snapshot 1`] = `
             Updated website icon for mobile "Add to Home" feature
           </li>
           <li>
-            Added Musalla (prayer room) info section [prayer room]
+            Added Main Prayer Room (Musalla). info section [prayer room]
           </li>
         </ul>
       </section>
