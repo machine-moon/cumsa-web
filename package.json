@@ -1,6 +1,6 @@
 {
   "name": "cumsa-web",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "private": true,
   "scripts": {
     "https-proxy": "local-ssl-proxy --source 3443 --target 3000 --cert certs/cert.pem --key certs/key.pem",
@@ -16,7 +16,7 @@
     "test:ui": "jest --selectProjects ui",
     "qc": "clear ;yarn lint ;yarn test -u;yarn format; yarn build",
     "sync": "BRANCH=$(git rev-parse --abbrev-ref HEAD) && git fetch origin && git reset --hard origin/$BRANCH",
-    "deploy": "yarn sync && yarn install && yarn build && yarn start"
+    "deploy": "yarn sync && yarn install && yarn buildt && yarn start"
   },
   "dependencies": {
     "better-sqlite3": "^12.2.0",

@@ -2,6 +2,11 @@ CUMSA Web Application Release Notes
 -------------------------------------------------------------------
 Document all changes introduced in this release as concise bullet points below.
 
+v0.0.25 (2025-10-29)
+----------------------
+Tarek Ibrahim
+- Added advocacy page to drafts
+
 v0.0.24 (2025-10-29)
 ----------------------
 Tarek Ibrahim

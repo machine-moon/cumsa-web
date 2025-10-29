@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`advocacy page snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-gradient-to-b from-slate-50 to-white min-h-screen"
+  >
+    <section
+      class="relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[var(--navy)] via-[var(--navy)] to-[var(--blue)]/80"
+      />
+      <div
+        class="hero-glow hero-glow-1"
+      />
+      <div
+        class="hero-glow hero-glow-2"
+      />
+      <div
+        class="relative container-base py-16 md:py-20"
+      >
+        <div
+          class="max-w-4xl mx-auto text-center"
+          style="opacity: 0; transform: translateY(20px);"
+        >
+          <h1
+            class="text-4xl md:text-5xl font-bold text-white mb-6"
+          >
+            Standing in Solidarity
+          </h1>
+          <p
+            class="text-lg md:text-xl text-white/90 leading-relaxed mb-6"
+          >
+            As the Muslim Student Association, we stand in unwavering solidarity with our brothers and sisters who face oppression and injustice around the world.
+          </p>
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+          >
+            <p
+              class="text-white/95 text-base md:text-lg italic leading-relaxed"
+            >
+              “And what is [the matter] with you that you fight not in the cause of Allāh and [for] the oppressed among men, women and children who say, “Our Lord, take us out of this city of oppressive people and appoint for us from Yourself a protector and appoint for us from Yourself a helper”
+            </p>
+            <p
+              class="text-white/80 mt-3 text-sm"
+            >
+              — Quran 4:75 (Saheeh International)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="container-base py-12"
+    >
+      <div
+        class="max-w-6xl mx-auto"
+        style="opacity: 0;"
+      >
+        <div
+          class="text-center mb-12"
+          style="opacity: 0; transform: translateY(30px);"
+        >
+          <h2
+            class="text-3xl font-bold text-[var(--navy)] mb-4"
+          >
+            Current Crises
+          </h2>
+          <p
+            class="text-gray-600 max-w-2xl mx-auto"
+          >
+            Learn about ongoing situations affecting Muslim communities worldwide and discover how you can make a difference.
+          </p>
+        </div>
+        <div
+          class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mb-16"
+        >
+          <div
+            style="opacity: 0; transform: translateY(30px);"
+          >
+            <button
+              class="w-full text-left bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-[var(--blue)] hover:scale-[1.02] group"
+            >
+              <div
+                class="flex items-start gap-4"
+              >
+                <div
+                  class="text-5xl flex-shrink-0"
+                >
+                  🇵🇸
+                </div>
+                <div
+                  class="flex-1"
+                >
+                  <h3
+                    class="text-2xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--blue)] transition-colors"
+                  >
+                    Palestine
+                  </h3>
+                  <p
+                    class="text-gray-600 mb-4"
+                  >
+                    Palestinians face ongoing occupation, displacement, and humanitarian crisis in Gaza and the West Bank.
+                  </p>
+                  <div
+                    class="flex items-center text-[var(--blue)] font-medium group-hover:gap-2 transition-all"
+                  >
+                    Learn more 
+                    <svg
+                      class="ml-2 text-sm"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div
+            style="opacity: 0; transform: translateY(30px);"
+          >
+            <button
+              class="w-full text-left bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-[var(--blue)] hover:scale-[1.02] group"
+            >
+              <div
+                class="flex items-start gap-4"
+              >
+                <div
+                  class="text-5xl flex-shrink-0"
+                >
+                  🇸🇩
+                </div>
+                <div
+                  class="flex-1"
+                >
+                  <h3
+                    class="text-2xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--blue)] transition-colors"
+                  >
+                    Sudan
+                  </h3>
+                  <p
+                    class="text-gray-600 mb-4"
+                  >
+                    Sudan faces a devastating civil war causing mass displacement, famine, and humanitarian catastrophe.
+                  </p>
+                  <div
+                    class="flex items-center text-[var(--blue)] font-medium group-hover:gap-2 transition-all"
+                  >
+                    Learn more 
+                    <svg
+                      class="ml-2 text-sm"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div
+            style="opacity: 0; transform: translateY(30px);"
+          >
+            <button
+              class="w-full text-left bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-[var(--blue)] hover:scale-[1.02] group"
+            >
+              <div
+                class="flex items-start gap-4"
+              >
+                <div
+                  class="text-5xl flex-shrink-0"
+                >
+                  🇨🇳
+                </div>
+                <div
+                  class="flex-1"
+                >
+                  <h3
+                    class="text-2xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--blue)] transition-colors"
+                  >
+                    China
+                  </h3>
+                  <p
+                    class="text-gray-600 mb-4"
+                  >
+                    Uyghur Muslims face systematic persecution, mass detention, and cultural genocide in Xinjiang.
+                  </p>
+                  <div
+                    class="flex items-center text-[var(--blue)] font-medium group-hover:gap-2 transition-all"
+                  >
+                    Learn more 
+                    <svg
+                      class="ml-2 text-sm"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div
+            style="opacity: 0; transform: translateY(30px);"
+          >
+            <button
+              class="w-full text-left bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-[var(--blue)] hover:scale-[1.02] group"
+            >
+              <div
+                class="flex items-start gap-4"
+              >
+                <div
+                  class="text-5xl flex-shrink-0"
+                >
+                  🇪🇬
+                </div>
+                <div
+                  class="flex-1"
+                >
+                  <h3
+                    class="text-2xl font-bold text-[var(--navy)] mb-2 group-hover:text-[var(--blue)] transition-colors"
+                  >
+                    Egypt
+                  </h3>
+                  <p
+                    class="text-gray-600 mb-4"
+                  >
+                    Egyptians face authoritarian rule, mass political imprisonment, and severe restrictions on freedoms.
+                  </p>
+                  <div
+                    class="flex items-center text-[var(--blue)] font-medium group-hover:gap-2 transition-all"
+                  >
+                    Learn more 
+                    <svg
+                      class="ml-2 text-sm"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
